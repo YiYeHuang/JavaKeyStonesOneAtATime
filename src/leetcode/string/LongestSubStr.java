@@ -16,11 +16,4 @@ package leetcode.string;
  */
 public class LongestSubStr
 {
-    public static int lengthOfLongestSubstring(String s)
-    {
-        for (int i = 0; i < s.length(); i++)
-        {
-            
-        }
-    }
 }

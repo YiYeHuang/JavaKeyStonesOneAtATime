@@ -11,11 +11,4 @@ package leetcode.search;
  */
 public class FindMinimumRotatedSortedArray
 {
-    public int findMin(int[] nums)
-    {
-        int low = 0;
-        int high = nums.length - 1;
-        
-        while ()
-    }
 }
