@@ -1,5 +1,9 @@
 package leetcode.search;
 
+import Tag.company.*;
+import Tag.type.BFS;
+import Tag.type.DFS;
+
 /**
  * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is
  * surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You
@@ -21,12 +25,18 @@ package leetcode.search;
  * 
  * to under stand that, water == land once notice that there is a land
  * connected, just clean it out to be "water" once reach water, stop
- * 
- * 
  */
-public class findIsland_amazon
+
+@Amazon
+@Facebook
+@Microsoft
+@Google
+@Zenefit
+public class NumberofIslands
 {
 
+    @BFS
+    @DFS
     public static int numIslands(char[][] grid)
     {
         int count = 0;
@@ -47,6 +57,7 @@ public class findIsland_amazon
 
     private static void clearRestOfLand(char[][] grid, int i, int j)
     {
+        // Cleans up the surroundings, act as search and "find" adjacent landing
         if (i < 0 || j < 0 || i >= grid.length || j >= grid[i].length || grid[i][j] == '0')
             return;
 
