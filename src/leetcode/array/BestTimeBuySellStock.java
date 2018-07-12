@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import Tag.company.Amazon;
+import Tag.level.Easy;
 import Tag.type.DP;
 
 /**
@@ -24,6 +25,7 @@ import Tag.type.DP;
  */
 
 @Amazon
+@Easy
 public class BestTimeBuySellStock
 {
     /**

@@ -1,5 +1,6 @@
 package leetcode.array;
 
+import Tag.level.Easy;
 import Tag.type.Array;
 
 import java.util.Arrays;
@@ -14,6 +15,7 @@ import java.util.Arrays;
  */
 
 @Array
+@Easy
 public class ArrayPartition1
 {
     /**

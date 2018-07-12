@@ -1,0 +1,2 @@
+1. if init operation is more than n^2, try sort the array first
+2. data structure > two pointer > sort > DP > two dim DP > sliding window

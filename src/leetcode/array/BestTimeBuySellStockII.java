@@ -1,6 +1,7 @@
 package leetcode.array;
 
 import Tag.company.Bloomberg;
+import Tag.level.Easy;
 import Tag.type.Array;
 import Tag.type.Greedy;
 
@@ -32,6 +33,7 @@ import Tag.type.Greedy;
  */
 
 @Bloomberg
+@Easy
 public class BestTimeBuySellStockII {
 
     /**

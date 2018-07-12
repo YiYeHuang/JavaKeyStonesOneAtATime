@@ -1,7 +1,10 @@
 package leetcode.array;
 
-import java.util.HashMap;
-import java.util.Map;
+import Tag.company.Amazon;
+import Tag.level.Easy;
+import Tag.type.Array;
+import Tag.type.BinarySearch;
+import Tag.type.TwoPointer;
 
 /**
  * Given an array of integers that is already sorted in ascending order, find
@@ -17,29 +20,42 @@ import java.util.Map;
  * Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2
  *
  */
-public class twoSumSorted_amazon
+
+@Amazon
+@Easy
+public class twoSumSorted
 {
     /**
-     * use of map, contain the previous result
+     * Two pointer, Tow sum's solution can no longer be used
+     * is sum is smaller than target, means it needs a larger result, low move up
+     * else, high move down
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      */
+    @BinarySearch
+    @Array
+    @TwoPointer
     public static int[] twoSum(int[] numbers, int target)
     {
+        int low = 0;
+        int high = numbers.length -1;
+
         int[] result = new int[2];
-        Map<Integer, Integer> map =new HashMap<Integer,Integer>();
-        for (int i = 0; i < numbers.length; i++)
-        {
-            if (!map.containsKey(target - numbers[i]))
-            {
-                map.put(numbers[i],i);
-            }
-            else
-            {
-                result[0] = map.get(target - numbers[i]) + 1;
-                result[1] = i + 1;
+
+        while (low < high) {
+            if (numbers[low] + numbers[high] == target) {
+                result[0] = low+1;
+                result[1] = high+1;
                 break;
+            } else if (numbers[low] + numbers[high] < target) {
+                low++;
+            } else {
+                high--;
             }
         }
-        return result;
+
+        return  result;
     }
     
     public static void main(String[] args)
