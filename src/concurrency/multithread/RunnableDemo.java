@@ -1,4 +1,4 @@
-package multithread;
+package concurrency.multithread;
 
 public class RunnableDemo implements Runnable
 {

@@ -1,0 +1,7 @@
+1. if init operation is more than n^2, try sort the array first
+2. data structure > two pointer > sort > DP > two dim DP > sliding window
+
+two sum: hashtable achieve the O(1) look up time
+two sum sort: two pointer search since the array is sorted, low ++ if result is less than target, high-- if larger
+three sum: Iteraton + two sum. Sort is needed, fix point with two pointer
+
