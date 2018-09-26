@@ -1,4 +1,4 @@
-package DataStructure.BST.source;
+package dataStructure.BST.source;
 
 import basic.TreeNode;
 
@@ -21,22 +21,26 @@ public class BinarySearchTree {
         return traceSearch(value, this.root);
     }
 
-    private boolean traceSearch(int value, TreeNode currentRoot) {
-        if (null == currentRoot) {
-            return false;
-        } else if (value == currentRoot.value) {
-            return true;
-        } else if (value > currentRoot.value) {
-            return traceSearch(value, currentRoot.right);
-        } else if (value < currentRoot.value) {
-            return traceSearch(value, currentRoot.left);
-        } else {
-            return false;
+    public boolean delete(int value) {
+        if (null != this.root && this.root.value == value) {
+            if (null != root.right && null != root.left) {
+                TreeNode currentMax = findBiggest(this.root.left);
+                TreeNode tempRoot = this.root;
+                currentMax.right = this.root.right;
+                this.root = this.root.left;
+                tempRoot = null;
+            } else if (null != root.right) {
+                TreeNode tempRoot = this.root;
+                this.root = root.right;
+                tempRoot = null;
+            } else if (null != root.left) {
+                TreeNode tempRoot = this.root;
+                this.root = root.left;
+                tempRoot = null;
+            }
         }
-    }
 
-    public Integer delete(int value) {
-        return null;
+        return true;
     }
 
     public int getHeight() {
@@ -50,6 +54,10 @@ public class BinarySearchTree {
             levelPrint(i, this.root);
             System.out.println("");
         }
+    }
+
+    public int findMax() {
+        return findBiggest(this.root).value;
     }
 
     private void levelPrint(int level, TreeNode currentRoot) {
@@ -87,6 +95,35 @@ public class BinarySearchTree {
         }
     }
 
+    private boolean traceSearch(int value, TreeNode currentRoot) {
+        if (null == currentRoot) {
+            return false;
+        } else if (value == currentRoot.value) {
+            return true;
+        } else if (value > currentRoot.value) {
+            return traceSearch(value, currentRoot.right);
+        } else if (value < currentRoot.value) {
+            return traceSearch(value, currentRoot.left);
+        } else {
+            return false;
+        }
+    }
+
+    private boolean traceDelete(int value, TreeNode currentRoot) {
+        if (null == currentRoot) {
+            return false;
+        } else if (value == currentRoot.value) {
+
+            return true;
+        } else if (value > currentRoot.value) {
+            return traceSearch(value, currentRoot.right);
+        } else if (value < currentRoot.value) {
+            return traceSearch(value, currentRoot.left);
+        } else {
+            return false;
+        }
+    }
+
     private int getCurrentheight(TreeNode root) {
         if (null == root)
         {
@@ -96,17 +133,29 @@ public class BinarySearchTree {
         }
     }
 
+    private TreeNode findBiggest(TreeNode currentRoot) {
+        while (null != currentRoot.right) {
+            currentRoot = currentRoot.right;
+        }
+
+        return currentRoot;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
 
+        bst.insert(5);
         bst.insert(10);
-        bst.insert(4);
-        bst.insert(15);
-        bst.insert(20);
-        bst.insert(1);
+        bst.insert(7);
         bst.insert(6);
-        bst.insert(11);
+        bst.insert(12);
+        bst.insert(13);
+        bst.insert(3);
+        bst.insert(1);
+        bst.insert(4);
+
+        bst.delete(5);
+
         bst.printTree();
-        System.out.println(bst.search(1));
     }
 }

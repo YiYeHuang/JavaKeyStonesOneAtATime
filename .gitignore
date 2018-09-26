@@ -41,3 +41,4 @@ out/production/LeetCodeRepo/leetcode/hard/_DS_Store
 .idea/project-template.xml
 LeetCodeRepo.iml
 LeetCodeRepo.iml
+*.pb
