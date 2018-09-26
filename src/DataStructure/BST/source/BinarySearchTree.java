@@ -4,14 +4,14 @@ import basic.TreeNode;
 
 public class BinarySearchTree {
 
-    private TreeNode root = null;
+    private BSTNode root = null;
 
     public BinarySearchTree() {
     }
 
     public void insert(int value) {
         if (root == null) {
-            root = new TreeNode(value);
+            root = new BSTNode(value);
         } else {
             traceInsert(root, value);
         }
@@ -24,17 +24,17 @@ public class BinarySearchTree {
     public boolean delete(int value) {
         if (null != this.root && this.root.value == value) {
             if (null != root.right && null != root.left) {
-                TreeNode currentMax = findBiggest(this.root.left);
-                TreeNode tempRoot = this.root;
+                BSTNode currentMax = findBiggest(this.root.left);
+                BSTNode tempRoot = this.root;
                 currentMax.right = this.root.right;
                 this.root = this.root.left;
                 tempRoot = null;
             } else if (null != root.right) {
-                TreeNode tempRoot = this.root;
+                BSTNode tempRoot = this.root;
                 this.root = root.right;
                 tempRoot = null;
             } else if (null != root.left) {
-                TreeNode tempRoot = this.root;
+                BSTNode tempRoot = this.root;
                 this.root = root.left;
                 tempRoot = null;
             }
@@ -60,7 +60,7 @@ public class BinarySearchTree {
         return findBiggest(this.root).value;
     }
 
-    private void levelPrint(int level, TreeNode currentRoot) {
+    private void levelPrint(int level, BSTNode currentRoot) {
         if (level == 1)
         {
             System.out.print(currentRoot.value + " ");
@@ -77,16 +77,16 @@ public class BinarySearchTree {
         }
     }
 
-    private void traceInsert(TreeNode currentRoot, int value) {
+    private void traceInsert(BSTNode currentRoot, int value) {
         if (value > currentRoot.value) {
             if (null == currentRoot.right) {
-                currentRoot.right = new TreeNode(value);
+                currentRoot.right = new BSTNode(value);
             } else {
                 traceInsert(currentRoot.right, value);
             }
         } else if (value < currentRoot.value) {
             if (null == currentRoot.left) {
-                currentRoot.left = new TreeNode(value);
+                currentRoot.left = new BSTNode(value);
             } else {
                 traceInsert(currentRoot.left, value);
             }
@@ -95,7 +95,7 @@ public class BinarySearchTree {
         }
     }
 
-    private boolean traceSearch(int value, TreeNode currentRoot) {
+    private boolean traceSearch(int value, BSTNode currentRoot) {
         if (null == currentRoot) {
             return false;
         } else if (value == currentRoot.value) {
@@ -109,7 +109,7 @@ public class BinarySearchTree {
         }
     }
 
-    private boolean traceDelete(int value, TreeNode currentRoot) {
+    private boolean traceDelete(int value, BSTNode currentRoot) {
         if (null == currentRoot) {
             return false;
         } else if (value == currentRoot.value) {
@@ -124,7 +124,7 @@ public class BinarySearchTree {
         }
     }
 
-    private int getCurrentheight(TreeNode root) {
+    private int getCurrentheight(BSTNode root) {
         if (null == root)
         {
             return 0;
@@ -133,7 +133,7 @@ public class BinarySearchTree {
         }
     }
 
-    private TreeNode findBiggest(TreeNode currentRoot) {
+    private BSTNode findBiggest(BSTNode currentRoot) {
         while (null != currentRoot.right) {
             currentRoot = currentRoot.right;
         }
