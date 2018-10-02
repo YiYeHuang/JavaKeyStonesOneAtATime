@@ -1,4 +1,4 @@
-package DataStructure.radblackTree;
+package dataStructure.radblackTree;
 
 public class RBNode {
 

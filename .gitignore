@@ -42,3 +42,9 @@ out/production/LeetCodeRepo/leetcode/hard/_DS_Store
 LeetCodeRepo.iml
 LeetCodeRepo.iml
 *.pb
+*.lock
+*.bin
+.gradle/buildOutputCleanup/cache.properties
+.gradle/vcsWorkingDirs/gc.properties
+.idea/.name
+.idea/gradle.xml
