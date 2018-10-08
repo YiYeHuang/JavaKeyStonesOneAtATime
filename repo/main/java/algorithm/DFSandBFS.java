@@ -1,4 +1,6 @@
-package basic;
+package algorithm;
+
+import basic.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

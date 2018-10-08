@@ -1,4 +1,6 @@
-package baseObj;
+package javabasic;
+
+import baseObj.Person;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.array;
 
 import Tag.type.Array;
 import Tag.type.Mathematics;
