@@ -1,10 +1,17 @@
-package dataStructure.source;
+package dataStructure.bst;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class BinarySearchTree {
 
     private BSTNode root = null;
+    private long size;
 
     public BinarySearchTree() {
+        this.size = 0;
     }
 
     public void insert(int value) {
@@ -49,18 +56,31 @@ public class BinarySearchTree {
         return getCurrentheight(root);
     }
 
-    public void printTree() {
-        int currentheight = getCurrentheight(this.root);
 
-        for (int i = 1; i <= currentheight; i++) {
-            levelPrint(i, this.root);
-            System.out.println("");
+    public void printTree() {
+        List<List<String>> structure = levelPrint(this.root);
+
+        for (int level = 0; level < structure.size() ; level++) {
+
+            List<String> currentLevel = structure.get(level);
+            for (int element = 0; element < currentLevel.size(); element++) {
+                if (currentLevel.get(element).equalsIgnoreCase("")) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print(currentLevel.get(element));
+                }
+            }
+            System.out.println();
         }
     }
 
     public int findMax() {
         return findBiggest(this.root).value;
     }
+
+    /**
+     * private =========================================================================================================
+     */
 
     private void levelPrint(int level, BSTNode currentRoot) {
         if (level == 1)
@@ -77,6 +97,53 @@ public class BinarySearchTree {
                 levelPrint(level - 1, currentRoot.right);
             }
         }
+    }
+
+    private List<List<String>> levelPrint(BSTNode inputNode) {
+        List<List<String>> res = new ArrayList<>();
+        if (inputNode == null) {
+            return res;
+        }
+
+        int rows = getCurrentheight(inputNode);
+        int cols = (int)Math.pow(2, rows) - 1;
+        for (int i = 0; i < rows; i++) {
+            List<String> row = new ArrayList<>();
+            for (int j = 0; j < cols; j++) {
+                row.add("");
+            }
+            res.add(row);
+        }
+
+        Queue<BSTNode> queue = new LinkedList<>();
+        Queue<int[]> indexQ = new LinkedList<>();
+        queue.offer(root);
+        indexQ.offer(new int[] { 0, cols - 1 });
+        int row = -1;
+        while (!queue.isEmpty()) {
+            row++;
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                BSTNode cur = queue.poll();
+                int[] indices = indexQ.poll();
+
+                if (cur == null) {
+                    continue;
+                }
+
+                int left = indices[0];
+                int right = indices[1];
+                int mid = left + (right - left) / 2;
+                res.get(row).set(mid, String.valueOf(cur.value));
+
+                queue.offer(cur.left);
+                queue.offer(cur.right);
+                indexQ.offer(new int[] { left, mid - 1 });
+                indexQ.offer(new int[] { mid + 1, right });
+            }
+        }
+
+        return res;
     }
 
     private void traceInsert(BSTNode currentRoot, int value) {
@@ -231,7 +298,9 @@ public class BinarySearchTree {
         bst.insert(1);
         bst.insert(4);
 
-        bst.delete(4);
+        bst.printTree();
+
+        bst.delete(10);
 
 
         bst.printTree();
