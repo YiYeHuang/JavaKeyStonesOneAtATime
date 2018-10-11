@@ -25,9 +25,9 @@ the performance is list as
 ## Printing
 Call levlPrint will give you result like:
 
-Layer 0 | head |---> [ level 0 | value 4 ]---> [ level 1 | value 5 ]---> [ level 0 | value 8 ]---> [ level 0 | value 10 ]
+Layer 0 | head |---> [ level 0 | value 4 ]---> [ level 1 | value 5 ]---> [ level 0 | value 8 ]---> [ level 1 | value 10 ]
 
-Layer 1 | head |-----------------------------> [ level 1 | value 5 ]
+Layer 1 | head |-----------------------------> [ level 1 | value 5 ]-----------------------------> [ level 1 | value 10 ]
 
 
 | Operation         | Time Complexity |
