@@ -1,5 +1,5 @@
 ## Skip List
-Based on William Pugh Skip Lists: A Probabilistic Alternative to Balanced Trees
+Based on William Pugh's paper at 1990: Skip Lists: A Probabilistic Alternative to Balanced Trees
 Skip List is sorted and can implement to allow duplicate. Example application can be multiMap with a SkipList 
 KeyValue Store.
 
