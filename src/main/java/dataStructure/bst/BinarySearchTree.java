@@ -17,6 +17,7 @@ public class BinarySearchTree {
     public void insert(int value) {
         if (root == null) {
             root = new BSTNode(value);
+            size++;
         } else {
             traceInsert(root, value);
         }
@@ -46,6 +47,8 @@ public class BinarySearchTree {
                 this.root = null;
             }
 
+            size--;
+
             return true;
         } else {
             return traceDelete(value, this.root);
@@ -56,6 +59,9 @@ public class BinarySearchTree {
         return getCurrentheight(root);
     }
 
+    public long getSize() {
+        return this.size;
+    }
 
     public void printTree() {
         List<List<String>> structure = levelPrint(this.root);
@@ -74,8 +80,18 @@ public class BinarySearchTree {
         }
     }
 
-    public int findMax() {
+    public Integer findMax() {
+        if (null == this.root) {
+            return null;
+        }
         return findBiggest(this.root).value;
+    }
+
+    public Integer findMin() {
+        if (null == this.root) {
+            return null;
+        }
+        return findSmallest(this.root).value;
     }
 
     /**
@@ -151,6 +167,7 @@ public class BinarySearchTree {
             if (null == currentRoot.right) {
                 currentRoot.right = new BSTNode(value);
                 currentRoot.right.parent = currentRoot;
+                size++;
             } else {
                 traceInsert(currentRoot.right, value);
             }
@@ -158,6 +175,7 @@ public class BinarySearchTree {
             if (null == currentRoot.left) {
                 currentRoot.left = new BSTNode(value);
                 currentRoot.left.parent = currentRoot;
+                size++;
             } else {
                 traceInsert(currentRoot.left, value);
             }
@@ -234,6 +252,7 @@ public class BinarySearchTree {
 
             currentMaxLeft.parent = parentNode;
             tobeDelete = null;
+            size--;
 
         } else if (null != tobeDelete.right) {
 
@@ -246,6 +265,7 @@ public class BinarySearchTree {
                 tobeDelete.right.parent = parentNode;
             }
             tobeDelete = null;
+            size--;
         } else if (null != tobeDelete.left) {
             if (larger) {
                 parentNode.right = tobeDelete.left;
@@ -256,6 +276,7 @@ public class BinarySearchTree {
                 tobeDelete.left.parent = parentNode;
             }
             tobeDelete = null;
+            size--;
         } else {
 
             if (larger) {
@@ -265,6 +286,7 @@ public class BinarySearchTree {
                 parentNode.left = null;
             }
             tobeDelete = null;
+            size--;
         }
     }
 
@@ -280,6 +302,14 @@ public class BinarySearchTree {
     private BSTNode findBiggest(BSTNode currentRoot) {
         while (null != currentRoot.right) {
             currentRoot = currentRoot.right;
+        }
+
+        return currentRoot;
+    }
+
+    private BSTNode findSmallest(BSTNode currentRoot) {
+        while (null != currentRoot.left) {
+            currentRoot = currentRoot.left;
         }
 
         return currentRoot;
@@ -301,8 +331,6 @@ public class BinarySearchTree {
         bst.printTree();
 
         bst.delete(10);
-
-
         bst.printTree();
     }
 }
