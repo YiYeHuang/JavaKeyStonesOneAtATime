@@ -1,4 +1,4 @@
-package dataStructure.bst;
+package dataStructure.bst.impl;
 
 public class BSTNode
 {

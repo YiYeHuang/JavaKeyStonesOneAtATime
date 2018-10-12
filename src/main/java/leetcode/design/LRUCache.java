@@ -1,7 +1,13 @@
-package leetcode.hard;
+package leetcode.design;
+
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.level.Hard;
+import leetcode.tag.type.Design;
+import leetcode.tag.type.LinkedList;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 /**
  * Design and implement a data structure for Least Recently Used (LRU) cache. 
@@ -35,7 +41,20 @@ import java.util.LinkedHashMap;
 //cache.get(1);       // returns -1 (not found)
 //cache.get(3);       // returns 3
 //cache.get(4);       // returns 4
-public class LRUCache_amazon
+
+@Amazon
+@Bloomberg
+@Facebook
+
+@Design
+@LinkedList
+@Hard
+/**
+ * A linkedlist is already enough for lru cache, even though the idea of lru cache requires bound data structure
+ * however the search time for linkedlist is O(logN) so a hashMap is used here, for quick access.
+ * Double LinkedList is also used for easier insert and delete operations.
+ */
+public class LRUCache
 {
     
     class DLinkedNode
@@ -80,7 +99,6 @@ public class LRUCache_amazon
         new_node.pre = m_head;
         // head point to current
         m_head.next = new_node;
-        
     }
 
     /**
@@ -96,7 +114,7 @@ public class LRUCache_amazon
     private DLinkedNode m_tail;
     private int m_currentCount;
 
-    public LRUCache_amazon(int capacity)
+    public LRUCache(int capacity)
     {
         this.m_capacity = capacity;
         this.m_cache = new HashMap<Integer, DLinkedNode>();
@@ -170,7 +188,7 @@ public class LRUCache_amazon
 
     public static void main(String[] args)
     {
-        LRUCache_amazon test = new LRUCache_amazon(3);
+        LRUCache test = new LRUCache(3);
         test.put(1, 1);
         test.put(2, 2);
         test.put(3, 3);

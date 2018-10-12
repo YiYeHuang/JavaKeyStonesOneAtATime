@@ -1,4 +1,4 @@
-package dataStructure.bst;
+package dataStructure.bst.impl;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
