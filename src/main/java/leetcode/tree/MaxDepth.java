@@ -1,6 +1,6 @@
 package leetcode.tree;
 
-import basic.TreeNode;
+import baseObj.TreeNode;
 
 /**
  * Given a binary tree, find its maximum depth.

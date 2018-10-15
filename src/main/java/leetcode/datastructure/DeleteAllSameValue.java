@@ -1,6 +1,6 @@
 package leetcode.datastructure;
 
-import basic.ListNode;
+import baseObj.ListNode;
 
 /**
  * Remove all elements from a linked list of integers that have value val.

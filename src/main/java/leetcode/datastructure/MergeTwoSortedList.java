@@ -1,6 +1,6 @@
 package leetcode.datastructure;
 
-import basic.ListNode;
+import baseObj.ListNode;
 
 /**
  * Merge two sorted linked lists and return it as a new list. The new list

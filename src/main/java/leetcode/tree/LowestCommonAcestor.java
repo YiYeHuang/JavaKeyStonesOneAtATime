@@ -3,7 +3,7 @@ package leetcode.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import basic.TreeNode;
+import baseObj.TreeNode;
 
 /**
  * Given a binary tree, find the lowest common ancestor (LCA) of two given nodes

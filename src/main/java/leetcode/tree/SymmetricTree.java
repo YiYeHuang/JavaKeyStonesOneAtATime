@@ -6,7 +6,7 @@ import leetcode.tag.company.Microsoft;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
-import basic.TreeNode;
+import baseObj.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

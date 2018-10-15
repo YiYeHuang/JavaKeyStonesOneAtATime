@@ -1,6 +1,6 @@
 package algorithm;
 
-import basic.TreeNode;
+import baseObj.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

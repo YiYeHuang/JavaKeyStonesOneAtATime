@@ -2,7 +2,7 @@ package leetcode.tree;
 
 import leetcode.tag.company.Bloomberg;
 import leetcode.tag.type.DFS;
-import basic.TreeNode;
+import baseObj.TreeNode;
 
 /**
  * Given two binary trees, write a function to check if they are the same or not.

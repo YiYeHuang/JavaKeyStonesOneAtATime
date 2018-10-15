@@ -1,6 +1,6 @@
 package leetcode.datastructure;
 
-import basic.ListNode;
+import baseObj.ListNode;
 
 /**
  * Write a function to delete a node (except the tail) in a singly linked list,

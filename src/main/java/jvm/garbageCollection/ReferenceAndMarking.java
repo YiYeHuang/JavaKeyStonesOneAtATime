@@ -1,6 +1,7 @@
 package jvm.garbageCollection;
 
-import dataStructure.skipList.SLNode;
+
+import dataStructure.skiplist.impl.SLNode;
 
 import java.util.HashMap;
 import java.util.LinkedList;

@@ -1,6 +1,6 @@
 package leetcode.datastructure;
 
-import basic.ListNode;
+import baseObj.ListNode;
 
 /**
  * Given a singly linked list, determine if it is a palindrome.

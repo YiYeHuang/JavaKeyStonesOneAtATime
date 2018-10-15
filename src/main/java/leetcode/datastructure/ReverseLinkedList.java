@@ -1,6 +1,6 @@
 package leetcode.datastructure;
 
-import basic.ListNode;
+import baseObj.ListNode;
 
 public class ReverseLinkedList
 {
