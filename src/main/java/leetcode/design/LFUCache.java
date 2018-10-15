@@ -40,33 +40,42 @@ import java.util.LinkedHashSet;
 @Bloomberg
 @Microsoft
 @Hard
+
+/**
+ * LFU potential problem with current implementation, as new node always insert at front, the front is the hot zone.
+ * old-now-cold-af-node-live-at-back may never get delete. use wisely
+ *
+ * Steps:
+ * update in hash structure --> reorder the main node structure
+ */
 public class LFUCache {
 
     /**
      * Instead of key value is the node, now counter is the node
      */
-    class DeNode {
+    class Node {
         public int count = 0;
 
         // reverse thinking, for same counter, could have multiple keys.
         // when same key has the same count, respect
         public LinkedHashSet<Integer> keys = null;
-        public DeNode prev = null;
-        public DeNode next = null;
+        public Node prev = null;
+        public Node next = null;
 
-        public DeNode(int count) {
+        public Node(int count) {
             this.count = count;
             keys = new LinkedHashSet<Integer>();
-            prev = next = null;
+            prev = null;
+            next = null;
         }
     }
 
-    private DeNode head;
+    private Node head;
     private int size;
     // A hash map that contains the key and the count, makes the value update time O(1)
-    private HashMap<Integer, Integer> valueHash = null;
+    private HashMap<Integer, Integer> valueHash;
     // A hash map that mapping the key and the actual node, make the node search time O(1)
-    private HashMap<Integer, DeNode> nodeHash = null;
+    private HashMap<Integer, Node> nodeHash;
 
     public LFUCache(int capacity) {
         this.size = capacity;
@@ -85,24 +94,66 @@ public class LFUCache {
 
     public void put(int key, int value) {
         if (size == 0) {
-            // full
+            // invalid
             return;
-        } else {
-
         }
+
+        if (valueHash.containsKey(key)){
+            // update key value in hash map
+            valueHash.put(key, value);
+        } else {
+            // input the node to the hashmap structure
+            if (valueHash.size() < size) {
+                valueHash.put(key, value);
+            } else {
+
+                // check capacity and remove if necessary
+                removeIfFull();
+                valueHash.put(key, value);
+            }
+
+            // Insert the new lowest count node the to head
+            addToHead(key);
+        }
+
+        // increase the count after a successful input.
+        increaseCount(key);
     }
 
     /**
      * Private =========================================================================================================
      */
 
+    // Insert the new lowest count node the to head
+    private void addToHead(int key) {
+        if (head == null) {
+            head = new Node(0);
+            head.keys.add(key);
+        } else if (head.count > 0) {
+            Node node = new Node(0);
+            node.keys.add(key);
+
+            // insert, and be the new head with the lowest count
+            node.next = head;
+            head.prev = node;
+            head = node;
+        } else {
+            head.keys.add(key);
+        }
+
+        // register the new node
+        nodeHash.put(key, head);
+    }
+
+    // reorder when key get hit
     private void increaseCount(int key) {
-        DeNode node = nodeHash.get(key);
+        // remove the current key and re-put in the next node
+        Node node = nodeHash.get(key);
         node.keys.remove(key);
 
         // increase new count.
         if (node.next == null) {
-            node.next = new DeNode(node.count + 1);
+            node.next = new Node(node.count + 1);
             node.next.prev = node;
             node.next.keys.add(key);
         } // insert to next node if the counter is adjacent
@@ -111,7 +162,7 @@ public class LFUCache {
         } // insert the node in between
         else {
             // create new node
-            DeNode tmp = new DeNode(node.count + 1);
+            Node tmp = new Node(node.count + 1);
             tmp.keys.add(key);
 
             tmp.prev = node;
@@ -119,7 +170,49 @@ public class LFUCache {
             node.next.prev = tmp;
             node.next = tmp;
         }
+
+        // Since when increment, the new key is guarantee to put to the next node, update the node in the hashmap
+        nodeHash.put(key, node.next);
+
+        // remove empty node
+        if (node.keys.size() == 0) {
+            removeNode(node);
+        }
     }
 
+
+    // Since Head is guarantee to be the lowest count，always remove the first key in the head
+    // this could cause the jump of the counter
+    private void removeIfFull() {
+        if (head == null) {
+            return;
+        }
+
+        int old = 0;
+        for (int n : head.keys) {
+            old = n;
+            break;
+        }
+
+        head.keys.remove(old);
+        if (head.keys.size() == 0) {
+            removeNode(head);
+        }
+
+        nodeHash.remove(old);
+        valueHash.remove(old);
+    }
+
+    private void removeNode(Node node) {
+        if (node.prev == null) {
+            head = node.next;
+        } else {
+            node.prev.next = node.next;
+        }
+
+        if (node.next != null) {
+            node.next.prev = node.prev;
+        }
+    }
 
 }
