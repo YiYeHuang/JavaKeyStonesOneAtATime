@@ -1,4 +1,12 @@
-package leetcode.datastructure;
+package leetcode.design;
+
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Google;
+import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.Design;
+import leetcode.tag.type.StackTag;
 
 import java.util.Stack;
 
@@ -12,10 +20,25 @@ import java.util.Stack;
  * getMin() -- Retrieve the minimum
  * element in the stack.
  */
+
+@Amazon
+@Google
+@Microsoft
+@Bloomberg
+@Easy
+@Design
+@StackTag
+/**
+ * only push the old minimum value when the current minimum value changes after pushing the new value x
+ *
+ * key move: push twice and pop twice
+ */
 public class MinStack
 {
     int min = Integer.MAX_VALUE;
     Stack<Integer> stack = new Stack<Integer>();
+
+
     public void push(int x) {
         // only push the old minimum value when the current 
         // minimum value changes after pushing the new value x
@@ -31,7 +54,9 @@ public class MinStack
         // pop twice and change the current minimum value to the last minimum value.
         
         // Key is here, always keep the copy of the previous min
-        if(stack.pop() == min) min=stack.pop();
+        if(stack.pop() == min) {
+            min=stack.pop();
+        }
     }
 
     public int top() {
@@ -50,6 +75,7 @@ public class MinStack
         test.push(2);
         int min1 = test.getMin();
         test.pop();
+        int min3 = test.getMin();
         test.pop();
         int min2 = test.getMin();
         test.pop();
