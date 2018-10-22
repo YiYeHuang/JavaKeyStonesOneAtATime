@@ -2,7 +2,7 @@ package leetcode.array;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.TwoPointer;
 
@@ -34,7 +34,7 @@ public class twoSumSorted
      * Space Complexity: O(1)
      */
     @BinarySearch
-    @Array
+    @ArrayTag
     @TwoPointer
     public static int[] twoSum(int[] numbers, int target)
     {

@@ -1,6 +1,6 @@
 package leetcode.array;
 
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Mathematics;
 
 import java.util.Arrays;
@@ -20,7 +20,7 @@ import java.util.Arrays;
  */
 public class MaximumProductThreeNumbers {
 
-	@Array
+	@ArrayTag
 	@Mathematics
 	public static int maximumProduct(int[] nums) {
 		Arrays.sort(nums);
@@ -34,7 +34,7 @@ public class MaximumProductThreeNumbers {
 	/**
 	 * Either +++ will get the max or  - - + will get the max
 	 */
-	@Array
+	@ArrayTag
 	@Mathematics
 	public static int maximumProductOrder(int[] nums) {
 		int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE, min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE;

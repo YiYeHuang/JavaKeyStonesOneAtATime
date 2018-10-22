@@ -11,6 +11,6 @@ import static java.lang.annotation.ElementType.TYPE;
 
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("Array")
-public @interface Array {
+@Tag("ArrayTag")
+public @interface ArrayTag {
 }

@@ -1,7 +1,7 @@
 package leetcode.dp;
 
 import leetcode.tag.company.LinkedIn;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.DP;
 
 /**
@@ -28,7 +28,7 @@ public class MaximumProductSubarray {
      *
      * time exceed
      */
-    @Array
+    @ArrayTag
     @DP
     public static int maxProduct(int[] nums) {
         int currentMax = nums[0];
@@ -57,7 +57,7 @@ public class MaximumProductSubarray {
      *
      * 0 is a reset point
      */
-    @Array
+    @ArrayTag
     public static int maxProductDoubleScan(int[] nums) {
         int max = Integer.MIN_VALUE, product = 1;
         int len = nums.length;
@@ -92,7 +92,7 @@ public class MaximumProductSubarray {
      * Why? The smallest product,
      * which is the largest in the negative sense could become the maximum when being multiplied by a negative number.
      */
-    @Array
+    @ArrayTag
     public static int maxProductMaxMin(int[] A) {
         if (A.length == 0) {
             return 0;

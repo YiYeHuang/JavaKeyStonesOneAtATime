@@ -103,7 +103,7 @@ public class allSort
         {
                 12, 11, 13, 5, 6, 7 };
 
-        System.out.println("Given Array");
+        System.out.println("Given ArrayTag");
         printArray(arr);
 
         allSort ob = new allSort();

@@ -27,7 +27,7 @@ import java.util.Map;
 @Easy
 public class MajorityItem
 {
-    @Array
+    @ArrayTag
     @Hash
     /**
      * Time Complexity O(n)
@@ -60,7 +60,7 @@ public class MajorityItem
     }
 
     @Sorting
-    @Array
+    @ArrayTag
     /**
      * If the elements are sorted in monotonically increasing (or decreasing) order, the majority element can
      * be found at index n/2 or n/2 + 1

@@ -5,7 +5,7 @@ import leetcode.tag.company.Apple;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.company.LinkedIn;
 import leetcode.tag.company.Microsoft;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 
 /**
  Given an array nums of n integers where n > 1,
@@ -37,7 +37,7 @@ public class ProductArrayExceptSelf
      * T: O(2n)
      * S: O(n)
      */
-    @Array
+    @ArrayTag
     public static int[] productExceptSelf(int[] nums)
     {
         int leng = nums.length;

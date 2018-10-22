@@ -2,7 +2,7 @@ package leetcode.array;
 
 import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Mathematics;
 
 /**
@@ -32,7 +32,7 @@ public class plusOne
      * only trick is to care about the carriers
      * return new array if overflow
      */
-    @Array
+    @ArrayTag
     @Mathematics
     public int[] plusOne(int[] digits)
     {

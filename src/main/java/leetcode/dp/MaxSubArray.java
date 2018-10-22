@@ -3,7 +3,7 @@ package leetcode.dp;
 import leetcode.tag.company.Bloomberg;
 import leetcode.tag.company.LinkedIn;
 import leetcode.tag.company.Microsoft;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.DP;
 
 /**
@@ -54,7 +54,7 @@ public class MaxSubArray
      */
 
     @DP
-    @Array
+    @ArrayTag
     public static int maxSubArray(int[] nums)
     {
         int n = nums.length;

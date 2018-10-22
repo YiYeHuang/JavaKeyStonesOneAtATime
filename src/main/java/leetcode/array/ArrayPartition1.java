@@ -1,7 +1,7 @@
 package leetcode.array;
 
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
  * Explanation: n is 2, and the maximum sum of pairs is 4.
  */
 
-@Array
+@ArrayTag
 @Easy
 public class ArrayPartition1
 {

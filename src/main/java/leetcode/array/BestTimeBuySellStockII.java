@@ -2,7 +2,7 @@ package leetcode.array;
 
 import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Greedy;
 
 /**
@@ -40,7 +40,7 @@ public class BestTimeBuySellStockII {
      *  Time complexity : O(n)O(n). Single pass.
      * accumulate peak to valley value
      */
-    @Array
+    @ArrayTag
     @Greedy
     public static int maxProfit(int[] prices) {
 

@@ -2,7 +2,7 @@ package leetcode.array;
 
 import leetcode.tag.company.*;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Hash;
 
 import java.util.HashMap;
@@ -34,7 +34,7 @@ public class TwoSum
      * Time Complexity: O(n)
      * Space Complexity: O(n)
      */
-    @Array
+    @ArrayTag
     @Hash
     public static int[] twoSum(int[] numbers, int target)
     {

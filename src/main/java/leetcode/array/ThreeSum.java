@@ -5,7 +5,7 @@ import leetcode.tag.company.Bloomberg;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
-import leetcode.tag.type.Array;
+import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.TwoPointer;
 
 import java.util.Arrays;
@@ -43,7 +43,7 @@ public class ThreeSum {
      * Time Complexity: O(n^2)
      * Space Complexity: O(1)
      */
-    @Array
+    @ArrayTag
     @TwoPointer
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
