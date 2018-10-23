@@ -1,7 +1,9 @@
 package concurrency.queue.syslog;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -11,11 +13,15 @@ import java.util.concurrent.atomic.AtomicLong;
  * Simulate collecting system log and then send to a syslog server
  */
 public class SyslogSimMultiThread implements ISyslog {
+	private final int QUEUE_SIZE = 200;
+	private final int DROP_RATE = 20;
+	private final int SIM_SENDING_COST_MAX = 10;
 
 	public volatile AtomicLong processed;
 	private final MessageSender sender;
-	private final ConcurrentLinkedDeque<SyslogMessage> messageQueue = new ConcurrentLinkedDeque<SyslogMessage>();
+	private final ArrayBlockingQueue<SyslogMessage> messageQueue = new ArrayBlockingQueue<>(QUEUE_SIZE);
 	ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+	private final List<SyslogMessage> dropList = new ArrayList<>(DROP_RATE);
 
 	public SyslogSimMultiThread() {
 		this.sender = new MessageSender(messageQueue, executor);
@@ -27,9 +33,7 @@ public class SyslogSimMultiThread implements ISyslog {
 
 	public void log(String message) {
 		if ( sender.isRunning() ) {
-
-				messageQueue.add(new SyslogMessage(message));
-
+			messageQueue.add(new SyslogMessage(message));
 		}
 	}
 
@@ -38,11 +42,17 @@ public class SyslogSimMultiThread implements ISyslog {
 		return processed.longValue();
 	}
 
-	public void close() {
-		sender.stop();
-		executor.shutdownNow();
-		System.out.println("stop send messages");
-		System.out.println("close");
+	public boolean close() {
+
+		if (messageQueue.isEmpty()) {
+			sender.stop();
+			executor.shutdownNow();
+			System.out.println("stop send messages");
+			System.out.println("close the queue, " + processed +" messages processed");
+			return true;
+		}
+		return false;
+
 	}
 
 
@@ -57,9 +67,9 @@ public class SyslogSimMultiThread implements ISyslog {
 	private class MessageSender implements Runnable {
 
 		private final AtomicBoolean run = new AtomicBoolean(true);
-		private final ConcurrentLinkedDeque<SyslogMessage> messageQueue;
+		private final ArrayBlockingQueue<SyslogMessage> messageQueue;
 
-		public MessageSender(final ConcurrentLinkedDeque<SyslogMessage> messageQueue, ThreadPoolExecutor executor) {
+		public MessageSender(final ArrayBlockingQueue<SyslogMessage> messageQueue, ThreadPoolExecutor executor) {
 			this.messageQueue = messageQueue;
 
 		}
@@ -76,8 +86,15 @@ public class SyslogSimMultiThread implements ISyslog {
 		public void sendMessages() throws InterruptedException {
 			while (run.get()) {
 				if (!messageQueue.isEmpty()) {
-
 					executor.submit(new PollTask(messageQueue, processed));
+					processed.incrementAndGet();
+				}
+
+				if (messageQueue.remainingCapacity() == 0) {
+					dropList.clear();
+					messageQueue.drainTo(dropList, DROP_RATE);
+					System.out.println("drop 20, message lose");
+					dropList.clear();
 				}
 			}
 		}
@@ -93,22 +110,18 @@ public class SyslogSimMultiThread implements ISyslog {
 
 	private class PollTask implements Runnable{
 		private Random seed = new Random();
-		private final ConcurrentLinkedDeque<SyslogMessage> messageQueue;
-		AtomicLong counter;
+		private final ArrayBlockingQueue<SyslogMessage> messageQueue;
 
-		public PollTask(ConcurrentLinkedDeque<SyslogMessage> messageQueue, AtomicLong counter) {
+		public PollTask(ArrayBlockingQueue<SyslogMessage> messageQueue, AtomicLong counter) {
 			this.messageQueue = messageQueue;
-			this.counter = counter;
 		}
 
 		public void run() {
 			try {
 				SyslogMessage message = messageQueue.poll();
-				int sleep = seed.nextInt(1);
-				System.out.println(message.message);
+				int sleep = seed.nextInt(SIM_SENDING_COST_MAX);
+				//System.out.println(message.message);
 				Thread.sleep(sleep);
-				this.counter.incrementAndGet();
-
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

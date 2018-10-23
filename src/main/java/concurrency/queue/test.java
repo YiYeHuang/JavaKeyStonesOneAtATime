@@ -2,32 +2,37 @@ package concurrency.queue;
 
 import concurrency.queue.syslog.ISyslog;
 import concurrency.queue.syslog.SyslogSim;
+import concurrency.queue.syslog.SyslogSimMultiThread;
 
 import java.util.Random;
 
 public class test {
 
-	public static int ROUND = 10000;
+	public static final int SIM_PRODUCER_ROUND = 10000;
+	public static final int SIM_PRODUCER_COST = 7;
 	private static Random seed = new Random();
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
-		test(new SyslogSim());
-		//test(new SyslogSimMultiThread());
+//		System.out.println("Test One Thread");
+//		test(new SyslogSim());
+
+		System.out.println("Test Multi Thread");
+		test(new SyslogSimMultiThread());
 	}
 
-	public static void test(ISyslog sg) {
+	public static void test(ISyslog sg) throws InterruptedException {
 
 		long start = System.currentTimeMillis();
 		System.out.println(start);
 
 		Thread producer = new Thread(() -> {
-			for (int i = 0; i < ROUND; i++) {
+			for (int i = 0; i < SIM_PRODUCER_ROUND; i++) {
 				sg.log("test" + i);
 				try {
-					int sleep = seed.nextInt(10);
-					Thread.sleep(1);
+					int sleep = seed.nextInt(SIM_PRODUCER_COST);
+					Thread.sleep(sleep);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -37,9 +42,14 @@ public class test {
 		});
 
 		producer.start();
-		while (sg.getCount() != ROUND -1) {
+
+		Thread.sleep(1000);
+
+		boolean keepRun = true;
+		while (keepRun) {
+			keepRun = !sg.close();
 		}
-		sg.close();
-		System.out.println(System.currentTimeMillis() - start);
+
+		System.out.println("Cost " + (  System.currentTimeMillis() - start));
 	}
 }

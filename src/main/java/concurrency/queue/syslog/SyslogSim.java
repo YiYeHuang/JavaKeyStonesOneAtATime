@@ -1,5 +1,7 @@
 package concurrency.queue.syslog;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
@@ -9,9 +11,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * Simulate collecting system log and then send to a syslog server
  */
 public class SyslogSim implements ISyslog {
+	private final int QUEUE_SIZE = 200;
+	private final int DROP_RATE = 20;
+	private final int SIM_SENDING_COST_MAX = 10;
+
+
 	public volatile long processed;
 	private final MessageSender sender;
-	private final BlockingQueue<SyslogMessage> messageQueue = new ArrayBlockingQueue<>(200);
+	private final BlockingQueue<SyslogMessage> messageQueue = new ArrayBlockingQueue<>(QUEUE_SIZE);
+	private final List<SyslogMessage> dropList = new ArrayList<>(DROP_RATE);
 
 	public SyslogSim() {
 		this.sender = new MessageSender(messageQueue);
@@ -35,10 +43,14 @@ public class SyslogSim implements ISyslog {
 		return processed;
 	}
 
-	public void close() {
-		sender.stop();
-		System.out.println("stop send messages");
-		System.out.println("close");
+	public boolean close() {
+		if (messageQueue.isEmpty()) {
+			sender.stop();
+			System.out.println("stop send messages");
+			System.out.println("close the queue, " + processed +" messages processed");
+			return true;
+		}
+		return false;
 	}
 
 
@@ -76,6 +88,13 @@ public class SyslogSim implements ISyslog {
 					SyslogMessage message = messageQueue.poll();
 					doSend(message.message);
 				}
+				if (messageQueue.remainingCapacity() == 0) {
+					dropList.clear();
+					messageQueue.drainTo(dropList, DROP_RATE);
+					processed -= 20;
+					System.out.println("queue full drop 20, message lose");
+					dropList.clear();
+				}
 			}
 		}
 
@@ -83,8 +102,8 @@ public class SyslogSim implements ISyslog {
 		 * Simulate send to a syslog server
 		 */
 		private void doSend(String message) throws InterruptedException {
-			int sleep = seed.nextInt(1);
-			// System.out.println(message);
+			int sleep = seed.nextInt(SIM_SENDING_COST_MAX);
+			//System.out.println(message);
 			Thread.sleep(sleep);
 			processed++;
 		}

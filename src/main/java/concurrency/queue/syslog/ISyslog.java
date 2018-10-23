@@ -5,5 +5,5 @@ public interface ISyslog {
 
 	long getCount();
 
-	void close();
+	boolean close();
 }
