@@ -30,13 +30,11 @@ import java.util.Stack;
 @Tree
 /**
  * O(h) in memory mean we cannot push all the nodes in and do the one by one iteration,
- * so idea is go on with one branch and file the min and
+ * so idea is go down with one branch and find the current min and push all right sub branch to the stack
  */
 public class BSTIterator {
-
     Stack<TreeNode> stack = new Stack<>();
-
-
+    
     public BSTIterator(TreeNode root) {
         TreeNode cur = root;
         while(cur != null){
