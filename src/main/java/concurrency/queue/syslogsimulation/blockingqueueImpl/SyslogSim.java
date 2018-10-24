@@ -1,4 +1,7 @@
-package concurrency.queue.syslog;
+package concurrency.queue.syslogsimulation.blockingqueueImpl;
+
+import concurrency.queue.syslogsimulation.ISyslog;
+import concurrency.queue.syslogsimulation.SyslogMessage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +11,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Simulate collecting system log and then send to a syslog server
+ * Simulate collecting system log and then send to a syslogsimulation server
  */
 public class SyslogSim implements ISyslog {
 	private final int QUEUE_SIZE = 200;
@@ -28,10 +31,10 @@ public class SyslogSim implements ISyslog {
 		thread.start();
 	}
 
-	public void log(String message) {
+	public void log(SyslogMessage message) {
 		if ( sender.isRunning() ) {
 			try {
-				messageQueue.put(new SyslogMessage(message));
+				messageQueue.put(message);
 			} catch (InterruptedException ie) {
 				Thread.currentThread().interrupt();
 			}
@@ -51,15 +54,6 @@ public class SyslogSim implements ISyslog {
 			return true;
 		}
 		return false;
-	}
-
-
-	private class SyslogMessage {
-
-		public String message;
-		SyslogMessage(final String message) {
-			this.message = message;
-		}
 	}
 
 	private class MessageSender implements Runnable {
@@ -99,7 +93,7 @@ public class SyslogSim implements ISyslog {
 		}
 
 		/*
-		 * Simulate send to a syslog server
+		 * Simulate send to a syslogsimulation server
 		 */
 		private void doSend(String message) throws InterruptedException {
 			int sleep = seed.nextInt(SIM_SENDING_COST_MAX);

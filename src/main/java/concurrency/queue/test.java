@@ -1,8 +1,8 @@
 package concurrency.queue;
 
-import concurrency.queue.syslog.ISyslog;
-import concurrency.queue.syslog.SyslogSim;
-import concurrency.queue.syslog.SyslogSimMultiThread;
+import concurrency.queue.syslogsimulation.ISyslog;
+import concurrency.queue.syslogsimulation.blockingqueueImpl.SyslogSim;
+import concurrency.queue.syslogsimulation.blockingqueueImpl.SyslogSimMultiThread;
 
 import java.util.Random;
 
@@ -14,10 +14,8 @@ public class test {
 
 
 	public static void main(String[] args) throws InterruptedException {
-
-//		System.out.println("Test One Thread");
-//		test(new SyslogSim());
-
+		System.out.println("Test One Thread");
+		test(new SyslogSim());
 		System.out.println("Test Multi Thread");
 		test(new SyslogSimMultiThread());
 	}
