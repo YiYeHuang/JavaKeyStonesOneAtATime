@@ -8,6 +8,9 @@ public class SyslogMessage {
 	private static Random seed = new Random();
 
 	public SyslogMessage() {
+	}
+
+	public void setMessage(String message) {
 		this.message = message;
 	}
 }

@@ -1,7 +1,7 @@
 package concurrency.queue.syslogsimulation;
 
 public interface ISyslog {
-	void log(SyslogMessage message);
+	void log(String message) throws InterruptedException;
 
 	long getCount();
 

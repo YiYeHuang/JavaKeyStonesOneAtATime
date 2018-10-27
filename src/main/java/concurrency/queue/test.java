@@ -1,23 +1,24 @@
 package concurrency.queue;
 
 import concurrency.queue.syslogsimulation.ISyslog;
-import concurrency.queue.syslogsimulation.blockingqueueImpl.SyslogSim;
-import concurrency.queue.syslogsimulation.blockingqueueImpl.SyslogSimMultiThread;
+import concurrency.queue.syslogsimulation.ringbufferimpl.SyslogSim_RingBuffer;
 
 import java.util.Random;
 
 public class test {
 
 	public static final int SIM_PRODUCER_ROUND = 10000;
-	public static final int SIM_PRODUCER_COST = 7;
+	public static final int SIM_PRODUCER_COST = 1;
 	private static Random seed = new Random();
 
 
 	public static void main(String[] args) throws InterruptedException {
-		System.out.println("Test One Thread");
-		test(new SyslogSim());
-		System.out.println("Test Multi Thread");
-		test(new SyslogSimMultiThread());
+//		System.out.println("Test One Thread");
+//		test(new SyslogSim());
+//		System.out.println("Test Multi Thread");
+//		test(new SyslogSimMultiThread());
+		System.out.println("Test Ring buffer");
+		test(new SyslogSim_RingBuffer());
 	}
 
 	public static void test(ISyslog sg) throws InterruptedException {
@@ -27,8 +28,8 @@ public class test {
 
 		Thread producer = new Thread(() -> {
 			for (int i = 0; i < SIM_PRODUCER_ROUND; i++) {
-				sg.log("test" + i);
 				try {
+					sg.log("test" + i);
 					int sleep = seed.nextInt(SIM_PRODUCER_COST);
 					Thread.sleep(sleep);
 				} catch (InterruptedException e) {

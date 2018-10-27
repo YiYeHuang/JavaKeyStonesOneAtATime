@@ -8,20 +8,21 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Simulate collecting system log and then send to a syslogsimulation server
  */
 public class SyslogSim implements ISyslog {
-	private final int QUEUE_SIZE = 200;
+	private final int QUEUE_SIZE = 2000;
 	private final int DROP_RATE = 20;
 	private final int SIM_SENDING_COST_MAX = 10;
 
 
 	public volatile long processed;
 	private final MessageSender sender;
-	private final BlockingQueue<SyslogMessage> messageQueue = new ArrayBlockingQueue<>(QUEUE_SIZE);
+	private final BlockingQueue<SyslogMessage> messageQueue = new LinkedBlockingDeque<>(QUEUE_SIZE);
 	private final List<SyslogMessage> dropList = new ArrayList<>(DROP_RATE);
 
 	public SyslogSim() {
@@ -31,10 +32,12 @@ public class SyslogSim implements ISyslog {
 		thread.start();
 	}
 
-	public void log(SyslogMessage message) {
+	public void log(String message) {
 		if ( sender.isRunning() ) {
 			try {
-				messageQueue.put(message);
+				SyslogMessage newMessage = new SyslogMessage();
+				newMessage.message = message;
+				messageQueue.put(newMessage);
 			} catch (InterruptedException ie) {
 				Thread.currentThread().interrupt();
 			}
@@ -82,13 +85,13 @@ public class SyslogSim implements ISyslog {
 					SyslogMessage message = messageQueue.poll();
 					doSend(message.message);
 				}
-				if (messageQueue.remainingCapacity() == 0) {
-					dropList.clear();
-					messageQueue.drainTo(dropList, DROP_RATE);
-					processed -= 20;
-					System.out.println("queue full drop 20, message lose");
-					dropList.clear();
-				}
+//				if (messageQueue.remainingCapacity() == 0) {
+//					dropList.clear();
+//					messageQueue.drainTo(dropList, DROP_RATE);
+//					processed -= 20;
+//					System.out.println("queue full drop 20, message lose");
+//					dropList.clear();
+//				}
 			}
 		}
 
@@ -96,10 +99,15 @@ public class SyslogSim implements ISyslog {
 		 * Simulate send to a syslogsimulation server
 		 */
 		private void doSend(String message) throws InterruptedException {
-			int sleep = seed.nextInt(SIM_SENDING_COST_MAX);
-			//System.out.println(message);
-			Thread.sleep(sleep);
+			// simulation sending cost here
+			long cost = 0;
+			while(cost < 1000000l) {
+				cost ++;
+			}
+
 			processed++;
+
+			//System.out.println("sending: " + message);
 		}
 
 
