@@ -1,34 +1,50 @@
 package concurrency.queue.syslogsimulation.ringbufferimpl;
 
+import com.lmax.disruptor.*;
 import concurrency.queue.syslogsimulation.ISyslog;
 import concurrency.queue.syslogsimulation.SyslogMessage;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.lmax.disruptor.IgnoreExceptionHandler;
-import com.lmax.disruptor.RingBuffer;
-import com.lmax.disruptor.WorkerPool;
-import com.lmax.disruptor.YieldingWaitStrategy;
 import com.lmax.disruptor.dsl.ProducerType;
 
 public class SyslogSim_RingBuffer implements ISyslog {
-
-	MessageFactory factory = new MessageFactory();
 	public volatile long processed;
 	private final int RINGBUFFER_SIZE = 2048;
+
+	MessageFactory factory = new MessageFactory();
 	WorkerPool<SyslogMessage> workerPool;
 	RingBuffer<SyslogMessage> ringBuffer;
 	ExecutorService executor;
+	WaitStrategy waitStra;
 
 
-	public SyslogSim_RingBuffer() {
+	public SyslogSim_RingBuffer(WaitMethod inputWaitType) {
 		executor = Executors.newFixedThreadPool(8);
+
+		switch(inputWaitType) {
+			case BLOCKING:
+				waitStra = new BlockingWaitStrategy();
+				break;
+			case BUSYSPIN:
+				waitStra = new BusySpinWaitStrategy();
+				break;
+			case YIELDING:
+				waitStra = new YieldingWaitStrategy();
+				break;
+			case SLEEPING:
+				waitStra = new SleepingWaitStrategy();
+				break;
+			default:
+				waitStra = new BlockingWaitStrategy();
+		}
+
 		ringBuffer = RingBuffer.create(
 				ProducerType.SINGLE,
-				new MessageFactory(),
+				factory,
 				RINGBUFFER_SIZE,
-				new YieldingWaitStrategy());
+				waitStra);
 
 		workerPool = new WorkerPool<SyslogMessage>(
 				ringBuffer,
