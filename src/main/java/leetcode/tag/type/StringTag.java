@@ -11,6 +11,6 @@ import static java.lang.annotation.ElementType.TYPE;
 
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("String")
-public @interface String {
+@Tag("StringTag")
+public @interface StringTag {
 }

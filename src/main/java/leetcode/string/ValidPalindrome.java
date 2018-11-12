@@ -1,16 +1,34 @@
 package leetcode.string;
 
+import leetcode.tag.company.Apple;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.StringTag;
+import leetcode.tag.type.TwoPointer;
+
 /**
- * Given a string, determine if it is a palindrome, considering only alphanumeric characters and
- * ignoring cases.
- * 
- * For example, "A man, a plan, a canal: Panama" is a palindrome. "race a car" is not a palindrome.
- * 
- * Note: Have you consider that the string might be empty? This is a good question to ask during an
- * interview.
- * 
- * For the purpose of this problem, we define empty string as valid palindrome.
+ Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+
+ Note: For the purpose of this problem, we define empty string as valid palindrome.
+
+ Example 1:
+
+ Input: "A man, a plan, a canal: Panama"
+ Output: true
+ Example 2:
+
+ Input: "race a car"
+ Output: false
  */
+
+@Facebook
+@Apple
+@Microsoft
+
+@Easy
+@StringTag
+@TwoPointer
 public class ValidPalindrome
 {
     public static boolean isPalindrome1(String s)
