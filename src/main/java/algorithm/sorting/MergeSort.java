@@ -19,8 +19,30 @@ public class MergeSort
      *
      * merge_sort(p...r) = merge(merge_sort(p...q), merge_sort(q+1...r))
      *
+     * divide and concur, divide and do bottom up
+     *
      * T(n)=Cn+nlog2n
      */
+    // Main function that sorts arr[l..r] using
+    // until the array size is down to 2
+    void split(int arr[], int start, int end)
+    {
+        if (start >= end) {
+            return;
+        } else {
+            // Find the middle point
+            int mid = (start + end) / 2;
+
+            // Sort left
+            split(arr, start, mid);
+            // Sort right
+            split(arr, mid + 1, end);
+
+            // Merge the sorted halves
+            merge(arr, start, mid, end);
+        }
+    }
+
     void merge(int arr[], int start, int mid, int end)
     {
         // Merges two subarrays of arr[].
@@ -80,23 +102,7 @@ public class MergeSort
         }
     }
 
-    // Main function that sorts arr[l..r] using
-    // merge()
-    void sort(int arr[], int start, int end)
-    {
-        if (start < end)
-        {
-            // Find the middle point
-            int mid = (start + end) / 2;
 
-            // Sort first and second halves
-            sort(arr, start, mid);
-            sort(arr, mid + 1, end);
-
-            // Merge the sorted halves
-            merge(arr, start, mid, end);
-        }
-    }
 
     /* A utility function to print array of size n */
     static void printArray(int arr[])
@@ -117,7 +123,7 @@ public class MergeSort
         printArray(arr);
 
         MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length - 1);
+        ob.split(arr, 0, arr.length - 1);
 
         System.out.println("\nSorted array");
         printArray(arr);

@@ -27,7 +27,7 @@ within the section are processed first. Stability sort comes in handy in this ca
 | Selection Sort   | O(n^2)| O(n^2) | O(n^2)| No | Yes |
 | Bubble Sort   | O(n)| O(n^2) | O(n^2)| Yes | Yes |
 | Merge Sort   | O(nlog(n))| O(nlog(n)) | O(nlog(n))| Yes | no O(nlog(n)) |
-| Quick Sort   | |
+| Quick Sort  | O(nlog(n))| O(n^2) | O(nlog(n))| no | Yes |
 | Bucket Sort   | |
 | Counting Sort   | |
 | Radix Sort   | |
