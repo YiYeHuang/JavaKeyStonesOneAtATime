@@ -1,9 +1,7 @@
 package leetcode.design;
 
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.LinkedList;
-
-import javax.annotation.processing.SupportedSourceVersion;
+import leetcode.tag.type.LinkedListTag;
 
 /**
  * Design your implementation of the linked list. You can choose to use the singly linked list or the doubly linked list. A node in a singly linked list should have two attributes: val and next. val is the value of the current node, and next is a pointer/reference to the next node. If you want to use the doubly linked list, you will need one more attribute prev to indicate the previous node in the linked list. Assume all nodes in the linked list are 0-indexed.
@@ -28,10 +26,10 @@ import javax.annotation.processing.SupportedSourceVersion;
  *
  * All values will be in the range of [1, 1000].
  * The number of operations will be in the range of [1, 1000].
- * Please do not use the built-in LinkedList library.
+ * Please do not use the built-in LinkedListTag library.
  */
 
-@LinkedList
+@LinkedListTag
 @Easy
 public class MyLinkedList {
 

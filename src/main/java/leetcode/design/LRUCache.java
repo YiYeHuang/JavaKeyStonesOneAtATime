@@ -5,7 +5,7 @@ import leetcode.tag.company.Bloomberg;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Design;
-import leetcode.tag.type.LinkedList;
+import leetcode.tag.type.LinkedListTag;
 
 import java.util.HashMap;
 
@@ -24,30 +24,25 @@ import java.util.HashMap;
  * item.
  * 
  * Follow up: Could you do both operations in O(1) time complexity?
- * 
- * 
+ *
+ *
+ * cache.put(1,1);
+ * cache.put(2,2);
+ * cache.get(1);       // returns 1
+ * cache.put(3,3);    // evicts key 2
+ * cache.get(2);       // returns -1 (not found)
+ * cache.put(4,4);    // evicts key 1
+ * cache.get(1);       // returns -1 (not found)
+ * cache.get(3);       // returns 3
+ * cache.get(4);       // returns 4
  */
-
-//Example:
-//
-//LRUCache cache = new LRUCache( 2 /* capacity */ );
-//
-//cache.put(1, 1);
-//cache.put(2, 2);
-//cache.get(1);       // returns 1
-//cache.put(3, 3);    // evicts key 2
-//cache.get(2);       // returns -1 (not found)
-//cache.put(4, 4);    // evicts key 1
-//cache.get(1);       // returns -1 (not found)
-//cache.get(3);       // returns 3
-//cache.get(4);       // returns 4
 
 @Amazon
 @Bloomberg
 @Facebook
 
 @Design
-@LinkedList
+@LinkedListTag
 @Hard
 /**
  * A linkedlist is already enough for lru cache, even though the idea of lru cache requires bound data structure
