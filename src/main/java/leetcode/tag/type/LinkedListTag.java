@@ -11,6 +11,6 @@ import static java.lang.annotation.ElementType.TYPE;
 
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("LinkedList")
-public @interface LinkedList {
+@Tag("LinkedListTag")
+public @interface LinkedListTag {
 }
