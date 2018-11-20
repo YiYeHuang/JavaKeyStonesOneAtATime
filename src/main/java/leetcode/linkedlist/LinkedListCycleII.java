@@ -1,4 +1,4 @@
-package leetcode.datastructure;
+package leetcode.linkedlist;
 
 import baseObj.ListNode;
 import leetcode.tag.company.Bloomberg;

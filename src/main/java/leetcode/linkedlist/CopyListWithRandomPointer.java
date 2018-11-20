@@ -1,4 +1,12 @@
-package leetcode.datastructure;
+package leetcode.linkedlist;
+
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.Google;
+import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.LinkedListTag;
 
 import java.util.HashMap;
 
@@ -9,6 +17,15 @@ import java.util.HashMap;
  * Return a deep copy of the list.
  *
  */
+
+@Facebook
+@Amazon
+@Microsoft
+@Google
+@Bloomberg
+
+@Medium
+@LinkedListTag
 public class CopyListWithRandomPointer
 {
     public static RandomListNode copyRandomList(RandomListNode head)
@@ -21,6 +38,7 @@ public class CopyListWithRandomPointer
         HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
         map.put(head, result);
 
+        // Deep Copy all nodes to Map, O(n)
         RandomListNode ptr = head.next;
         while (null != ptr)
         {
