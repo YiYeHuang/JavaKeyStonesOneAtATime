@@ -48,7 +48,7 @@ public class MiddleOfLinkedList {
 
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
-		head.add(2).add(3).add(4).add(5).add(6);
+		head.add(2).add(3).add(4).add(5);
 		System.out.println(middleNode(head).toString());
 
 	}

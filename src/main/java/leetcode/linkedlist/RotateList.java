@@ -1,6 +1,9 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
+import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.LinkedListTag;
 
 /**
  * Given a list, rotate the list to the right by k places, where k is non-negative.
@@ -11,8 +14,16 @@ import baseObj.ListNode;
  * 
  * 
  */
+
+@Microsoft
+
+@Medium
+@LinkedListTag
 public class RotateList
 {
+    /**
+     * Key to the problem is to
+     */
     public static ListNode rotateRight(ListNode head, int k)
     {
         if (head == null || head.next == null || k == 0)
@@ -20,7 +31,7 @@ public class RotateList
             return head;
         }
 
-        // find tail first and find the lenght btw
+        // find tail first and find the length
         ListNode tail = head;
         int len = 1;
         while (tail.next != null)
@@ -37,7 +48,7 @@ public class RotateList
         //   1->2->3
         //   ^     |
         //   5 <- 4
-        
+        // fina the new tail
         for (int i = 0; i < len - k; i++)
         {
             tail = tail.next;
