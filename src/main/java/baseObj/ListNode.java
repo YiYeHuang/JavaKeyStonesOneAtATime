@@ -13,6 +13,11 @@ public class ListNode
         return newNode;
     }
 
+    public ListNode addNode(ListNode newNode) {
+        this.next = newNode;
+        return newNode;
+    }
+
     @Override
     public String toString() {
         ListNode head = this;
