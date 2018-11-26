@@ -14,4 +14,6 @@
     - [173 BST Iterator](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/blob/develop/src/main/java/leetcode/design/BSTIterator.java)
     - [460 LFU cache](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/blob/develop/src/main/java/leetcode/design/LFUCache.java)
     - [146 LRU cache](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/blob/develop/src/main/java/leetcode/design/LRUCache.java)
+  - [linked list](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/linkedlist)
+  - [binary search](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/binarySearch)
 

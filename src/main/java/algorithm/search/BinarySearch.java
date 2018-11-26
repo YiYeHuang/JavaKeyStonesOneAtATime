@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.search;
 
 public class BinarySearch
 {
@@ -18,7 +18,7 @@ public class BinarySearch
         while (lo <= hi)
         {
             // Key is in a[lo..hi] or not present.
-            int mid = lo + (hi - lo) / 2;
+            int mid = lo + (hi - lo) / 2; // do this to avoid overflow
             if (key < a[mid])
             {
                 hi = mid - 1;
@@ -44,7 +44,7 @@ public class BinarySearch
         if (low > high) {
             return false;
         } else {
-            int mid = (low + high) / 2;
+            int mid = low + (high - low) / 2; // do this to avoid overflow
             if (target == data[mid])
                 return true;
             else if (target < data[mid])
