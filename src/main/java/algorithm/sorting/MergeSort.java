@@ -3,6 +3,10 @@ package algorithm.sorting;
 public class MergeSort
 {
 
+    void mergeSort(int arr[]) {
+        split(arr, 0, arr.length - 1);
+    }
+
     /**
      * Best: O(nlog(n))
      * Worst: O(nlog(n))
@@ -25,7 +29,7 @@ public class MergeSort
      */
     // Main function that sorts arr[l..r] using
     // until the array size is down to 2
-    void split(int arr[], int start, int end)
+    private void split(int arr[], int start, int end)
     {
         if (start >= end) {
             return;
@@ -43,7 +47,7 @@ public class MergeSort
         }
     }
 
-    void merge(int arr[], int start, int mid, int end)
+    private void merge(int arr[], int start, int mid, int end)
     {
         // Merges two subarrays of arr[].
         // First subarray is arr[l..m]
@@ -123,7 +127,7 @@ public class MergeSort
         printArray(arr);
 
         MergeSort ob = new MergeSort();
-        ob.split(arr, 0, arr.length - 1);
+        ob.mergeSort(arr);
 
         System.out.println("\nSorted array");
         printArray(arr);
