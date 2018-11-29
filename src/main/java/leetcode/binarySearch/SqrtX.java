@@ -34,7 +34,7 @@ import leetcode.tag.type.LinkedListTag;
 public class SqrtX {
 
     /**
-     * Oppisite of Power, keep cutting the result to half
+     * Opposite of Power, keep cutting the result to half
      */
     public static int mySqrt(int x) {
         if (x == 1) return 1;
@@ -42,7 +42,9 @@ public class SqrtX {
         int high = x;
 
         while (low <= high) {
-            int mid = (low + high)/2;
+
+            // Always be careful about overflow
+            int mid = low + (high - low) /2 ;
 
             if (mid == x/mid)
                 return mid;
@@ -50,7 +52,7 @@ public class SqrtX {
             if (mid < x/mid) {
                 low = mid + 1;
             } else {
-                high = mid - 1;
+                high = mid;
             }
         }
 
