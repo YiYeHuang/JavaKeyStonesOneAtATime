@@ -1,5 +1,11 @@
 package leetcode.binarySearch;
 
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.Google;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.BinarySearch;
+
 /**
  * Let's call an array A a mountain if the following properties hold:
  *
@@ -21,30 +27,36 @@ package leetcode.binarySearch;
  * 0 <= A[i] <= 10^6
  * A is a mountain, as defined above.
  */
+
+@Google
+@Bloomberg
+@Facebook
+
+@Easy
+@BinarySearch
 public class PeakIndexinMountainArray {
 
+    /**
+     * Mid is now used to compare if up hill or down hill.
+     */
     public static int peakIndexInMountainArray(int[] A) {
         int low = 0;
         int high = A.length - 1;
-        int currentPeak = A[high];
 
         while (low < high) {
             int mid = low + (high - low)/2;
 
             // down hill
-            if (A[mid] > currentPeak) {
-                currentPeak = A[mid];
+            if (A[mid] > A[mid - 1]) {
                 high = mid;
-            }
-
-            // up fill
-            if (A[mid] < currentPeak) {
+            } else if (A[mid] < A[mid+1]) {
                 low = mid + 1;
+            } else {
+                return mid;
             }
-
         }
 
-        return low;
+        return -1;
     }
 
     public static void main(String[] args) {
