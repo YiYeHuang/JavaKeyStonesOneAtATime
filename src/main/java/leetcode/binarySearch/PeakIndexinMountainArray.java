@@ -38,6 +38,8 @@ public class PeakIndexinMountainArray {
 
     /**
      * Mid is now used to compare if up hill or down hill.
+     *
+     * the key if compare mid with adjacent value
      */
     public static int peakIndexInMountainArray(int[] A) {
         int low = 0;
@@ -46,21 +48,20 @@ public class PeakIndexinMountainArray {
         while (low < high) {
             int mid = low + (high - low)/2;
 
-            // down hill
-            if (A[mid] > A[mid - 1]) {
-                high = mid;
-            } else if (A[mid] < A[mid+1]) {
+            // up fill
+            if (A[mid] < A[mid+1]) {
                 low = mid + 1;
             } else {
-                return mid;
+                // down hill
+                high = mid;
             }
         }
 
-        return -1;
+        return low;
     }
 
     public static void main(String[] args) {
-        int[] test = {3, 4, 5, 1 };
+        int[] test = {3, 4, 5, 4, 2, 1, 0};
         System.out.print(peakIndexInMountainArray(test));
     }
 }
