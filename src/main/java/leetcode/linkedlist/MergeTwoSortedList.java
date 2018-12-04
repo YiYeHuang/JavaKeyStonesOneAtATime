@@ -1,6 +1,9 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
+import leetcode.tag.company.*;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.LinkedListTag;
 
 /**
  Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the
@@ -11,6 +14,15 @@ import baseObj.ListNode;
  Input: 1->2->4, 1->3->4
  Output: 1->1->2->3->4->4
  */
+
+@Amazon
+@Microsoft
+@Facebook
+@Bloomberg
+@Apple
+
+@Easy
+@LinkedListTag
 public class MergeTwoSortedList
 {
     /**
