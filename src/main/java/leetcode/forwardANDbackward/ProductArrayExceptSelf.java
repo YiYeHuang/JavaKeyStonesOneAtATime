@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.forwardANDbackward;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Apple;
@@ -6,6 +6,7 @@ import leetcode.tag.company.Facebook;
 import leetcode.tag.company.LinkedIn;
 import leetcode.tag.company.Microsoft;
 import leetcode.tag.type.ArrayTag;
+import leetcode.tag.type.ForwardBackward;
 
 /**
  Given an array nums of n integers where n > 1,
@@ -27,6 +28,8 @@ import leetcode.tag.type.ArrayTag;
 @Amazon
 @LinkedIn
 @Apple
+
+@ForwardBackward
 public class ProductArrayExceptSelf
 {
     /**
@@ -44,7 +47,9 @@ public class ProductArrayExceptSelf
         int[] ret = new int[leng];
         if(leng == 0)
             return ret;
+
         int runningprefix = 1;
+
         for(int i = 0; i < leng; i++){
             ret[i] = runningprefix;
             runningprefix*= nums[i];

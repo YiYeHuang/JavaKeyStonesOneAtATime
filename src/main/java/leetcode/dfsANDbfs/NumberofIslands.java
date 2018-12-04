@@ -1,4 +1,4 @@
-package leetcode.search;
+package leetcode.dfsANDbfs;
 
 import leetcode.tag.company.*;
 import leetcode.tag.type.BFS;
