@@ -1,4 +1,4 @@
-package algorithm.search;
+package algorithm;
 
 import baseObj.TreeNode;
 
