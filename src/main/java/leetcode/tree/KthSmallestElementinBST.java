@@ -55,6 +55,7 @@ public class KthSmallestElementinBST {
     /**
      * Typical DFS traversal template with stack
      *
+     * operate with counter
      * Extra memory usage
      */
     public int kthSmallest(TreeNode root, int k) {
@@ -76,11 +77,25 @@ public class KthSmallestElementinBST {
             TreeNode right = next.right;
             while (right != null) {
                 smallestCount.push(right);
-                root = root.left;
+                right = right.left;
             }
         }
 
         return -1;
+    }
+
+    public int kthSmallestTemplate(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<>();
+        while(root != null || !stack.isEmpty()) {
+            while(root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if(--k == 0) break;
+            root = root.right;
+        }
+        return root.value;
     }
 
     /**
