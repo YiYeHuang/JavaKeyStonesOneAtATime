@@ -48,6 +48,7 @@ public class SortList {
             fast = fast.next.next;
         }
 
+        // break the link
         leftTail.next = null;
 
         //from here it is very similar to the merge sort code
