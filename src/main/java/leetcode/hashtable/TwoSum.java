@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.hashtable;
 
 import leetcode.tag.company.*;
 import leetcode.tag.level.Easy;

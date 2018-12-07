@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
@@ -22,7 +22,11 @@ import leetcode.tag.type.TwoPointer;
  */
 
 @Amazon
+
 @Easy
+@BinarySearch
+@ArrayTag
+@TwoPointer
 public class twoSumSorted
 {
     /**
@@ -33,9 +37,7 @@ public class twoSumSorted
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */
-    @BinarySearch
-    @ArrayTag
-    @TwoPointer
+
     public static int[] twoSum(int[] numbers, int target)
     {
         int low = 0;
@@ -61,7 +63,7 @@ public class twoSumSorted
     public static void main(String[] args)
     {
         int[] test =
-        { 2,3,4 };
-        System.out.println(twoSum(test, 6));
+        { 1,3,4, 5, 8, 11, 23 };
+        System.out.println(twoSum(test, 13));
     }
 }
