@@ -1,9 +1,22 @@
 package leetcode.dp;
 
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.Google;
+import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.BinarySearch;
+import leetcode.tag.type.HashTableTag;
+import leetcode.tag.type.SlidingWindow;
+import leetcode.tag.type.TwoPointer;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 3. Longest Substring Without Repeating Characters
+ *
  * Given a string, find the length of the longest substring without repeating
  * characters.
  * 
@@ -18,8 +31,24 @@ import java.util.Set;
  * 
  * 
  */
+
+@Facebook
+@Amazon
+@Google
+@Bloomberg
+@Microsoft
+
+@Medium
+@SlidingWindow
+@HashTableTag
+
 public class LongestSubstringWithoutRepeatingCharacters
 {
+    /**
+     * one sue set to track the repeat
+     *
+     * once find the repeat, clean the list and redo
+     */
     public static int lengthOfLongestSubstring(String s)
     {
         if (null == s || s.length() == 0)
@@ -114,15 +143,15 @@ public class LongestSubstringWithoutRepeatingCharacters
     public static void main(String[] args)
     {
         /**
-         * a,  [a],     i = 0, j = 1
-         * a, b [a, b]  i = 0, j = 2
-         * a, b, b [b]   i = 1, j = 2
-         * a, b, b []      i = 2, j = 2
-         * a, b ,b [b]     i = 2, j = 3
-         * a, b, b, a [a, b]  i = 2, j = 4
-         * a, b, b, a, b [a]  i = 3, j = 4
-         * a, b ,b, a, b [a, b] i = 3, j = 5
-         * a, b ,b, a, b, c [a, b, c] i = 3, j = 6
+         * a,               [a],        expending upper bound i = 0, j = 1
+         * a, b             [a, b]      expending upper bound i = 0, j = 2
+         * a, b, b          [b]         shrinking lower bound i = 1, j = 2
+         * a, b, b          []          shrinking lower bound i = 2, j = 2
+         * a, b ,b          [b]         expending upper bound i = 2, j = 3
+         * a, b, b, a       [a, b]      expending upper bound i = 2, j = 4
+         * a, b, b, a, b    [a]         shrinking lower bound i = 3, j = 4
+         * a, b ,b, a, b    [a, b]      expending upper bound i = 3, j = 5
+         * a, b ,b, a, b, c [a, b, c]   expending upper bound i = 3, j = 6
          * 
          * break
          */

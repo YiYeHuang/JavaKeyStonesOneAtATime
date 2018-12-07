@@ -27,8 +27,6 @@ public class KeyBoardRow {
 		String row2 = "ASDFGHJKL";
 		String row3 = "ZXCVBNM";
 
-		for 
-
 
 
 	}
