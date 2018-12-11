@@ -39,10 +39,10 @@ public class QuickSort {
      * Swap the final marking point with pivot value
      *
      */
-    private static int partition(int[] arr, int start , int end) {
-        int pivot = arr[end];
+    private static int partition(int[] arr, int start , int endPivot) {
+        int pivot = arr[endPivot];
         int i = start;
-        for(int j = start; j < end; ++j) {
+        for(int j = start; j < endPivot; ++j) {
             if (arr[j] < pivot) {
                 int tmp = arr[i];
                 arr[i] = arr[j];
@@ -52,8 +52,8 @@ public class QuickSort {
         }
 
         int tmp = arr[i];
-        arr[i] = arr[end];
-        arr[end] = tmp;
+        arr[i] = arr[endPivot];
+        arr[endPivot] = tmp;
 
         System.out.println("pivot point =" + i);
         return i;
