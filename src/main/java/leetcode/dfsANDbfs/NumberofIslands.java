@@ -1,6 +1,7 @@
 package leetcode.dfsANDbfs;
 
 import leetcode.tag.company.*;
+import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
 
@@ -32,11 +33,15 @@ import leetcode.tag.type.DFS;
 @Microsoft
 @Google
 @Zenefit
+
+@Medium
+@BFS
+@DFS
 public class NumberofIslands
 {
-
-    @BFS
-    @DFS
+    /**
+     * DFS: although the
+     */
     public static int numIslands(char[][] grid)
     {
         int count = 0;

@@ -45,12 +45,12 @@ public class IsomorphicStrings {
      *
      * if all words are unique then the result is valid, the key check is the
      */
-    public static boolean isIsomorphic(String s1, String s2) {
+    public static boolean isIsomorphic(String s, String t) {
         int[] m = new int[512];
-        for (int i = 0; i < s1.length(); i++) {
-            if (m[s1.charAt(i)] != m[s2.charAt(i)+256]) return false;
-            m[s1.charAt(i)]  = i+1;
-            m[s2.charAt(i)+256]  = i+1;
+        for (int i = 0; i < s.length(); i++) {
+            if (m[s.charAt(i)] != m[t.charAt(i)+256]) return false;
+            m[s.charAt(i)]  = i+1;
+            m[t.charAt(i)+256]  = i+1;
         }
         return true;
     }

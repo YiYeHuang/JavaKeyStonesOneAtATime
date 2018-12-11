@@ -2,6 +2,10 @@ package leetcode.tree;
 
 import algorithm.sorting.BSTUtil;
 import baseObj.TreeNode;
+import leetcode.tag.company.Google;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.DFS;
+import leetcode.tag.type.Tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +14,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.
+ * Given a binary search tree (BST) with duplicates, find all the mode(s)
+ * (the most frequently occurred element) in the given BST.
 
  Assume a BST is defined as follows:
 
@@ -35,10 +40,20 @@ import java.util.TreeMap;
 
  Follow up: Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).
  */
+
+@Google
+
+@Easy
+@Tree
 public class FindModeInBST {
 
 	public static int max = 0;
 
+    /**
+     * With extra solution, load the tree into map, keep increment the max of the tree
+     *
+     * Convert into Arraylist
+     */
 	public static int[] findMode(TreeNode root) {
 		if (root == null) return new int[0];
 
@@ -64,6 +79,9 @@ public class FindModeInBST {
 		return res;
 	}
 
+    /**
+     * in order traversal to add all nodes into map
+     */
 	public  static void load(TreeNode root, Map<Integer, Integer> result) {
 		if (null == root) return;
 
