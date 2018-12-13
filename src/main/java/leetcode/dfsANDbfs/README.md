@@ -1,16 +1,24 @@
 ## DFS and BFS LeetCode Notes
 
-BFS Level Order Template
-```java 
-    public void compute(List<List<Integer>> ans,TreeNode curr,int level)
+DFS with stack template
+```java
+    public static List<Integer> dfsTraversal(TreeNode root)
     {
-        if(curr==null) return;
-        
-        if(ans.size()==level) {
-            // Do sth
+        List<Integer> list = new ArrayList<>();
+        if (root == null)
+            return list;
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.empty())
+        {
+            while (root != null)
+            {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            list.add(root.value);
+            root = root.right;
         }
-        
-        compute(ans,curr.left,level+1);
-        compute(ans,curr.right,level+1);
+        return list;
     }
 ```
