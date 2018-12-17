@@ -8,6 +8,7 @@ import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
+import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
 
 import java.util.Stack;
@@ -49,6 +50,7 @@ import java.util.Stack;
 
 @Medium
 @BinarySearch
+@DFS
 @Tree
 public class KthSmallestElementinBST {
 
