@@ -55,6 +55,7 @@ public class BTLevelOrderTraversalII {
 	{
 		if(curr==null) return;
 
+		// first in, push to the end
 		if(ans.size()==level)
 			ans.add(0,new ArrayList<Integer>());
 
