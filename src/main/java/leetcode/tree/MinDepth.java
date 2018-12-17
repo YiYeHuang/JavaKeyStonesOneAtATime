@@ -1,6 +1,9 @@
 package leetcode.tree;
 
 import baseObj.TreeNode;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.DFS;
+import leetcode.tag.type.Tree;
 
 /**
 
@@ -28,6 +31,10 @@ import baseObj.TreeNode;
  15   7
  return its minimum depth = 2.
  */
+
+@Easy
+@Tree
+@DFS
 public class MinDepth {
 
 	/**
