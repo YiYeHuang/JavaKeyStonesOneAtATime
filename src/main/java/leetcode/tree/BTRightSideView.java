@@ -39,6 +39,9 @@ import java.util.List;
 @BFS
 public class BTRightSideView {
 
+    /**
+     * Level order template,  keep updating latest, since right is always visited last, the remaining is always right
+     */
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         bulid(ans,root,0);

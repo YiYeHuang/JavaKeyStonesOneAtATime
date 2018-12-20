@@ -56,6 +56,10 @@ public class SymmetricTree {
         return (n1.value == n2.value) && isSymmetricHelp(n1.left, n2.right) && isSymmetricHelp(n1.right, n2.left);
     }
 
+    /**
+     * BFS + queue
+     *
+     */
     public boolean isSymmetricItr(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
