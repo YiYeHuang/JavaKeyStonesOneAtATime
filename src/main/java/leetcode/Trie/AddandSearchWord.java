@@ -35,12 +35,12 @@ import leetcode.tag.type.Trie;
 
 @Medium
 @Trie
-public class WordDictionary {
+public class AddandSearchWord {
 
 	private TrieNode root;
 
 	/** Initialize your data structure here. */
-	public WordDictionary() {
+	public AddandSearchWord() {
 		root = new TrieNode();
 		root.val = ' ';
 	}
