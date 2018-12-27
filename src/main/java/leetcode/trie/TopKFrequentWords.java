@@ -1,4 +1,4 @@
-package leetcode.Trie;
+package leetcode.trie;
 
 import baseObj.TrieNode;
 import leetcode.tag.company.*;
@@ -81,7 +81,7 @@ public class TopKFrequentWords {
 
     /**
      *  define a trie within each bucket to store all the words with the same frequency.
-     *  With Trie, it ensures that the lower alphabetical word will be met first,
+     *  With trie, it ensures that the lower alphabetical word will be met first,
      *  saving the trouble to sort the words within the bucket.
      */
     public List<String> topKFrequentBucketAndTrie(String[] words, int k) {
@@ -92,7 +92,7 @@ public class TopKFrequentWords {
             map.put(n, map.getOrDefault(n,0)+1);
         }
 
-        // build the buckets and Trie
+        // build the buckets and trie
         TrieNode[] bucketRoot = new TrieNode[words.length + 1];
         for(String word : map.keySet()) {
             int freq = map.get(word);

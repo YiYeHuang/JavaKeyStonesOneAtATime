@@ -1,4 +1,4 @@
-package leetcode.Trie;
+package leetcode.trie;
 
 import baseObj.TrieNode;
 import leetcode.tag.company.*;

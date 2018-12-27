@@ -59,8 +59,8 @@ public class LongestWordInDictionary {
     }
 
     /**
-     * Trie solution
-     * Build Trie, BFS to find the longest path
+     * trie solution
+     * Build trie, BFS to find the longest path
      */
     private TrieNode root;
 

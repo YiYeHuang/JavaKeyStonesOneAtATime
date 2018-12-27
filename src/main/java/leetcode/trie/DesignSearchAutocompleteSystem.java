@@ -1,4 +1,4 @@
-package leetcode.Trie;
+package leetcode.trie;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Google;
@@ -151,7 +151,7 @@ public class DesignSearchAutocompleteSystem {
 
 
 	public List<String> input(char c) {
-		// check # first: add current sentences to the Trie, reset to the root and return empty list
+		// check # first: add current sentences to the trie, reset to the root and return empty list
 		if (c == '#') {
 			// occur ++
 			build(prefixCache, 1);
