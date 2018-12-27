@@ -1,13 +1,15 @@
-package leetcode.design;
+package leetcode.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.*;
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.LinkedIn;
+import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Stack;
 
 /**

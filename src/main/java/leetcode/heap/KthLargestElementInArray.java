@@ -45,6 +45,7 @@ public class KthLargestElementInArray {
 	 *
 	 * - push to queue
 	 * - keep popping out the smallest number outside size k
+	 * - since every time you pop the smallest item, the remaining k elements heap, the top one is kth largest
 	 *
 	 * Space O(k)
 	 * Com O((n - k) * logk)
