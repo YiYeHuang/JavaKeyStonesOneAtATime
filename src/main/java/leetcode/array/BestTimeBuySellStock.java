@@ -25,20 +25,23 @@ import leetcode.tag.type.DP;
  */
 
 @Amazon
+
 @Easy
+@DP
 public class BestTimeBuySellStock
 {
     /**
      * Dynamically changing new low price and profit
      */
-    @DP
+
     public static int maxProfit(int[] prices)
     {
         if (prices.length == 0)
         {
             return 0;
         }
-        
+
+
         int min = prices[0];
         int profit = 0;
         for (int i = 1; i < prices.length; i++)

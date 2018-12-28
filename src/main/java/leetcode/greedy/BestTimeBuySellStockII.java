@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.greedy;
 
 import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Easy;
@@ -33,15 +33,17 @@ import leetcode.tag.type.Greedy;
  */
 
 @Bloomberg
+
 @Easy
+@ArrayTag
+@Greedy
 public class BestTimeBuySellStockII {
 
     /**
-     *  Time complexity : O(n)O(n). Single pass.
+     *  Time complexity : O(n) O(n). Single pass.
      * accumulate peak to valley value
      */
-    @ArrayTag
-    @Greedy
+
     public static int maxProfit(int[] prices) {
 
         if (prices.length == 0)
@@ -53,8 +55,10 @@ public class BestTimeBuySellStockII {
 
         for (int i = 1; i < prices.length; i++) {
             if (prices[i] < prices[i - 1]) {
+                // simulate buy
                 prices[i-1] = 0;
             } else {
+                // simulate sell
                 currentProfit += prices[i] - prices[i-1];
             }
         }
