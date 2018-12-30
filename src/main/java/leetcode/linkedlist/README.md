@@ -27,7 +27,6 @@
 - Faster & Slower Walker
 - since there is a cycle, two walker will eventually meet
 
-
 #### LinkedList cycleII: return the entry point
 - Faster & Slower Walker
 - since there is a cycle, two walker will eventually meet
