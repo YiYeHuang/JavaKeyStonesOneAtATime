@@ -41,20 +41,35 @@ Trie + recursive search
     - if . skip this layer and continue continue with all 26 child if not null.
 
 ### 642. Design Search Autocomplete System (hard)
-Trie + Kth most frequent (heap)
+Trie + Kth most frequent (heap) + Hash Map
 Based one trie tree, As the input is dynamic, bucket sort cannot be used
 
 - in the case when a new input is tried multiple times, the bucket will experience out of bounce
   Special character might also used, an array of ascII table each node is very expensive
 - need to use dynamic data structure
 
+Special TrieNode is used here
+```java
+	class TrieNode {
+		Map<Character, AutoCompTrieNode> children;
+		Map<String, Integer> counts;
+		boolean isWord;
+		public AutoCompTrieNode() {
+			children = new HashMap<Character, AutoCompTrieNode>();
+			counts = new HashMap<String, Integer>();
+			isWord = false;
+		}
+	}
+```
 
 - Add (trie tree node will contain map instead of array, and a count nmap)
 	- build the trie tree, while build the trie tree, build the count map
 - Search
-	- for each input, unless it is #, rebuild prefix and search the current root
+ 	- *** for each input, unless it is #, rebuild prefix and search the current root
     - trick is to keep a global prefix for continuous search
-    - push the node to heap - priority queue and get top 3
+    - *** Based on each search (with each char from prefix) build find the root in current trie tree
+    - *** push all the nodes in count map from the root to the max heap
+    - *** build the result of top 3
 
 ### 648. Replace Words
 Trie

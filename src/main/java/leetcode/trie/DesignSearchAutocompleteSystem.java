@@ -103,15 +103,6 @@ public class DesignSearchAutocompleteSystem {
 		}
 	}
 
-	class Pair {
-		String word;
-		int count;
-		public Pair(String w, int c) {
-			this.word = w;
-			this.count = c;
-		}
-	}
-
 	AutoCompTrieNode root;
 	String prefixCache;
 
@@ -174,21 +165,21 @@ public class DesignSearchAutocompleteSystem {
 			curr = next;
 		}
 
-		// Sort from large to small
-		PriorityQueue<Pair> heap = new PriorityQueue<>((a, b) -> (
-				a.count == b.count ?
-						a.word.compareTo(b.word) :
-						b.count - a.count));
+		// Build a max heap
+		PriorityQueue<Map.Entry<String, Integer>> heap = new PriorityQueue<>((a, b) -> (
+				a.getValue() == b.getValue() ?
+						a.getKey().compareTo(b.getKey()) :
+						b.getValue() - a.getValue()));
 
-		// push all count to
-		for (String str : curr.counts.keySet()) {
-			heap.add(new Pair(str, curr.counts.get(str)));
+		// push all count to max heap
+		for (Map.Entry<String, Integer> entry : curr.counts.entrySet()) {
+			heap.add(entry);
 		}
 
 		// build result
 		List<String> result = new ArrayList<String>();
 		for (int i = 0; i < 3 && !heap.isEmpty(); i++) {
-			result.add(heap.poll().word);
+			result.add(heap.poll().getKey());
 		}
 		return result;
 	}
