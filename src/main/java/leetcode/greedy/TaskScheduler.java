@@ -3,6 +3,7 @@ package leetcode.greedy;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Greedy;
+import leetcode.tag.type.Heap;
 
 import java.util.*;
 
@@ -37,6 +38,7 @@ import java.util.*;
 
 @Medium
 @Greedy
+@Heap
 public class TaskScheduler {
 
     /**
