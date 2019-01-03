@@ -27,10 +27,10 @@ import java.util.Queue;
  Example 1:
  Input:
 
- 1
- /   \
- 3     2
- / \     \
+      1
+    /   \
+   3     2
+  / \     \
  5   3     9
 
  Output: 4
@@ -38,10 +38,10 @@ import java.util.Queue;
  Example 2:
  Input:
 
- 1
- /
- 3
- / \
+     1
+    /
+   3
+  / \
  5   3
 
  Output: 2
@@ -49,9 +49,9 @@ import java.util.Queue;
  Example 3:
  Input:
 
- 1
- / \
- 3   2
+     1
+    / \
+   3   2
  /
  5
 
@@ -60,12 +60,12 @@ import java.util.Queue;
  Example 4:
  Input:
 
- 1
- / \
- 3   2
- /     \
- 5       9
- /         \
+        1
+       / \
+      3   2
+     /     \
+    5       9
+   /         \
  6           7
  Output: 8
  Explanation:The maximum width existing in the fourth level with the length 8 (6,null,null,null,null,null,null,7).

@@ -87,12 +87,32 @@ Trie + Bucket Sort
 Key: since the trie check is sort by alphabetical order, no sort is needed.
 
 ### 720. Longest Word in Dictionary
-Trie + BFS
+Trie + BFS Queue
 - Load the words into a trie tree
 - Search is the key part
     - push the root to the a queue
     - for each level, if child not null, and there is a word ending, push to queue again
         - since the longest word is built by other word, the pushed node could also have child
     - search until the queue is empty
+```java
+public String findLongestWord() {
+        String result = null;
+        Queue<TrieNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TrieNode node = queue.poll();
+                for (int j = 25; j >= 0; j--) {
+                    if (node.children[j] != null && node.children[j].wordEndHere) {
+                        result = node.children[j].word;
+                        queue.offer(node.children[j]);
+                    }
+                }
+            }
+        }
+        return result;
+}
+```
 
  

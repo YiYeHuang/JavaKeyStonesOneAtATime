@@ -1,8 +1,10 @@
 package leetcode.tree;
 
 import leetcode.tag.company.Bloomberg;
+import leetcode.tag.level.Easy;
 import leetcode.tag.type.DFS;
 import baseObj.TreeNode;
+import leetcode.tag.type.Tree;
 
 /**
  * Given two binary trees, write a function to check if they are the same or not.
@@ -39,9 +41,12 @@ import baseObj.TreeNode;
  */
 
 @Bloomberg
+
+@Easy
+@DFS
+@Tree
 public class SameTree
 {
-    @DFS
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
