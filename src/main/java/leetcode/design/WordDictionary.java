@@ -7,6 +7,7 @@ import leetcode.tag.company.Facebook;
 import leetcode.tag.company.Google;
 import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
+import leetcode.tag.type.BackTrack;
 import leetcode.tag.type.Trie;
 
 
@@ -39,6 +40,7 @@ import leetcode.tag.type.Trie;
 
 @Medium
 @Trie
+@BackTrack
 public class WordDictionary {
 
 	private TrieNode root;
