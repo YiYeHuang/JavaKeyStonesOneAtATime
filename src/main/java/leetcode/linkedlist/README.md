@@ -2,33 +2,33 @@
 
 ## Basic trick and template:
 
-- reverse linked list
-    - create previous walker as null
-    - Temp walker 'next' jump to next node, to store the next node while break the current connection
-    - point current head to previous node (when doing first step, point to null)
-    - point previous node to current head to iterate to next
-    - move current head to next node.
-
-- Dummy Head
-    - create dummy node with value 0 as a new list
-
-- Faster slower walker
-    - faster node walks twice as fast as slow node, used to split the linked list or detected cycle
-
-- Java delete a node
+### Java delete a node
     - node = node.next.next
 
+### Dummy Head
+    - create dummy node with value 0 as a new list
 
-#### Middle of A LinkedList
-- Faster & Slower Walker
-- When even number, slow will always return the second one
+#### 2 Add Two Numbers
+Dummy head
 
-#### LinkedList cycle
+#### 21 Merge Two Sorted List
+- Merge L1 and L2 at the same time
+- Check L1 remaining 
+- Check L2 remaining
+
+    
+### Faster slower walker
+    - faster node walks twice as fast as slow node, used to split the linked list or detected cycle
+
+#### 876 Middle of A LinkedList
 - Faster & Slower Walker
+- when node number is odd, will return the middle
+- When even number, slow will always return the second one, for first one cache a node before
+
+#### 141 LinkedList cycle
 - since there is a cycle, two walker will eventually meet
 
-#### LinkedList cycleII: return the entry point
-- Faster & Slower Walker
+#### 142 LinkedList cycleII: return the entry point
 - since there is a cycle, two walker will eventually meet
 - Return meeting point
     - L1 as the distance head to the cycle entry point
@@ -43,11 +43,23 @@
             - -> L1 = C - L2
 - When hit the meeting point, head to entry is the meeting point to entry point
 
-#### Merge Two Sorted List
-- Dummy head
-- Merge L1 and L2 at the same time
-- Check L1 remaining 
-- Check L2 remaining
+### reverse linked list
+    - create previous walker as null
+    - Temp walker 'next' jump to next node, to store the next node while break the current connection
+    - point current head to previous node (when doing first step, point to null)
+    - point previous node to current head to iterate to next
+    - move current head to next node.
+
+#### 206 Reverse a singly linked list.
+basic reverse linked list question
+
+### Combined Questions
+
+#### 92 Reverse Linked List from m to n
+Dummy head + reverse linked list
+
+
+
 
 #### Sort Linked List
 - Merge Sort & Merge Two Sorted List & Faster/Slower Walker

@@ -11,7 +11,7 @@ import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
 /**
- * Reverse a singly linked list.
+206 Reverse a singly linked list.
 
  Example:
 

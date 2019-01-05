@@ -1,9 +1,12 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
+import leetcode.tag.company.*;
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.LinkedListTag;
 
 /**
- * Reverse a linked list from position m to n. Do it in one-pass.
+ * 92 Reverse a linked list from position m to n. Do it in one-pass.
  *
  * Note: 1 ≤ m ≤ n ≤ length of list.
  *
@@ -12,6 +15,14 @@ import baseObj.ListNode;
  * Input: 1->2->3->4->5->NULL, m = 2, n = 4
  * Output: 1->4->3->2->5->NULL
  */
+
+@Microsoft
+@Amazon
+@Facebook
+@Bloomberg
+
+@Medium
+@LinkedListTag
 public class ReverseLinkedListII {
 
     public static ListNode reverseBetween(ListNode head, int m, int n) {
