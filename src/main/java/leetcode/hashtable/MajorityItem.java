@@ -1,5 +1,7 @@
-package leetcode.array;
+package leetcode.hashtable;
 
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Google;
 import leetcode.tag.company.Zenefit;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.*;
@@ -10,6 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ 169. Majority Element
+
  Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
 
  You may assume that the array is non-empty and the majority element always exist in the array.
@@ -23,12 +27,16 @@ import java.util.Map;
  Input: [2,2,1,1,1,2,2]
  Output: 2
  */
-@Zenefit
+@Google
+@Amazon
+
 @Easy
+@Hash
+@Sorting
+@DivideConquer
 public class MajorityItem
 {
-    @ArrayTag
-    @Hash
+
     /**
      * Time Complexity O(n)
      * Space Complexity O(n)
@@ -59,8 +67,7 @@ public class MajorityItem
         return -1;
     }
 
-    @Sorting
-    @ArrayTag
+
     /**
      * If the elements are sorted in monotonically increasing (or decreasing) order, the majority element can
      * be found at index n/2 or n/2 + 1

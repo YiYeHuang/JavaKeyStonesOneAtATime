@@ -6,11 +6,7 @@ import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
 /**
- * Remove Nth Node From End of List
- * Medium
- * 1320
- * 103
- *
+ * 19 Remove Nth Node From End of List
  *
  * Given a linked list, remove the n-th node from the end of list and return its head.
  *
