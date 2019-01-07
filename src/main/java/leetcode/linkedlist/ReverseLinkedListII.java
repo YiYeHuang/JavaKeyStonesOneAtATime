@@ -66,9 +66,45 @@ public class ReverseLinkedListII {
         return dummy.next;
     }
 
+    public static ListNode reverseBetweenTemplate(ListNode head, int m, int n) {
+        if (head == null || head.next == null ) return head;
+
+        ListNode dummy = new ListNode(0); // create a dummy node to mark the head of this list
+        dummy.next = head;
+
+        // find the head before reverse
+        ListNode begin = head;
+        int step = m;
+        while (step > 1) {
+            begin = begin.next;
+            step--;
+        }
+
+        // start as the reverse head, will be tail
+        ListNode tailTobe = begin.next;
+        ListNode reverseNext = tailTobe.next;
+
+        step = n - m;
+
+        // move next
+        // break previous connection
+
+        ListNode end = begin;
+
+        while (step > 0) {
+            end = end.next;
+            step--;
+        }
+
+        ReverseLinkedListBetween.reverse(begin, end);
+
+        return dummy.next;
+    }
+
+
     public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.add(2).add(3).add(4).add(5);
-        System.out.println(reverseBetween(head, 2, 4));
+        ListNode head = new ListNode(0);
+        head.add(1).add(2).add(3).add(4).add(5).add(6);
+        System.out.println(reverseBetweenTemplate(head, 0, 5));
     }
 }
