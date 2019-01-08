@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Bloomberg;
@@ -6,6 +6,8 @@ import leetcode.tag.company.Facebook;
 import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
+import leetcode.tag.type.BinarySearch;
+import leetcode.tag.type.Sorting;
 import leetcode.tag.type.TwoPointer;
 
 import java.util.Arrays;
@@ -34,7 +36,11 @@ import java.util.List;
 @Microsoft
 @Amazon
 @Bloomberg
+
 @Medium
+@Sorting
+@BinarySearch
+@TwoPointer
 public class ThreeSum {
 
     /**
