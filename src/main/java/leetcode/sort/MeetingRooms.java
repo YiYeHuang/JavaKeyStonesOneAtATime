@@ -1,13 +1,12 @@
 package leetcode.sort;
 
+import baseObj.Interval;
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Sorting;
 
 import java.util.Arrays;
-
-import com.sun.tracing.dtrace.FunctionAttributes;
 
 /**
  252. Meeting Rooms
@@ -34,13 +33,6 @@ import com.sun.tracing.dtrace.FunctionAttributes;
 @Sorting
 public class MeetingRooms {
 
-	public class Interval {
-		int start;
-		int end;
-		Interval() { start = 0; end = 0; }
-		Interval(int s, int e) { start = s; end = e; }
-	}
-
 	public boolean canAttendMeetings(Interval[] intervals) {
 		if (null == intervals) return false;
 
@@ -49,6 +41,7 @@ public class MeetingRooms {
 
 		/**
 		 * [0, 30], [5, 10], next start time needs to be later then end time
+		 * backward compare, compare next start to previous end
 		 */
 		for (int i = 1; i < intervals.length; i++) {
 			if (intervals[i].start < intervals[i -1].end) {
