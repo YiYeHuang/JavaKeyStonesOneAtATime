@@ -1,12 +1,15 @@
-package leetcode.array;
+package leetcode.hashtable;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BitManipulation;
+import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Mathematics;
 
 /**
+ * 268. Missing Number
+ * 
  * Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.
  *
  * Example 1:
@@ -26,6 +29,7 @@ import leetcode.tag.type.Mathematics;
 @Easy
 @ArrayTag
 @Mathematics
+@HashTableTag
 @BitManipulation
 public class MissingNumber {
 
