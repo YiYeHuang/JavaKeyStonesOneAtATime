@@ -1,4 +1,4 @@
-package leetcode.array;
+package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
