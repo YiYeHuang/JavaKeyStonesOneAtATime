@@ -1,4 +1,4 @@
-package leetcode.number;
+package leetcode.math;
 
 /**
  * Determine whether an integer is a palindrome. Do this without extra space.
@@ -6,7 +6,7 @@ package leetcode.number;
 public class palindromeNumber
 {
     /**
-     * Key here is in place keep recalculating a another half of the input. and compare the number
+     * Key here is in place keep recalculating a another half of the input. and compare the math
      */
     public boolean isPalindrome(int x)
     {

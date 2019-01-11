@@ -1,4 +1,4 @@
-package leetcode.string;
+package leetcode.palinDrome;
 
 import leetcode.tag.company.Apple;
 import leetcode.tag.company.Facebook;

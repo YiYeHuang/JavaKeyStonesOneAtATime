@@ -1,4 +1,4 @@
-package leetcode.hashtable;
+package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Apple;
