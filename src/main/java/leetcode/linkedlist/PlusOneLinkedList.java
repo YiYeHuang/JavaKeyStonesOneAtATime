@@ -1,12 +1,9 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import concurrency.list.List;
 import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
-
-import java.util.Stack;
 
 /**
  * 369. Plus One Linked List

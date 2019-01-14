@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import concurrency.list.List;
 
 /**
  * Reverse a link list between begin and end exclusively

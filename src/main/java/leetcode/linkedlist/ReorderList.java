@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import concurrency.list.List;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.company.Google;
 import leetcode.tag.company.Microsoft;
