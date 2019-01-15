@@ -1,5 +1,8 @@
 package leetcode.backtrack;
 
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.BackTrack;
+
 /**
  * 509. Fibonacci Number
  *
@@ -35,6 +38,9 @@ package leetcode.backtrack;
  *
  * 0 ≤ N ≤ 30.
  */
+
+@Easy
+@BackTrack
 public class FibonacciNumber {
     public int fib(int N) {
         if (N == 0) return 0;
