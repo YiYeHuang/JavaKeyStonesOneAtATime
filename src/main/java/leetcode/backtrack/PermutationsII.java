@@ -1,5 +1,11 @@
 package leetcode.backtrack;
 
+import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.LinkedIn;
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.BackTrack;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +25,13 @@ import java.util.List;
  *   [2,1,1]
  * ]
  */
+
+@LinkedIn
+@Facebook
+@Bloomberg
+
+@Medium
+@BackTrack
 public class PermutationsII {
 
     /**
@@ -37,7 +50,7 @@ public class PermutationsII {
 
     public void backtrack(List<List<Integer>> res, List<Integer> list, int[] nums, boolean[] used){
         if (list.size() == nums.length) {
-            res.add(new ArrayList<Integer>(list));
+            res.add(new ArrayList<>(list));
             return;
         } else {
             for (int i = 0; i < nums.length; i++) {
@@ -47,10 +60,10 @@ public class PermutationsII {
                 used[i] = true;
                 list.add(nums[i]);
                 backtrack(res, list, nums, used);
+                used[i]=false;
                 list.remove(list.size() - 1);
             }
         }
     }
-
 
 }
