@@ -4,6 +4,10 @@ import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 216. Combination Sum III
  *
@@ -28,4 +32,27 @@ import leetcode.tag.type.BackTrack;
 @Medium
 @BackTrack
 public class combinationSumIII {
+
+	public static List<List<Integer>> combinationSum3(int k, int n) {
+		List<List<Integer>> result = new ArrayList<>();
+		backtrack(result, new ArrayList<>(), k, n,  1);
+		return result;
+	}
+
+	public static void backtrack(List<List<Integer>> result,List<Integer> temp, int k, int remains, int startIndex) {
+		if (remains < 0) return;
+		if (remains == 0 && temp.size() == k) result.add(new ArrayList<>(temp));
+
+		for (int i = startIndex; i < 9; i++){
+			temp.add(i);
+			// move position up 1
+			backtrack(result, temp, k, remains - i,  i + 1);
+			temp.remove(temp.size() - 1);
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] test = {10, 1, 2, 7, 6, 1, 5};
+		combinationSum3(2, 18);
+	}
 }

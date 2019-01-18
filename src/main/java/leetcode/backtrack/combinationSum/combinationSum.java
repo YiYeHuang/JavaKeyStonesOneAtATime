@@ -59,7 +59,7 @@ public class combinationSum {
 		return result;
 	}
 
-	public static void backtrack(List<List<Integer>> result,List<Integer> temp, int[] candidates, int remains ,int startIndex) {
+	public void backtrack(List<List<Integer>> result,List<Integer> temp, int[] candidates, int remains ,int startIndex) {
 		if (remains < 0) return;
 		if (remains == 0) result.add(new ArrayList<>(temp));
 
