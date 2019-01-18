@@ -49,12 +49,13 @@ public class combinationSum {
 	/**
 	 * Subset + login for deal with remaining
 	 *
-	 * if remaining is 0 add result
+	 * - trick: start point
+	 * - add up: check remaining, if remaining is 0 add result
 	 */
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		List<List<Integer>> result = new ArrayList<>();
 		Arrays.sort(candidates);
-		backtrack(result, new ArrayList<>(), candidates, target, int start);
+		backtrack(result, new ArrayList<>(), candidates, target, 0);
 		return result;
 	}
 

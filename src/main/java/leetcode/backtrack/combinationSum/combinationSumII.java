@@ -5,6 +5,10 @@ import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 40. Combination Sum II
  *
@@ -42,4 +46,36 @@ import leetcode.tag.type.BackTrack;
 @BackTrack
 public class combinationSumII {
 
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates);
+        backtrack(result, new ArrayList<>(), nums, 0);
+        return result;
+    }
+
+    public static void backtrack(List<List<Integer>> result,List<Integer> temp, int[] candidates, int remains ,int startIndex) {
+        if (remains < 0) return;
+        if (remains == 0) result.add(new ArrayList<>(temp));
+
+        for (int i = startIndex; i < candidates.length; i++) {
+
+            temp.add(candidates[i]);
+            // move position up 1
+            backtrack(result, temp, candidates, remains - candidates[i],  +i); // not increment to i + 1 because reuse
+            temp.remove(temp.size() - 1);
+        }
+    }
+
+    public static void backtrack(List<List<Integer>> result,List<Integer> temp, int[] candidates, int remains ,int startIndex) {
+        if (remains < 0) return;
+        if (remains == 0) result.add(new ArrayList<>(temp));
+
+        for (int i = startIndex; i < candidates.length; i++) {
+
+            temp.add(candidates[i]);
+            // move position up 1
+            backtrack(result, temp, candidates, remains - candidates[i],  +i); // not increment to i + 1 because reuse
+            temp.remove(temp.size() - 1);
+        }
+    }
 }
