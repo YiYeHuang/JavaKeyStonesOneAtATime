@@ -46,10 +46,15 @@ import java.util.List;
 @BackTrack
 public class combinationSumII {
 
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+	/**
+	 * combination sum + subset skip logic
+	 *
+	 *
+	 */
+    public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(candidates);
-        backtrack(result, new ArrayList<>(), nums, 0);
+        backtrack(result, new ArrayList<>(), candidates, target, 0);
         return result;
     }
 
@@ -58,24 +63,19 @@ public class combinationSumII {
         if (remains == 0) result.add(new ArrayList<>(temp));
 
         for (int i = startIndex; i < candidates.length; i++) {
-
+			// avoid -1 index and extra skip
+			if (i > startIndex && candidates[i] == candidates[i - 1]) continue;
             temp.add(candidates[i]);
             // move position up 1
-            backtrack(result, temp, candidates, remains - candidates[i],  +i); // not increment to i + 1 because reuse
+            backtrack(result, temp, candidates, remains - candidates[i],  i + 1); // incremenet, cuz every only use once
+			// reuse
             temp.remove(temp.size() - 1);
         }
     }
 
-    public static void backtrack(List<List<Integer>> result,List<Integer> temp, int[] candidates, int remains ,int startIndex) {
-        if (remains < 0) return;
-        if (remains == 0) result.add(new ArrayList<>(temp));
+    public static void main(String[] args) {
+    	int[] test = {10, 1, 2, 7, 6, 1, 5};
+    	combinationSum2(test, 8);
+	}
 
-        for (int i = startIndex; i < candidates.length; i++) {
-
-            temp.add(candidates[i]);
-            // move position up 1
-            backtrack(result, temp, candidates, remains - candidates[i],  +i); // not increment to i + 1 because reuse
-            temp.remove(temp.size() - 1);
-        }
-    }
 }
