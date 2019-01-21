@@ -1,12 +1,19 @@
 package leetcode.dp;
 
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Apple;
 import leetcode.tag.company.Bloomberg;
+import leetcode.tag.company.Google;
 import leetcode.tag.company.LinkedIn;
 import leetcode.tag.company.Microsoft;
+import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.DP;
 
 /**
+
+ 53. Maximum Subarray
+
  Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
  Example:
@@ -16,57 +23,54 @@ import leetcode.tag.type.DP;
  Explanation: [4,-1,2,1] has the largest sum = 6.
  Follow up:
 
- If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+
+
  */
 
-@Microsoft
-@Bloomberg
+@Amazon
+@Apple
+@Google
 @LinkedIn
+
+@Easy
+@DP
 public class MaxSubArray
 {
-    /**
-     * this is a optimization problem So when it comes to DP, the first thing for us to figure out
-     * is the format of the sub problem.
-     * 
-     * At first, means the maxSubArray for A[i: j].
-     * 
-     * In this way, our goal is to figure out what
-     *  maxSubArray(A, 0, A.length - 1) is.
-     * 
-     * However, if we define the format of the sub problem in this way, it's hard to find the
-     * connection from the sub problem to the original problem(at least for me). In other words, I
-     * can't find a way to divided the original problem into the sub problems and use the solutions
-     * of the sub problems to somehow create the solution of the original one.
-     * 
-     * So I change the format of the sub problem into something like: 
-     * maxSubArray(int A[], int i),
-     * which means the maxSubArray for A[0:i] which must has A[i] as the end element. Note that now
-     * the sub problem's format is less flexible and less powerful than the previous one because
-     * there's a limitation that A[i] should be contained in that sequence and we have to keep track
-     * of each solution of the sub problem to update the global optimal value. However, now the
-     * connect between the sub problem & the original one becomes clearer:
-     * 
-     * 
-     * maxSubArray(A, i) = maxSubArray(A, i - 1) > 0 ? maxSubArray(A, i - 1) : 0 + A[i];
-     *
-     * int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-     *          dp: {-2, 1, -2, 4,  3, 5, 6,  1, 5}
-     */
 
-    @DP
-    @ArrayTag
-    public static int maxSubArray(int[] nums)
-    {
-        int n = nums.length;
-        int[] dp = new int[n];
-        dp[0] = nums[0];
-        int max = dp[0];
-        
-        for(int i = 1; i < n; i++){
-            dp[i] = nums[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
-            max = Math.max(max, dp[i]);
+    /**
+     * 极端的例子1: [-11, -23, -123, -13, -33, -1, -21] 当所有都是负数的时候最大值就是取 一位，-1
+     * 我们便希望尽可能避免负数，取正数
+     *
+     * 子问题:   Max(A[], i, j) where A[i, j] sum is max
+     * return的是sum, 问题便不需要用2D array求解
+     *
+     * Input: [-2,1,-3,4,-1,2,1,-5,4],
+     *
+     * [0,0] max -2
+     * [0,1] max 1    so we want to ditch the -2, and ditch the index 0, cuz it will always make the sum smaller
+     * [1,2] max -2
+     * [1,3] max 4    ditch -2 and ditch index 2
+     *
+     * so..............
+     *
+     *  Max(A[]) = Result[i - 1] > 0      Max( A [i])  or Max(A[i]) + Result[i - 1]
+     *
+     */
+    public static int maxSubArray(int[] nums) {
+
+        for(int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] < 0) {
+                nums[i] = nums[i];
+            } else {
+                nums[i] += nums[i - 1];
+            }
         }
-        
+        int max = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+            if (nums[i] > max) max = nums[i];
+        }
+
         return max;
     }
 
