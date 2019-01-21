@@ -32,38 +32,38 @@ public class PaintFence {
 	/**
 	 * k = 3
 	 *
-	 * n = 0    o
+	 * n = 0    0
 	 *
-	 * n = 1    c1	c2	c3											k ways
+	 * n = 1    k ways      c1 c2 c3
 	 *
-	 * n = 2    same color	c1	c2	c3
-	 * 						c1	c2	c3								k ways    ----> same
-	 *																								|-----> k * k ways
-	 * 			diff  color	c1				c2			c3
-	 * 		    			(c2, c3)		(c1, c3)	(c1, c2)	k * (k - 1) ways ----> diff
+	 * n = 2    same color  c1 c2 c3
+	 * 						c1 c2 c3
+	 * 			k ways  - >>>>  as f(same)
 	 *
+	 * 			diff color	c1       c2       c3
+	 * 		    			(c2, c3) (c1, c3) (c1, c2)
+	 *           k * (k - 1) ->>>>  as f(diff)
+	 * n = 2     total  k * k ways
 	 *
 	 *    		based on n = 2 same color
-	 * n = 3	c1		c2		c3
-	 * 			c1		c2		c3
-	 * 		    c3,c2	c1,c3	c2,c1								same * (k - 1) ways
+	 * n = 3	c1    c2    c3
+	 * 			c1    c2    c3
+	 *          c3,c2 c1,c3 c2,c1
+	 *          f(same) * (k - 1) ways
 	 *
+	 * 		    based on n = 2 diff color
+	 *          c1         c2          c3
+	 *          (c2, c3)   (c1, c3)    (c1, c2)
+	 * 			(c1,c2,c3)	(c1,c2,c3) (c1,c2,c3)
+	 *          f(diff)*(k)
 	 *
-	 * 		    based on n = 3 diff color
-	 * 			 c1				 c2				 c3
-	 * 		   	(c2, c3)		(c1, c3)		(c1, c2)
-	 * 			(c1, c2 , c3)	(c1, c2 , c3)	(c1, c2 , c3)		diff*(k)
-	 *
-	 * 	n = 3    -> same * (k - 1) ways + diff*(k) =  k * (k - 1) + k * (k - 1) * k
-	 * 											   =  ( k - 1 ) + (k  	+  k * k)
-	 * 											   				   i -1	  i - 2
-	 *
-	 *
+	 * 	n = 3
+	 * 	   f(same) * (k - 1) + f(diff)*(k)
+	 * 	=  k * (k - 1) + k * (k - 1) * k
+	 * 	=  ( k - 1 ) + (k  	+  k * k)
+	 *                 i -1    i - 2
 	 *
 	 * 	num_ways(i) = num_ways_diff(i) + num_ways_same(i)
-	 *
-	 *
-	 *
 	 */
 	public int numWays(int n, int k) {
 

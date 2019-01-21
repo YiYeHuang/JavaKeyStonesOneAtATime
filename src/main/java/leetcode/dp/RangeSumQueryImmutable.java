@@ -42,8 +42,8 @@ public class RangeSumQueryImmutable {
 	 *
 	 *  (0, 5) can get result at once
 	 *  (3, 5)  = i4 + i5 + i6
-	 *  		= i0 + i1 + i2 + i3 + i4 + i5 - (i0 + i1 + i2)
-	 *  		= -3 - (1) = -4
+	 *          = i0 + i1 + i2 + i3 + i4 + i5 - (i0 + i1 + i2)
+	 *          = -3 - (1) = -4
 	 *
 	 */
 	int[] result;
