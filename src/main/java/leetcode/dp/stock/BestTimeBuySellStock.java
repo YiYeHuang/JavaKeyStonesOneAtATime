@@ -1,4 +1,4 @@
-package leetcode.dp;
+package leetcode.dp.stock;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
@@ -32,6 +32,10 @@ public class BestTimeBuySellStock
 {
     /**
      * Dynamically changing new low price and profit
+     *
+     * Local min = price[0], update min
+     *       then
+     *       profit = current - min,   update profit
      */
 
     public static int maxProfit(int[] prices)
@@ -48,11 +52,12 @@ public class BestTimeBuySellStock
         {
             if (prices[i] < min)
             {
-                
+                // update min
                 min = prices[i];
             }
             else
             {
+                // update profit
                 if (prices[i] - min > profit)
                 {
                     profit = prices[i] - min;
