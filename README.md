@@ -1,6 +1,5 @@
 ## Notes of fundamental knowledges, somehow I wrote them all in Java
 
-### Recent updates
 - [Algorithm](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/algorithm)
     - [binary search template](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/blob/develop/src/main/java/algorithm/search/BinarySearch.java)
     - [Sorting](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/algorithm/sorting)
