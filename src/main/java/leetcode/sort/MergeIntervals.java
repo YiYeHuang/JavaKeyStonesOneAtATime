@@ -58,13 +58,14 @@ public class MergeIntervals {
 		for (int i = 1; i < intervals.size(); i++) {
 			Interval current = intervals.get(i);
 			if (current.start <= currentStart.end) {
+				// compare tow end time and update
 				currentStart.end = Math.max(current.end, currentStart.end);
 			} else {
 				result.add(currentStart);
 				currentStart = current;
 			}
 		}
-		// make up
+		// special case the current hasn't being added to the list yet
 		if (!result.contains(currentStart))
 			result.add(currentStart);
 
