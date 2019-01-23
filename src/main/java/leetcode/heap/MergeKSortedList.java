@@ -51,7 +51,7 @@ public class MergeKSortedList {
 
 		// dummy head
 		ListNode dummy = new ListNode(0);
-		ListNode tail=dummy;
+		ListNode walker=dummy;
 
 		// push all current node into queue, get sorted, from min -> max
 		for (ListNode node:lists) {
@@ -62,11 +62,11 @@ public class MergeKSortedList {
 		// min heap will always return next min,
 		// while we keep polling node from queue, push next to queue as well for sorting
 		while(!queue.isEmpty()) {
-			tail.next = queue.poll();
-			tail=tail.next;
+			walker.next = queue.poll();
+			walker=walker.next;
 
-			if (tail.next != null) {
-				queue.add(tail.next);
+			if (walker.next != null) {
+				queue.add(walker.next);
 			}
 		}
 

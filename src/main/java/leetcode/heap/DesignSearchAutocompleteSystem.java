@@ -103,7 +103,7 @@ public class DesignSearchAutocompleteSystem {
 		}
 	}
 
-	class Pair {
+	private class Pair {
 		String word;
 		int count;
 		public Pair(String w, int c) {
@@ -131,11 +131,11 @@ public class DesignSearchAutocompleteSystem {
 		prefixCache = "";
 
 		for (int i = 0; i < sentences.length; i++) {
-			build(sentences[i], times[i]);
+			add(sentences[i], times[i]);
 		}
 	}
 
-	private void build(String s, int count) {
+	private void add(String s, int count) {
 		AutoCompTrieNode curr = root;
 		for (char c : s.toCharArray()) {
 			AutoCompTrieNode next = curr.children.get(c);
@@ -154,7 +154,7 @@ public class DesignSearchAutocompleteSystem {
 		// check # first: add current sentences to the trie, reset to the root and return empty list
 		if (c == '#') {
 			// occur ++
-			build(prefixCache, 1);
+			add(prefixCache, 1);
 			prefixCache = "";
 			return new ArrayList<>();
 		}
@@ -175,20 +175,20 @@ public class DesignSearchAutocompleteSystem {
 		}
 
 		// Sort from large to small
-		PriorityQueue<Pair> heap = new PriorityQueue<>((a, b) -> (
+		PriorityQueue<Pair> maxheap = new PriorityQueue<>((a, b) -> (
 				a.count == b.count ?
 						a.word.compareTo(b.word) :
 						b.count - a.count));
 
 		// push all count to
 		for (String str : curr.counts.keySet()) {
-			heap.add(new Pair(str, curr.counts.get(str)));
+			maxheap.add(new Pair(str, curr.counts.get(str)));
 		}
 
 		// build result
 		List<String> result = new ArrayList<String>();
-		for (int i = 0; i < 3 && !heap.isEmpty(); i++) {
-			result.add(heap.poll().word);
+		for (int i = 0; i < 3 && !maxheap.isEmpty(); i++) {
+			result.add(maxheap.poll().word);
 		}
 		return result;
 	}
