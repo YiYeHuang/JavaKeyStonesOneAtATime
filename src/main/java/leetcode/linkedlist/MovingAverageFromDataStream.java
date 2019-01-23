@@ -1,9 +1,19 @@
-package leetcode.heap;
+package leetcode.linkedlist;
+
+import leetcode.tag.company.Amazon;
+import leetcode.tag.company.Apple;
+import leetcode.tag.company.Facebook;
+import leetcode.tag.company.Google;
+import leetcode.tag.company.LinkedIn;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.LinkedListTag;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+  346 Moving Average from Data Stream
+
  * Given a stream of integers and a window size, calculate the moving average of
  * all integers in the sliding window.
  * 
@@ -14,6 +24,13 @@ import java.util.Queue;
  * m.next(3) = (1 + 10 + 3) / 3 
  * m.next(5) = (10 + 3 + 5) / 3
  */
+
+@Facebook
+@Amazon
+@Google
+
+@Easy
+@LinkedListTag
 public class MovingAverageFromDataStream
 {
     Queue<Integer> cache = new LinkedList<Integer>();

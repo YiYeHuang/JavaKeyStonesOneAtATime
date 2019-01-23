@@ -44,8 +44,8 @@ public class SuperUglyNumber {
 		for (int i = 1; i < n; i++) {
 			ugly[i] = pq.peek().val;
 			while (pq.peek().val == ugly[i]) {
-				Num nxt = pq.poll();
-				pq.add(new Num(nxt.p * ugly[nxt.idx], nxt.idx + 1, nxt.p));
+				Num next = pq.poll();
+				pq.add(new Num(next.prime * ugly[next.idx], next.idx + 1, next.prime));
 			}
 		}
 
@@ -55,12 +55,12 @@ public class SuperUglyNumber {
 	private static class Num implements Comparable<Num> {
 		int val;
 		int idx;
-		int p;
+		int prime;
 
 		public Num(int val, int idx, int p) {
 			this.val = val;
 			this.idx = idx;
-			this.p = p;
+			this.prime = p;
 		}
 
 		@Override
@@ -70,7 +70,7 @@ public class SuperUglyNumber {
 
 		@Override
 		public String toString() {
-			return "[" + val + " " + idx + " " + p + "]";
+			return "[" + val + " " + idx + " " + prime + "]";
  		}
 	}
 

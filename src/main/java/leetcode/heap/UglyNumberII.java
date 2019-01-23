@@ -46,6 +46,7 @@ public class UglyNumberII {
 		int count3 = 0;
 		int count5 = 0;
 
+		// also cache the result of 2, 3, 5 factor
 		int factor2 = 2;
 		int factor3 = 3;
 		int factor5 = 5;
