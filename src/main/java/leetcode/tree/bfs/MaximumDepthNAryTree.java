@@ -1,4 +1,4 @@
-package leetcode.tree.dfsANDbfs;
+package leetcode.tree.bfs;
 
 import baseObj.Node;
 import leetcode.tag.level.Easy;

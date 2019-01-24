@@ -21,8 +21,6 @@ import java.util.List;
  5   6
 
 
-
-
  Return its postorder traversal as: [5,6,3,2,4,1].
 
  Note:

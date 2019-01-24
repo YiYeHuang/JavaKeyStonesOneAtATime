@@ -1,4 +1,4 @@
-package leetcode.tree.dfsANDbfs;
+package leetcode.tree.bfs;
 
 import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;

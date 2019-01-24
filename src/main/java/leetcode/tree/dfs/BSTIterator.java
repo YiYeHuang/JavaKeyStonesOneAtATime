@@ -1,4 +1,4 @@
-package leetcode.tree.dfsANDbfs;
+package leetcode.tree.dfs;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Amazon;

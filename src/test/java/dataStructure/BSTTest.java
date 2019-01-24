@@ -1,6 +1,7 @@
 package dataStructure;
 
-import dataStructure.bst.BinarySearchTree;
+import dataStructure.bst.impl.BinarySearchTree;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

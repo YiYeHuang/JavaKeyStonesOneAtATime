@@ -1,4 +1,4 @@
-package leetcode.tree.levelorder;
+package leetcode.tree.bfs;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Bloomberg;
