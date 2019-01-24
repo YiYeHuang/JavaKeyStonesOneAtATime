@@ -1,4 +1,4 @@
-package leetcode.dfsANDbfs;
+package leetcode.tree.dfsANDbfs;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Facebook;
