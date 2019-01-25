@@ -1,5 +1,12 @@
 ## Heap LeetCode Notes 全是骚题
 
+
+- Heap keeps max/min items on the top, used for problems that needs dynamic sorting
+- O(logn) or add, offer operation, for heapify proess
+- O(n) or remove
+- O(1) for poll and peek.
+
+
 ## Basic trick and template:
 
 ### Min Heap: priorityQueue is by default min heap

@@ -1,6 +1,7 @@
-package leetcode.tree;
+package leetcode.tree.dfs;
 
 import baseObj.TreeNode;
+import leetcode.tag.type.StackTag;
 import leetcode.tag.type.Tree;
 
 import java.util.Stack;
@@ -31,9 +32,15 @@ import java.util.Stack;
  Explanation: The input is: [5,1,4,null,null,3,6]. The root node's value
  is 5 but its right child's value is 4.
  */
-public class ValidateBST {
-	public boolean isValidBST(TreeNode root) {
 
+@Tree
+@StackTag
+public class ValidateBST {
+
+	/**
+	 * basic DFS stack template.  Keep the previous node cache
+	 */
+	public boolean isValidBST(TreeNode root) {
 		if (root == null) return true;
 		Stack<TreeNode> stack = new Stack<>();
 		TreeNode prevousCache = null;
