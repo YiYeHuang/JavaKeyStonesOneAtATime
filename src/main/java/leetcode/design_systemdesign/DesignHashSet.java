@@ -1,6 +1,4 @@
-package leetcode.design;
-
-import leetcode.tag.type.ArrayTag;
+package leetcode.design_systemdesign;
 
 import java.util.Arrays;
 
@@ -17,7 +15,7 @@ import java.util.Arrays;
  Share
  Design a HashSet without using any built-in hash table libraries.
 
- To be specific, your design should include these functions:
+ To be specific, your design_systemdesign should include these functions:
 
  add(value): Insert a value into the HashSet.
  contains(value) : Return whether the value exists in the HashSet or not.

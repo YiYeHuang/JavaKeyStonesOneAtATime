@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign.searchAutocompleteSystem;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Google;

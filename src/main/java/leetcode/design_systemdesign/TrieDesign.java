@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import baseObj.TrieNode;
 import leetcode.tag.company.Amazon;

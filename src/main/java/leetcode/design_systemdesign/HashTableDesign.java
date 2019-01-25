@@ -1,17 +1,16 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import leetcode.tag.company.Apple;
 import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.HashTableTag;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
  * Design a HashMap without using any built-in hash table libraries.
  *
- * To be specific, your design should include these functions:
+ * To be specific, your design_systemdesign should include these functions:
  *
  * put(key, value) : Insert a (key, value) pair into the HashMap. If the value already exists in the HashMap, update the value.
  * get(key): Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key.

@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import baseObj.TrieNode;
 import leetcode.tag.company.Amazon;
@@ -13,7 +13,7 @@ import leetcode.tag.type.Trie;
 
 /**
 
- 211. Add and Search Word - Data structure design
+ 211. Add and Search Word - Data structure design_systemdesign
 
  Design a data structure that supports the following two operations:
 

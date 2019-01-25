@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import leetcode.tag.company.Facebook;
 import leetcode.tag.company.LinkedIn;

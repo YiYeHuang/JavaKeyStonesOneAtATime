@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import java.util.HashMap;
 

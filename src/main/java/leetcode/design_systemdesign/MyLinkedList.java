@@ -1,4 +1,4 @@
-package leetcode.design;
+package leetcode.design_systemdesign;
 
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
