@@ -1,18 +1,12 @@
 package leetcode.string.Reader4;
 
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.StringTag;
+
 /**
  * 157. Read N Characters Given Read4
- Easy
 
- 136
-
- 1341
-
- Favorite
-
- Share
  Given a file and assume that you can only read the file using a given method read4, implement a method to read n characters.
-
 
 
  Method read4:
@@ -40,7 +34,8 @@ package leetcode.string.Reader4;
 
  Method read:
 
- By using the read4 method, implement the method read that reads n characters from the file and store it in the buffer array buf. Consider that you cannot manipulate the file directly.
+ By using the read4 method, implement the method read that reads n characters from the file and store it in the buffer array buf.
+ Consider that you cannot manipulate the file directly.
 
  The return value is the number of actual characters read.
 
@@ -56,17 +51,21 @@ package leetcode.string.Reader4;
 
  Input: file = "abc", n = 4
  Output: 3
- Explanation: After calling your read method, buf should contain "abc". We read a total of 3 characters from the file, so return 3. Note that "abc" is the file's content, not buf. buf is the destination buffer that you will have to write the results to.
+ Explanation: After calling your read method, buf should contain "abc". We read a total of 3 characters from the file,
+ so return 3. Note that "abc" is the file's content, not buf.
+ buf is the destination buffer that you will have to write the results to.
  Example 2:
 
  Input: file = "abcde", n = 5
  Output: 5
- Explanation: After calling your read method, buf should contain "abcde". We read a total of 5 characters from the file, so return 5.
+ Explanation: After calling your read method, buf should contain "abcde". W
+ e read a total of 5 characters from the file, so return 5.
  Example 3:
 
  Input: file = "abcdABCD1234", n = 12
  Output: 12
- Explanation: After calling your read method, buf should contain "abcdABCD1234". We read a total of 12 characters from the file, so return 12.
+ Explanation: After calling your read method, buf should contain "abcdABCD1234".
+ We read a total of 12 characters from the file, so return 12.
  Example 4:
 
  Input: file = "leetcode", n = 5
@@ -80,15 +79,40 @@ package leetcode.string.Reader4;
  The read function will only be called once for each test case.
  You may assume the destination buffer array, buf, is guaranteed to have enough space for storing n characters.
  */
+
+@Easy
+@StringTag
 public class ReadNCharactersGivenRead4 extends Reader4 {
 
 	/**
 	 * @param buf Destination buffer
 	 * @param n   Number of characters to read
 	 * @return    The number of actual characters read
+	 *
+	 *
 	 */
 	public int read(char[] buf, int n) {
-		char[] b4 = new char[];
+		char[] temp = new char[4];  //Store our read chars from Read4
+		int total = 0;
 
+		while(total < n){
+			/*Read and store characters in Temp. Count will store total chars read from Read4*/
+			int count = read4(temp);
+
+            /*Even if we read 4 chars from Read4, count can be larger than the remain of the n
+            we don't want to exceed N and only want to read chars till n.*/
+			count = Math.min(count, n-total);
+
+			//Transfer all the characters read from Read4 to our buffer
+			for(int i = 0;  i < count; i++){
+				buf[total] = temp[i];
+				total++;
+			}
+
+			//done. We can't read more characters. all data transferred
+			if(count < 4) break;
+		}
+
+		return total;
 	}
 }
