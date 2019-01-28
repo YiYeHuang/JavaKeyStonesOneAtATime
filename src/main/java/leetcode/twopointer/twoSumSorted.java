@@ -24,7 +24,6 @@ import leetcode.tag.type.TwoPointer;
 @Amazon
 
 @Easy
-@BinarySearch
 @ArrayTag
 @TwoPointer
 public class twoSumSorted

@@ -58,22 +58,23 @@ public class TaskScheduler {
 
         // Sort the frequency and put in queue
         // Larger frequency first, if same alphabetical order
-        PriorityQueue<Map.Entry<Character, Integer>> minHeap = new PriorityQueue<>(
+        PriorityQueue<Map.Entry<Character, Integer>> maxHeap = new PriorityQueue<>(
                 (a,b) -> a.getValue() != b.getValue() ? b.getValue() - a.getValue() : a.getKey() - b.getKey()
         );
 
         // add the first one
-        minHeap.addAll(map.entrySet());
+        maxHeap.addAll(map.entrySet());
 
         int count = 0;
-        while (!minHeap.isEmpty()) {
+        while (!maxHeap.isEmpty()) {
             // this is the cpu task interval
+            // A B idle    A B idle this case n is 2, the group length should be 3
             int k = n + 1;
 
             List<Map.Entry> templist = new ArrayList<>();
-            while (k > 0 && !minHeap.isEmpty()) {
+            while (k > 0 && !maxHeap.isEmpty()) {
                 // get the current most frequent task
-                Map.Entry<Character, Integer> top = minHeap.poll();
+                Map.Entry<Character, Integer> top = maxHeap.poll();
                 // simulate that the task is executed
                 top.setValue(top.getValue() - 1);
                 templist.add(top);
@@ -83,11 +84,12 @@ public class TaskScheduler {
 
             for (Map.Entry<Character, Integer> e : templist) {
                 // collect task to add back to queue with new frequency
-                if (e.getValue() > 0) minHeap.add(e);
+                if (e.getValue() > 0) maxHeap.add(e);
             }
 
-            if (minHeap.isEmpty()) break;
-            count = count + k;
+            if (maxHeap.isEmpty()) break;
+            // Plus the idle task number
+            count += k;
         }
 
         return count;
