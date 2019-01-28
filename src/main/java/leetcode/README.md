@@ -2,7 +2,7 @@
 - [bfs and dfs](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/dfsANDbfs)
 - [binary search](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/binarySearch)
 - [binary tree](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/tree)
-- [design](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/design)
+- [design & system design](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/design)
 - [dp](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/dp)
 - [hashtable](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/hashtable)
 - [heap](https://github.com/YiYeHuang/JavaKeyStonesOneAtATime/tree/develop/src/main/java/leetcode/heap)
