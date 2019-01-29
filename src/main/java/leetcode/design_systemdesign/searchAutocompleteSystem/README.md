@@ -36,10 +36,10 @@ should use consistent hashing
                                    |
                                    |----API server 4
 
-API server 1 handles range A ~ F
-API server 2 handles range G ~ M
-API server 3 handles range N ~ T
-API server 4 handles range U ~ Z
+API server 1 handles range A ~ D
+API server 4 handles range E ~ H
+API server 2 handles range I ~ P
+API server 3 handles range Q ~ Z
 
 ### Store part
 - it is nice that the result would be persist forever, but, as this is a helper service

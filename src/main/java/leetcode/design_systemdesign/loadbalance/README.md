@@ -24,3 +24,8 @@ Distributed the new request to the server currently has the least connection and
 
 ### Random
 Distributed the new request to a random server
+
+### Consistent Hashing
+For a safe scaling the avoid mod function that causing cascading failure
+- consistent hashing ring: implementation example cassandra
+- when a new server is added, only affecting one near by server
