@@ -16,6 +16,7 @@ import leetcode.tag.type.HashTableTag;
  *
  * Input: "code"
  * Output: false
+ *
  * Example 2:
  *
  * Input: "aab"
