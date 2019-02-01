@@ -73,6 +73,7 @@ public class FindBottomLeftTreeValue {
                     queue.offer(root.right);
                 }
 
+                // pushes left later, so the left side is the last left in queue
                 if (root.left != null) {
                     queue.offer(root.left);
                 }

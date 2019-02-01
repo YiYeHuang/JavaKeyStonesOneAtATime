@@ -67,7 +67,7 @@ public class combinationSum {
 
 			temp.add(candidates[i]);
 			// move position up 1
-			backtrack(result, temp, candidates, remains - candidates[i],  +i); // not increment to i + 1 because reuse
+			backtrack(result, temp, candidates, remains - candidates[i],  i); // not increment to i + 1 because reuse
 			temp.remove(temp.size() - 1);
 		}
 	}

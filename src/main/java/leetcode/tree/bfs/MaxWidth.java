@@ -122,6 +122,7 @@ public class MaxWidth {
 					end = map.get(node);
 				}
 
+				// always building the next layer
 				if(node.left != null){
 					map.put(node.left, map.get(node) * 2);
 					queue.offer(node.left);
