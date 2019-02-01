@@ -48,23 +48,3 @@
         compute(ans,curr.right,level+1);
     }
 ```
-
-### In order traversal recursive template. With help of global variable
-```java
-
-	public static List<Integer> inorderTraversalRec(TreeNode root) {
-		List<Integer> result = new ArrayList<>();
-		load(root, result);
-		return result;
-	}
-	
-	private static void load(TreeNode node, List<Integer> result) {
-		if (node == null) return;
-
-		load(node.left, result);
-		/* computing logic here */
-		result.add(node.value);
-		load(node.right, result);
-	}
-```
-
