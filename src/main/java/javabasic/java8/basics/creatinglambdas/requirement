@@ -1,0 +1,12 @@
+Creating a Lambda Expression
+----------------------------
+Business Requirement: Creating a formal greeting for visitors.
+
+Given a vistor, the program should return an output formally greeting the visitor.
+
+Example: Input/Output 
+		 "Harry"/"Hello, Harry"
+		 "Miss Pingu"/"Hello, Miss Pingu"
+		 
+		 Exception/Unhappy flow:
+		 ""/"Did you forget something?"
