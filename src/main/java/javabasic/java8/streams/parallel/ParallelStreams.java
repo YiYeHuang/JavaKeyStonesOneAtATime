@@ -39,7 +39,8 @@ public class ParallelStreams {
 						Thread.currentThread().getName()))
 				.map(t -> t.getQuantity())
 				.peek(t -> System.out.printf("(Mapper Thread Name=%s)\n",
-						Thread.currentThread().getName())).reduce(Integer::sum);
+						Thread.currentThread().getName()))
+				.reduce(Integer::sum);
 
 		System.out.println(sumOfTrades.get());
 	}

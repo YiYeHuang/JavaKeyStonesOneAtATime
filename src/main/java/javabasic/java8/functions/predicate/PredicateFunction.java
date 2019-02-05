@@ -2,7 +2,7 @@ package javabasic.java8.functions.predicate;
 
 import java.util.function.Predicate;
 
-// java.util.function.Predicate functional interface
+// Function for checking a boolean condition, chained with or, and, test
 public class PredicateFunction {
 
 	Predicate<Employee> bonusLambda = (emp)-> emp.getRatings()>10?true:false;

@@ -9,7 +9,7 @@ import javabasic.java8.domain.Trade;
 import javabasic.java8.util.TradeUtil;
 
 /*Function functional interface */
-
+// input with an output
 public class FunctionFunctionalInterface {
 	List<Trade> trades = TradeUtil.createTrades();
 	
@@ -33,6 +33,7 @@ public class FunctionFunctionalInterface {
 				.findFirst()
 				.get();
 	};
+
 	private void testFunction(String movieName) {
 		Movie movie = createMovieFunction.apply(movieName);
 		System.out.println("Movie is: "+movie);

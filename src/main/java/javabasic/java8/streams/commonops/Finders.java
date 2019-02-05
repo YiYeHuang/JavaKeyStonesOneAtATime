@@ -27,12 +27,14 @@ public class Finders {
 			System.out.println("First trade: "+anyTrade.get());
 		
 	}
-	
+
+	// at least one match
 	private void testAnyMatch() {
 		boolean rottenTrade = trades.stream().anyMatch(t -> t.getStatus().equals("ROTTEN"));
 		System.out.println("Rotten trade?:"+rottenTrade);
 	}
-	
+
+	// all match
 	private void testAllMatch() {
 		boolean ibmTrade = trades.stream()
 				.allMatch(t -> t.getInstrument().equals("IBM"));

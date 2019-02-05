@@ -27,8 +27,7 @@ public class PerformanceMeasurement {
 		Instant start = Instant.now();
 		// Parallel code
 		// Sequential mode
-				trades.stream()
-				.parallel()
+				trades.parallelStream()
 				.map(Trade::getQuantity)
 				.reduce(Integer::sum);
 		

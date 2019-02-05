@@ -12,11 +12,12 @@ public class StreamsBasics {
 	// Collecting big trades using Streams
 	private void findLargeTradesUsingStreams(List<Trade> trades) {
 		
-		List<Trade> largeTrades = trades.parallelStream()
+		List<Trade> largeTrades = trades.stream()
 			.filter(trade ->trade.getQuantity() > 10000)
 			.filter(Trade::isCancelledTrade)
 			.limit(10)
 			.collect(Collectors.toList());
+
 		
 		System.out.println("Large trades: "+largeTrades);
 	}

@@ -44,11 +44,11 @@ public class CreatingStreams {
 	
 	private void testGenerateIterateStreams() {
 		Stream<Double> randomStream = Stream.generate(Math::random);
-//		randomStream.forEach(System.out::println);
+		randomStream.forEach(System.out::println);
 		
 		//iterate
 		Stream<Integer> wholeNumbers = Stream.iterate(1,i -> i+1);
-//		wholeNumbers.forEach(System.out::println);
+		wholeNumbers.forEach(System.out::println);
 		
 	}
 	public static void main(String[] args) {

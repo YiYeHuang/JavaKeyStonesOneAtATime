@@ -15,6 +15,7 @@ public class ComposingPredicates {
 		Predicate<Trade> newTrade = t -> t.getStatus().equals("NEW");
 		Predicate<Trade> cancelledTrade = t -> t.getStatus().equals("CANCEL");
 		Predicate<Trade> newOrCancelledTrade = newTrade.or(cancelledTrade);
+
 		/* LOGICAL AND and OR */
 		Predicate<Trade> bigTrade = t -> t.isBigTrade();
 		

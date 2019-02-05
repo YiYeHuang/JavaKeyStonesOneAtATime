@@ -4,7 +4,7 @@ import java.util.function.Consumer;
 import javabasic.java8.domain.Movie;
 
 /* Consumer Functional Interface */
-
+// do things and no return, chain with and then to do multiple tasks
 public class ConsumerFunctionalInterface {
 	// Consumer for a movie print info
 	Consumer<Movie> printInfo = m -> System.out.println("Printing out movie info: "+m);

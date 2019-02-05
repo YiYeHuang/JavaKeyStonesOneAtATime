@@ -6,6 +6,7 @@ import javabasic.java8.domain.Employee;
 import javabasic.java8.domain.Manager;
 
 // TWO argument function: BiPredicate
+// Predict with two parameter
 public class BiPredicateFunction {
 
 	BiPredicate<Employee, Manager> empManagerPredicate = (emp, manager) -> emp

@@ -7,6 +7,7 @@ import javabasic.java8.domain.Employee;
 import javabasic.java8.domain.Manager;
 
 // Composing Function functions
+// chain with andThen and compose, match input and return type
 public class ComposingFunctions {
 	
 	Function<Employee, Manager> managerFinder = (emp) -> getManager(emp);

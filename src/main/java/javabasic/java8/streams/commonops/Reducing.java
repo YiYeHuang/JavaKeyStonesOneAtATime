@@ -22,7 +22,7 @@ public class Reducing {
 	
 	private void schoolStaff() {
 		List<Integer> ints = Arrays.asList(11, 13, 12, 15);
-		int staff = ints.stream().reduce(10, (i,j) -> i+j);
+		int staff = ints.stream().reduce(9, (i,j) -> i+j);
 		System.out.println("Total staff: "+staff);
 		
 	}

@@ -7,10 +7,11 @@ import javabasic.java8.domain.Trade;
 import javabasic.java8.util.TradeUtil;
 
 /* Supplier Functional Interface */
-
+// no input, output data
 public class SupplierFunctionalInterface {
 	Supplier<String[]> fruitSupplier = () -> new String[]{"Apple", "Orange"};
 
+	// could used to create date steam
 	Supplier<List<Trade>> tradeSupplier = () -> TradeUtil.createTrades();
 	private void testSupplier() {
 		String[] fruits = fruitSupplier.get();
@@ -24,6 +25,7 @@ public class SupplierFunctionalInterface {
 		}
 		
 	}
+
 	public static void main(String[] args) {
 		new SupplierFunctionalInterface().testSupplier();
 	}
