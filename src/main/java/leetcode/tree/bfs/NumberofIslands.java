@@ -67,6 +67,7 @@ public class NumberofIslands
             return;
 
         grid[i][j] = '0';
+        // clean until it hits 0 or boundary
         clearRestOfLand(grid, i + 1, j);
         clearRestOfLand(grid, i - 1, j);
         clearRestOfLand(grid, i, j + 1);

@@ -26,8 +26,8 @@ import java.util.Stack;
     5
    / \
   1   4
- /     \
- 3      6
+     / \
+    3   6
  Output: false
  Explanation: The input is: [5,1,4,null,null,3,6]. The root node's value
  is 5 but its right child's value is 4.
@@ -58,5 +58,16 @@ public class ValidateBST {
 			root = root.right;
 		}
 		return true;
+	}
+
+	// recursively iterating over the tree while defining interval <minVal, maxVal> for each node which value must fit in.
+	public boolean isValidBSTRec(TreeNode root) {
+		return isValidBSTre(root, Long.MIN_VALUE, Long.MAX_VALUE);
+	}
+
+	public boolean isValidBSTre(TreeNode root, long minVal, long maxVal) {
+		if (root == null) return true;
+		if (root.value >= maxVal || root.value <= minVal) return false;
+		return isValidBSTre(root.left, minVal, root.value) && isValidBSTre(root.right, root.value, maxVal);
 	}
 }

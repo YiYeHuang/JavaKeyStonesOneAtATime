@@ -9,6 +9,7 @@ import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A linked list is given such that each node contains an additional random
@@ -30,32 +31,26 @@ public class CopyListWithRandomPointer
 {
     public static RandomListNode copyRandomList(RandomListNode head)
     {
-        if (head == null)
-        {
-            return head;
-        }
-        RandomListNode result = new RandomListNode(head.label);
-        HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
-        map.put(head, result);
+        if (head == null) return null;
 
-        // Deep Copy all nodes to Map, O(n)
-        RandomListNode ptr = head.next;
-        while (null != ptr)
-        {
-            map.put(ptr, new RandomListNode(ptr.label));
-            ptr = ptr.next;
+        Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+
+        // loop 1. copy all the nodes
+        RandomListNode node = head;
+        while (node != null) {
+            map.put(node, new RandomListNode(node.label));
+            node = node.next;
         }
 
-        RandomListNode ptr2 = head;
-        
-        while(null != ptr2)
-        {
-            RandomListNode current = map.get(ptr2);
-            current.next = map.get(ptr2.next);
-            current.random = map.get(ptr2.random);
+        // loop 2. assign next and random pointers
+        node = head;
+        while (node != null) {
+            map.get(node).next = map.get(node.next);
+            map.get(node).random = map.get(node.random);
+            node = node.next;
         }
 
-        return result;
+        return map.get(head);
     }
 }
 
