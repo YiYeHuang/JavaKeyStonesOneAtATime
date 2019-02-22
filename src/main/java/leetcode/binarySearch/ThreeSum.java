@@ -54,8 +54,11 @@ public class ThreeSum {
         Arrays.sort(nums);
         List<List<Integer>> res = new LinkedList<>();
         for (int i = 0; i < nums.length-2; i++) {
+            // handle error case with here
             if (i == 0 || (i > 0 && nums[i] != nums[i-1])) {
-                int lo = i+1, hi = nums.length-1, sum = 0 - nums[i];
+                int lo = i+1;
+                int hi = nums.length-1
+                int sum = 0 - nums[i];
                 while (lo < hi) {
                     if (nums[lo] + nums[hi] == sum) {
                         res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
