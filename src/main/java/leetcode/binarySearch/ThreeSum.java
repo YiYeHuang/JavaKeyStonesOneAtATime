@@ -57,7 +57,7 @@ public class ThreeSum {
             // handle error case with here
             if (i == 0 || (i > 0 && nums[i] != nums[i-1])) {
                 int lo = i+1;
-                int hi = nums.length-1
+                int hi = nums.length-1;
                 int sum = 0 - nums[i];
                 while (lo < hi) {
                     if (nums[lo] + nums[hi] == sum) {
