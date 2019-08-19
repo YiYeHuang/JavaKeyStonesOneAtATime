@@ -95,16 +95,18 @@ public class FruitIntoBaskets {
     }
 
     public static int totalFruit2(int[] tree) {
-        Map<Integer, Integer> count = new HashMap<Integer, Integer>();
-        int res = 0, i = 0;
-        for (int j = 0; j < tree.length; ++j) {
-            count.put(tree[j], count.getOrDefault(tree[j], 0) + 1);
+        Map<Integer, Integer> count = new HashMap<>();
+        int res = 0, head = 0;
+        for (int end = 0; end < tree.length; ++end) {
+            count.put(tree[end], count.getOrDefault(tree[end], 0) + 1);
             while (count.size() > 2) {
-                count.put(tree[i], count.get(tree[i]) - 1);
-                if (count.get(tree[i]) == 0) count.remove(tree[i]);
-                i++;
+                count.put(tree[head], count.get(tree[head]) - 1);
+                if (count.get(tree[head]) == 0) {
+                    count.remove(tree[head]);
+                }
+                head++;
             }
-            res = Math.max(res, j - i + 1);
+            res = Math.max(res, end - head + 1);
         }
         return res;
     }

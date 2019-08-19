@@ -1,5 +1,9 @@
 package leetcode.string;
 
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.DP;
+import leetcode.tag.type.HashTableTag;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +21,10 @@ import java.util.Set;
  * UPDATE (2017/1/4): The wordDict parameter had been changed to a list of strings (instead of a set
  * of strings). Please reload the code definition to get the latest changes.
  */
+
+@HashTableTag
+@DP
+@Medium
 public class WordBreak
 {
     public static boolean wordBreak(String s, List<String> wordDict)
