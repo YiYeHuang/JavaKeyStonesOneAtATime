@@ -10,15 +10,7 @@ import leetcode.tag.type.Heap;
 
 /*
 451. Sort Characters By Frequency
-Medium
 
-805
-
-73
-
-Favorite
-
-Share
 Given a string, sort it in decreasing order based on the frequency of characters.
 
 Example 1:
