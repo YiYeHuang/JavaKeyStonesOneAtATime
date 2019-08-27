@@ -1,8 +1,7 @@
 package javabasic.concurrency.queue.syslogsimulation.ringbufferimpl;
 
-import javabasic.concurrency.queue.syslogsimulation.SyslogMessage;
-
 import com.lmax.disruptor.EventFactory;
+import javabasic.concurrency.queue.syslogsimulation.SyslogMessage;
 
 public class MessageFactory implements EventFactory {
 
