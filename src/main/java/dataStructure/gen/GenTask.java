@@ -28,7 +28,7 @@ public class GenTask implements Callable<Long> {
 
     Duration duration = Duration.between(start, Instant.now());
     System.out.print("*** Thread " + id + " takes " + result + " draw to finish in "
-        + duration.toNanos() + " nano sec --- Luck draw: ");
+        + duration.toMinutes() + " minutes --- Luck draw: ");
     int[] lucky = rand();
     for (int i = 0; i < 7; i ++) {
 			System.out.print(lucky[i] + " ");
