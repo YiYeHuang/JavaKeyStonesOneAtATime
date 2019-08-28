@@ -16,7 +16,7 @@ public class Generate {
 
   public static void main(String[] args) {
 
-    int size = 1;
+    int size = 3362;
     int[][] fullHistory = new int[size][7];
     try {
       fullHistory = load(size);
