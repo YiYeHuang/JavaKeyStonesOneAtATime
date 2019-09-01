@@ -1,4 +1,4 @@
-package leetcode.binarySearch;
+package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Facebook;
