@@ -1,4 +1,4 @@
-package leetcode.tree.bfs;
+package leetcode.dfs;
 
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Facebook;

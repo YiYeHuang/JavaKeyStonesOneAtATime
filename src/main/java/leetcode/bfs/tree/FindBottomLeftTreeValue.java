@@ -1,4 +1,4 @@
-package leetcode.tree.bfs;
+package leetcode.bfs.tree;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Bloomberg;

@@ -1,4 +1,4 @@
-package leetcode.tree.dfs;
+package leetcode.dfs.tree;
 
 import algorithm.sorting.BSTUtil;
 import baseObj.TreeNode;

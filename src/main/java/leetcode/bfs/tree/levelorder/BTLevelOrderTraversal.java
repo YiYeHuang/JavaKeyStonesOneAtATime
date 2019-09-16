@@ -1,4 +1,4 @@
-package leetcode.tree.bfs.levelorder;
+package leetcode.bfs.tree.levelorder;
 
 import algorithm.sorting.BSTUtil;
 import baseObj.TreeNode;

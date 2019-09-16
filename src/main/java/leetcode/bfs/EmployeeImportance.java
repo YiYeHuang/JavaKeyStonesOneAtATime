@@ -1,4 +1,4 @@
-package leetcode.tree.bfs;
+package leetcode.bfs;
 
 import baseObj.Employee;
 import leetcode.tag.company.Amazon;

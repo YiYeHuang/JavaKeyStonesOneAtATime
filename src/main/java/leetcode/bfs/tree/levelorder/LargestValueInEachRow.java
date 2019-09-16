@@ -1,4 +1,4 @@
-package leetcode.tree.bfs.levelorder;
+package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.LinkedIn;

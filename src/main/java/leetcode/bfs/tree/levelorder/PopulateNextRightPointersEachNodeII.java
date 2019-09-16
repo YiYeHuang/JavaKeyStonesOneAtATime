@@ -1,4 +1,4 @@
-package leetcode.tree.bfs.levelorder;
+package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeLinkNode;
 import leetcode.tag.level.Medium;

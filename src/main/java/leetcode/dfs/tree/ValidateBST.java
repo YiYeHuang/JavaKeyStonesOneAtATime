@@ -1,4 +1,4 @@
-package leetcode.tree.dfs;
+package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
 import leetcode.tag.type.StackTag;

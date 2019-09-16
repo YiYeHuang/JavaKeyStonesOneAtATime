@@ -1,4 +1,4 @@
-package leetcode.tree.dfs;
+package leetcode.dfs;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Google;
