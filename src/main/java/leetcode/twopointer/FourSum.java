@@ -5,7 +5,6 @@ import leetcode.tag.type.TwoPointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /*
@@ -92,7 +91,7 @@ public class FourSum {
         if (low >= high) return;
 
         // end early
-        // if (2 * nums[low] > target || 2 * nums[high] < target) return;
+        if (2 * nums[low] > target || 2 * nums[high] < target) return;
 
         int i = low;
         int j = high;

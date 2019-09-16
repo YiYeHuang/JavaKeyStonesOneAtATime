@@ -4,8 +4,6 @@ import leetcode.tag.level.Medium;
 import leetcode.tag.type.TwoPointer;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /*
 16. 3Sum Closest
