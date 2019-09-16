@@ -10,11 +10,14 @@ import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Sorting;
 import leetcode.tag.type.TwoPointer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 15. 3Sum
+ *
  * Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
  *
  * Note:
@@ -53,11 +56,12 @@ public class ThreeSum {
     @TwoPointer
     public static List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
-        List<List<Integer>> res = new LinkedList<>();
+        List<List<Integer>> res = new ArrayList<>();
         for (int i = 0; i < nums.length-2; i++) {
-            if (i == 0 || (i > 0 && nums[i] != nums[i-1])) {
+            if (i == 0 ||  nums[i] != nums[i-1]) {
                 int lo = i+1, hi = nums.length-1, sum = 0 - nums[i];
                 while (lo < hi) {
+                    // match case
                     if (nums[lo] + nums[hi] == sum) {
                         res.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
 
@@ -72,7 +76,7 @@ public class ThreeSum {
                         lo++;
                         hi--;
                     } else if (nums[lo] + nums[hi] < sum) {
-                        // since sorted, need a bigger number
+                        // need a bigger number
                         lo++;
                     } else {
                         // need a smaller number
