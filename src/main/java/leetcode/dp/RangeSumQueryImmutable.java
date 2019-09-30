@@ -5,7 +5,7 @@ import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
-/**
+/*
  303. Range Sum Query - Immutable
 
  Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
@@ -21,8 +21,6 @@ import leetcode.tag.type.DP;
  There are many calls to sumRange function.
  */
 
-@Facebook
-@Google
 
 @Easy
 @DP
