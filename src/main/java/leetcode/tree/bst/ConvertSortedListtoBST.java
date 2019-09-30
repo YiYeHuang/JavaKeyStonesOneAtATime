@@ -1,4 +1,4 @@
-package leetcode.tree;
+package leetcode.tree.bst;
 
 import baseObj.ListNode;
 import baseObj.TreeNode;
