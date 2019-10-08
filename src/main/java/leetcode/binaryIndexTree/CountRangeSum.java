@@ -1,6 +1,5 @@
 package leetcode.binaryIndexTree;
 
-import dataStructure.tree.FenwickTree;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.BinaryIndexTree;
 
