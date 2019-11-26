@@ -1,17 +1,12 @@
 package leetcode.linkedlist;
 
-import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/*
  * A linked list is given such that each node contains an additional random
  * pointer which could point to any node in the list or null.
  * 
@@ -19,20 +14,13 @@ import java.util.Map;
  *
  */
 
-@Facebook
-@Amazon
-@Microsoft
-@Google
-@Bloomberg
-
 @Medium
 @LinkedListTag
-public class CopyListWithRandomPointer
-{
-    public static RandomListNode copyRandomList(RandomListNode head)
-    {
+public class CopyListWithRandomPointer {
+    public static RandomListNode copyRandomList(RandomListNode head) {
         if (head == null) return null;
 
+        //  original        copy
         Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
 
         // loop 1. copy all the nodes
@@ -43,11 +31,11 @@ public class CopyListWithRandomPointer
         }
 
         // loop 2. assign next and random pointers
-        node = head;
-        while (node != null) {
-            map.get(node).next = map.get(node.next);
-            map.get(node).random = map.get(node.random);
-            node = node.next;
+        RandomListNode orginal = head;
+        while (orginal != null) {
+            map.get(orginal).next = map.get(orginal.next);
+            map.get(orginal).random = map.get(orginal.random);
+            orginal = orginal.next;
         }
 
         return map.get(head);
