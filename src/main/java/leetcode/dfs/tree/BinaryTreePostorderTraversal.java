@@ -46,7 +46,7 @@ public class BinaryTreePostorderTraversal {
 
 		load(node.left, result);
 		load(node.right, result);
-		result.add(node.value);
+		result.add(node.val);
 	}
 
 	public static List<Integer> PostorderTraversalPost(TreeNode root) {

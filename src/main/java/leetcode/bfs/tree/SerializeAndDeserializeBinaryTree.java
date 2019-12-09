@@ -3,7 +3,6 @@ package leetcode.bfs.tree;
 import baseObj.TreeNode;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.BFS;
-import leetcode.tag.type.Tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -54,7 +53,7 @@ public class SerializeAndDeserializeBinaryTree {
                 continue;
             }
 
-            res.append(node.value).append(" ");
+            res.append(node.val).append(" ");
             queue.add(node.left);
             queue.add(node.right);
         }

@@ -80,7 +80,7 @@ public class DFSandBFS
 
     private void insertValue(TreeNode lastest, TreeNode valueNode)
     {
-        if (lastest.value > valueNode.value)
+        if (lastest.val > valueNode.val)
         {
             if (null == lastest.left)
             {
@@ -115,7 +115,7 @@ public class DFSandBFS
         {
             ptr = ptr.right;
         }
-        return ptr.value;
+        return ptr.val;
     }
 
     public static int min(TreeNode head)
@@ -129,7 +129,7 @@ public class DFSandBFS
         {
             ptr = ptr.left;
         }
-        return ptr.value;
+        return ptr.val;
     }
 
     public static int treeMaxDepth(TreeNode head)
@@ -154,7 +154,7 @@ public class DFSandBFS
         } else
         {
             inorder(input.left);
-            System.out.print(input.value + " ");
+            System.out.print(input.val + " ");
             inorder(input.right);
         }
     }
@@ -171,7 +171,7 @@ public class DFSandBFS
         {
             postorder(input.left);
             postorder(input.right);
-            System.out.print(input.value + " ");
+            System.out.print(input.val + " ");
         }
     }
 
@@ -185,7 +185,7 @@ public class DFSandBFS
             return;
         } else
         {
-            System.out.print(input.value + " ");
+            System.out.print(input.val + " ");
             preorder(input.left);
             preorder(input.right);
         }
@@ -206,7 +206,7 @@ public class DFSandBFS
     {
         if (level == 0)
         {
-            System.out.print(current.value + " ");
+            System.out.print(current.val + " ");
         } else
         {
             if (null != current.left)
@@ -227,7 +227,7 @@ public class DFSandBFS
             return true;
         } else
         {
-            return node1 != null && node2 != null && node1.value == node2.value && compareTree(node1.left, node2.left)
+            return node1 != null && node2 != null && node1.val == node2.val && compareTree(node1.left, node2.left)
                     && compareTree(node1.right, node2.right);
         }
     }
@@ -257,7 +257,7 @@ public class DFSandBFS
         } else
         {
             load(root.left, aa);
-            aa.add(root.value);
+            aa.add(root.val);
             load(root.right, aa);
         }
     }
@@ -276,7 +276,7 @@ public class DFSandBFS
                 root = root.left;
             }
             root = stack.pop();
-            list.add(root.value);
+            list.add(root.val);
             root = root.right;
         }
         return list;

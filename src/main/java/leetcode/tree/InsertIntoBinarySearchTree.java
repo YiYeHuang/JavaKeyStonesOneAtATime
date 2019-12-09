@@ -1,7 +1,6 @@
 package leetcode.tree;
 
 import baseObj.TreeNode;
-import dataStructure.bst.impl.BSTNode;
 import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
@@ -56,13 +55,13 @@ public class InsertIntoBinarySearchTree {
         return root;
     }
     private void traceInsert(TreeNode currentRoot, int value) {
-        if (value > currentRoot.value) {
+        if (value > currentRoot.val) {
             if (null == currentRoot.right) {
                 currentRoot.right = new TreeNode(value);
             } else {
                 traceInsert(currentRoot.right, value);
             }
-        } else if (value < currentRoot.value) {
+        } else if (value < currentRoot.val) {
             if (null == currentRoot.left) {
                 currentRoot.left = new TreeNode(value);
             } else {

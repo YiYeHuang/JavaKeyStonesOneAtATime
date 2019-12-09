@@ -61,7 +61,7 @@ public class SubtreeofAnotherTree {
 		if (p == null || q == null) {
 			return false;
 		}
-		if (p.value == q.value) {
+		if (p.val == q.val) {
 			return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 		} else {
 			return false;
@@ -86,7 +86,7 @@ public class SubtreeofAnotherTree {
 			if(next==null)
 				sb.append(",#"); // Appending # inorder to handle same values but not subtree cases
 			else
-				sb.append(","+next.value);
+				sb.append(","+next.val);
 			if(next!=null){
 				stacktree.push(next.right);
 				stacktree.push(next.left);

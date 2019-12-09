@@ -67,9 +67,9 @@ public class BTZigZagTraversal {
 		}
 
 		if (level % 2 == 0) {
-			ans.get(level).add(curr.value);
+			ans.get(level).add(curr.val);
 		} else {
-			ans.get(level).add(0, curr.value);
+			ans.get(level).add(0, curr.val);
 		}
 
 

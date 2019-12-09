@@ -52,7 +52,7 @@ public class SerializeDeserializeBST {
 	 */
 	public void serialize(TreeNode root, StringBuilder sb) {
 		if (root == null) return;
-		sb.append(root.value).append(",");
+		sb.append(root.val).append(",");
 		serialize(root.left, sb);
 		serialize(root.right, sb);
 	}

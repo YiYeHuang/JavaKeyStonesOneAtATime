@@ -1,7 +1,6 @@
 package leetcode.tree.pathSum;
 
 import baseObj.TreeNode;
-import leetcode.tag.type.Tree;
 
 /**
  * 437. Path Sum III
@@ -52,6 +51,6 @@ public class PathSumIII {
 
     public int sumFrom(TreeNode root, int sum) {
         if (root == null) return 0;
-        return (sum==root.value?1:0) + sumFrom(root.left, sum - root.value) + sumFrom(root.right, sum - root.value);
+        return (sum==root.val ?1:0) + sumFrom(root.left, sum - root.val) + sumFrom(root.right, sum - root.val);
     }
 }

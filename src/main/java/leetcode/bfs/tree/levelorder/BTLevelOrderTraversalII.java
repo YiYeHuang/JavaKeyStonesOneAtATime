@@ -59,7 +59,7 @@ public class BTLevelOrderTraversalII {
 		if(ans.size()==level)
 			ans.add(0,new ArrayList<Integer>());
 
-		ans.get(ans.size()-level-1).add(curr.value);
+		ans.get(ans.size()-level-1).add(curr.val);
 
 		compute(ans,curr.left,level+1);
 		compute(ans,curr.right,level+1);

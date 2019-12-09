@@ -70,7 +70,7 @@ public class AverageLevelsinBinaryTree {
 			count.add(0.0);
 		}
 
-		sum.set(level, sum.get(level)+(double)curr.value);
+		sum.set(level, sum.get(level)+(double)curr.val);
 		count.set(level, count.get(level)+1);
 
 		compute(sum,count,curr.left,level+1);
@@ -99,7 +99,7 @@ public class AverageLevelsinBinaryTree {
 			Double count = 0.0;
 			while (size > 0) {
 				TreeNode node = queue.poll();
-				sum += node.value;
+				sum += node.val;
 				count ++;
 				size --;
 				if (node.left != null) {

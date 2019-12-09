@@ -47,15 +47,15 @@ public class LowestCommonAcestor
 
     public TreeNode lowestCommonAncestorANSWER(TreeNode root, TreeNode p, TreeNode q)
     {
-        if(root.value<Math.min(p.value,q.value)) return lowestCommonAncestor(root.right,p,q);
-        if(root.value>Math.max(p.value,q.value)) return lowestCommonAncestor(root.left,p,q);
+        if(root.val <Math.min(p.val,q.val)) return lowestCommonAncestor(root.right,p,q);
+        if(root.val >Math.max(p.val,q.val)) return lowestCommonAncestor(root.left,p,q);
         return root;
     }
 
     public TreeNode lowestCommonAncestorMath(TreeNode root, TreeNode p, TreeNode q)
     {
-        while ((root.value - p.value) * (root.value - q.value) > 0)
-            root = p.value < root.value ? root.left : root.right;
+        while ((root.val - p.val) * (root.val - q.val) > 0)
+            root = p.val < root.val ? root.left : root.right;
         return root;
     }
 

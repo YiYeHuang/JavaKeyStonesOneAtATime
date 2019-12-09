@@ -3,17 +3,17 @@ package baseObj;
 
 public class TreeNode
 {
-    public int value;
+    public int val;
     public TreeNode right;
     public TreeNode left;
 
     public TreeNode(int value)
     {
-        this.value = value;
+        this.val = value;
     }
 
     @Override
     public String toString() {
-        return "Node: " + value;
+        return "Node: " + val;
     }
 }

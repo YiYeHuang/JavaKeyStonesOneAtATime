@@ -79,6 +79,6 @@ public class FindBottomLeftTreeValue {
                 }
             }
         }
-        return root.value;
+        return root.val;
     }
 }

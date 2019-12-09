@@ -77,6 +77,6 @@ public class BSTIterator {
             }
         }
 
-        return node.value;
+        return node.val;
     }
 }

@@ -67,7 +67,7 @@ public class BTLevelOrderTraversal {
             return ;
         } else {
             if (level == 0) {
-                input.add(root.value);
+                input.add(root.val);
                 return;
             }
             levelOrder(root.left, level -1, input);
@@ -102,7 +102,7 @@ public class BTLevelOrderTraversal {
             ans.add(new ArrayList<Integer>());
         }
 
-        ans.get(level).add(curr.value);
+        ans.get(level).add(curr.val);
 
         compute(ans,curr.left,level+1);
         compute(ans,curr.right,level+1);

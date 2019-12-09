@@ -45,7 +45,7 @@ public class ConstructStringFromBST {
 	public String tree2str(TreeNode t) {
 		if (t == null) return "";
 
-		String result = t.value + "";
+		String result = t.val + "";
 
 		String left = tree2str(t.left);
 		String right = tree2str(t.right);

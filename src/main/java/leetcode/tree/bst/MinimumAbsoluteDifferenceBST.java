@@ -49,7 +49,7 @@ public class MinimumAbsoluteDifferenceBST {
 		getMinimumDifference(root.left);
 
 		if (prev != null) {
-			min = Math.min(min, root.value - prev.value);
+			min = Math.min(min, root.val - prev.val);
 		}
 
 		prev = root;

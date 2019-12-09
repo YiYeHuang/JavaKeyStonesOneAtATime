@@ -35,9 +35,9 @@ public class SearchaBinarySearchTree {
         if (root == null) {
             return null;
         } else {
-            if (root.value == val) {
+            if (root.val == val) {
                 return root;
-            } else if (root.value < val) {
+            } else if (root.val < val) {
                 return searchBST(root.right, val);
             } else {
                 return searchBST(root.left, val);

@@ -44,7 +44,7 @@ public class ConstructBTFromPreAndInOrder {
 		TreeNode root = new TreeNode(preorder[preStart]);
 		int inIndex = 0; // Index of current root in inorder
 		for (int i = inStart; i <= inEnd; i++) {
-			if (inorder[i] == root.value) {
+			if (inorder[i] == root.val) {
 				inIndex = i;
 			}
 		}

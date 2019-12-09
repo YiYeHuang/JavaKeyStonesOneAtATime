@@ -52,7 +52,7 @@ public class ValidateBST {
 			}
 			root = stack.pop();
 
-			if (prevousCache != null && prevousCache.value >= root.value ) return false;
+			if (prevousCache != null && prevousCache.val >= root.val) return false;
 
 			prevousCache = root;
 			root = root.right;
@@ -67,7 +67,7 @@ public class ValidateBST {
 
 	public boolean isValidBSTre(TreeNode root, long minVal, long maxVal) {
 		if (root == null) return true;
-		if (root.value >= maxVal || root.value <= minVal) return false;
-		return isValidBSTre(root.left, minVal, root.value) && isValidBSTre(root.right, root.value, maxVal);
+		if (root.val >= maxVal || root.val <= minVal) return false;
+		return isValidBSTre(root.left, minVal, root.val) && isValidBSTre(root.right, root.val, maxVal);
 	}
 }

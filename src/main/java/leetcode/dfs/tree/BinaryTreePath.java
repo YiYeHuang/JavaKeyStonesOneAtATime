@@ -45,10 +45,10 @@ public class BinaryTreePath {
     public void build(List<String> result, String path, TreeNode curr) {
         if (curr == null ) return;
         if (curr.left == null && curr.right == null) {
-            result.add(path + curr.value);
+            result.add(path + curr.val);
         }
 
-        build(result, path + curr.value + "->", curr.left);
-        build(result, path + curr.value + "->", curr.right);
+        build(result, path + curr.val + "->", curr.left);
+        build(result, path + curr.val + "->", curr.right);
     }
 }

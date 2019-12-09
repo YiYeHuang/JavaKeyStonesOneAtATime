@@ -4,14 +4,12 @@ import algorithm.sorting.BSTUtil;
 import baseObj.TreeNode;
 import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Given a binary search tree (BST) with duplicates, find all the mode(s)
@@ -86,14 +84,14 @@ public class FindModeInBST {
 		if (null == root) return;
 
 		load(root.left, result);
-		if (result.containsKey(root.value)) {
-			result.put(root.value, 1 + result.get(root.value));
-			if (result.get(root.value) >= max) {
-				max = result.get(root.value);
+		if (result.containsKey(root.val)) {
+			result.put(root.val, 1 + result.get(root.val));
+			if (result.get(root.val) >= max) {
+				max = result.get(root.val);
 			}
 		}
 		else {
-			result.put(root.value, 1);
+			result.put(root.val, 1);
 			if (1 > max) {
 				max=1;
 			}

@@ -56,7 +56,7 @@ public class BTRightSideView {
             input.add(Integer.MIN_VALUE);
         }
 
-        input.set(level, curr.value);
+        input.set(level, curr.val);
 
         bulid(input,curr.left,level+1);
         bulid(input,curr.right,level+1);

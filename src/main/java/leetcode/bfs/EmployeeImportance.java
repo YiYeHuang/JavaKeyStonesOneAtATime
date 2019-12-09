@@ -27,8 +27,6 @@ import java.util.Queue;
  Employee 1 has importance value 5, and he has two direct subordinates: employee 2 and employee 3. They both have importance value 3. So the total importance value of employee 1 is 5 + 3 + 3 = 11.
  */
 
-@Amazon
-
 @Easy
 @BFS
 public class EmployeeImportance {

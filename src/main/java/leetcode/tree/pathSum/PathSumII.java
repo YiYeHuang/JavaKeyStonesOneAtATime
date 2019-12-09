@@ -57,22 +57,22 @@ public class PathSumII {
      */
     public void build(List<List<Integer>> result, List<Integer> temp, int sum, TreeNode root) {
         if (root == null) return;
-        temp.add(root.value);
+        temp.add(root.val);
 
         // add up all
-        if (root.left == null && root.right == null && sum - root.value == 0) {
+        if (root.left == null && root.right == null && sum - root.val == 0) {
             result.add(new ArrayList<>(temp));
             return;
         }
 
         //?????????
         if(root.left!=null) {
-            build(result, temp, sum - root.value, root.left);
+            build(result, temp, sum - root.val, root.left);
             temp.remove(temp.size() - 1);
         }
         //?????????
         if(root.right!=null) {
-            build(result, temp, sum - root.value, root.right);
+            build(result, temp, sum - root.val, root.right);
             temp.remove(temp.size() - 1);
         }
     }
@@ -90,8 +90,8 @@ public class PathSumII {
         while(cur!=null || !stack.isEmpty()){
             while(cur!=null){
                 stack.push(cur);
-                path.add(cur.value);
-                SUM+=cur.value;
+                path.add(cur.val);
+                SUM+=cur.val;
                 cur=cur.left;
             }
             cur = stack.peek();
@@ -105,7 +105,7 @@ public class PathSumII {
             pre = cur;
             stack.pop();
             path.remove(path.size()-1);
-            SUM-=cur.value;
+            SUM-=cur.val;
             cur = null;
 
         }

@@ -44,7 +44,7 @@ public class BinaryTreePreorderTraversal {
 	private static void load(TreeNode node, List<Integer> result) {
 		if (node == null) return;
 
-		result.add(node.value);
+		result.add(node.val);
 		load(node.left, result);
 		load(node.right, result);
 	}

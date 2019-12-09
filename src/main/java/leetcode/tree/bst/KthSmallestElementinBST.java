@@ -5,7 +5,6 @@ import leetcode.tag.company.Amazon;
 import leetcode.tag.company.Facebook;
 import leetcode.tag.company.Google;
 import leetcode.tag.company.Microsoft;
-import leetcode.tag.level.Easy;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.DFS;
@@ -73,7 +72,7 @@ public class KthSmallestElementinBST {
             TreeNode next = smallestCount.pop();
             k--;
             if (k== 0) {
-                return next.value;
+                return next.val;
             }
 
             TreeNode right = next.right;
@@ -97,7 +96,7 @@ public class KthSmallestElementinBST {
             if(--k == 0) break;
             root = root.right;
         }
-        return root.value;
+        return root.val;
     }
 
     /**
@@ -112,7 +111,7 @@ public class KthSmallestElementinBST {
             return kthSmallest(root.right, k -1 - count);// 1 is counted as current node
         }
 
-        return root.value;
+        return root.val;
     }
 
     public int countNodes(TreeNode n) {
@@ -138,7 +137,7 @@ public class KthSmallestElementinBST {
         if (n.left != null) helper(n.left);
         count--;
         if (count == 0) {
-            number = n.value;
+            number = n.val;
             return;
         }
         if (n.right != null) helper(n.right);

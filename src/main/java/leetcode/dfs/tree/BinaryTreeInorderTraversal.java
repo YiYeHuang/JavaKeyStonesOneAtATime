@@ -54,7 +54,7 @@ public class BinaryTreeInorderTraversal {
 		if (node == null) return;
 
 		load(node.left, result);
-		result.add(node.value);
+		result.add(node.val);
 		load(node.right, result);
 	}
 

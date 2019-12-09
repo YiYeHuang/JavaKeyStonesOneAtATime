@@ -38,7 +38,7 @@ public class SumOfLeftLeaves {
         if (root.left != null) {
 
             if (root.left.left == null && root.left.right.right == null) {
-                sum += root.left.value;
+                sum += root.left.val;
             } else {
                 build(root.left);
             }
@@ -61,7 +61,7 @@ public class SumOfLeftLeaves {
             TreeNode curr = stack.pop();
             if (curr.left != null) {
                 if (curr.left.left == null && curr.left.right.right == null) {
-                    result += curr.left.value;
+                    result += curr.left.val;
                 }
                 stack.push(root.left);
             }
@@ -89,7 +89,7 @@ public class SumOfLeftLeaves {
             TreeNode curr = queue.poll();
             if (curr.left != null) {
                 if (curr.left.left == null && curr.left.right.right == null) {
-                    result += curr.left.value;
+                    result += curr.left.val;
                 }
                 queue.offer(root.left);
             }

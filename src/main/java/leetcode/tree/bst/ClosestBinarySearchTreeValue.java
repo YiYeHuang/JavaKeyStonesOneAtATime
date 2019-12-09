@@ -40,19 +40,19 @@ public class ClosestBinarySearchTreeValue {
      */
     public int closestValue(TreeNode root, double target) {
 
-        int lastCache = root.value;
+        int lastCache = root.val;
 
         while (root != null) {
-            if (Math.abs(target - root.value) < Math.abs(target - lastCache)) {
+            if (Math.abs(target - root.val) < Math.abs(target - lastCache)) {
                 // update cache
-                lastCache = root.value;
+                lastCache = root.val;
 
                 // optimized with condition check, check if the diff is under 0.5
-                if (Math.abs(target - root.value) <= 0.5)
+                if (Math.abs(target - root.val) <= 0.5)
                     break;
             }
 
-            if (root.value > target) {
+            if (root.val > target) {
                 root = root.left;
             } else {
                 root = root.right;

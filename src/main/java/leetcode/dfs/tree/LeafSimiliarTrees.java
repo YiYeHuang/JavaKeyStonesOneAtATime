@@ -66,7 +66,7 @@ public class LeafSimiliarTrees {
 	public static void build(TreeNode root, List<Integer> list) {
 		if (root == null) return;
 		if (root.left == null && root.right == null) {
-			list.add(root.value);
+			list.add(root.val);
 			return;
 		}
 

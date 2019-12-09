@@ -56,8 +56,8 @@ public class LargestValueInEachRow {
 			ans.add(Integer.MIN_VALUE);
 		}
 
-		if (curr.value > ans.get(level)) {
-			ans.set(level, curr.value);
+		if (curr.val > ans.get(level)) {
+			ans.set(level, curr.val);
 		}
 
 		compute(ans,curr.left,level+1);
