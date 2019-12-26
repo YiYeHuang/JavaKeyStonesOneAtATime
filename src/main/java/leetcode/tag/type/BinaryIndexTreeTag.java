@@ -12,5 +12,5 @@ import static java.lang.annotation.ElementType.TYPE;
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Tag("BinaryIndexTree")
-public @interface BinaryIndexTree {
+public @interface BinaryIndexTreeTag {
 }

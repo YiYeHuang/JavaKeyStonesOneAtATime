@@ -1,7 +1,7 @@
 package leetcode.binaryIndexTree;
 
 import leetcode.tag.level.Hard;
-import leetcode.tag.type.BinaryIndexTree;
+import leetcode.tag.type.BinaryIndexTreeTag;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ Explanation: The three ranges are : [0,0], [2,2], [0,2] and their respective sum
  */
 
 @Hard
-@BinaryIndexTree
+@BinaryIndexTreeTag
 public class CountRangeSum {
 
     public int countRangeSum(int[] nums, int lower, int upper) {
