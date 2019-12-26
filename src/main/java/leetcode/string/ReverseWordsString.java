@@ -1,11 +1,17 @@
 package leetcode.string;
 
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.StringTag;
+
 /**
  * Given an input string, reverse the string word by word.
  * 
  * For example, Given s = "the sky is blue", return "blue is sky the".
  */
-public class ReverseWordsString_Amazon
+
+@Medium
+@StringTag
+public class ReverseWordsString
 {
     public static String reverseWords(String s)
     {

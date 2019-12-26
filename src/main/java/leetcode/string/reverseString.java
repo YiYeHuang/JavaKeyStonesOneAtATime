@@ -1,12 +1,18 @@
 package leetcode.string;
 
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.StringTag;
+
 /**
  * Write a function that takes a string as input and returns the string
  * reversed.
  * 
  * Example: Given s = "hello", return "olleh".
  */
-public class reverseString
+
+@Easy
+@StringTag
+public class ReverseString
 {
     public String reverseString(String s)
     {
