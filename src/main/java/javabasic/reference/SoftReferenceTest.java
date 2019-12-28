@@ -7,7 +7,7 @@ import java.lang.ref.SoftReference;
 public class SoftReferenceTest {
 
     /**
-     * 系统在即将out of memory之前会对对象进行二次回收， 如果内存充足，不会被GC
+     * out of memory then do second GC
      */
     private static ReferenceQueue<MyObject> softQueue = new ReferenceQueue<>();
 
