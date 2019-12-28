@@ -1,6 +1,5 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 
@@ -18,8 +17,6 @@ import leetcode.tag.type.BinarySearch;
  * Input: 14
  * Output: false
  */
-
-@LinkedIn
 
 @Easy
 @BinarySearch

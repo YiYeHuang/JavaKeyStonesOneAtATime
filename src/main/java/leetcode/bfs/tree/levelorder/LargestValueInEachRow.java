@@ -1,7 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.Tree;
@@ -31,8 +30,6 @@ import java.util.List;
  Output: [1, 3, 9]
 
  */
-
-@LinkedIn
 
 @Medium
 @BFS

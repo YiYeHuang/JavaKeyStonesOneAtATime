@@ -1,6 +1,5 @@
 package leetcode.dp;
 
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
@@ -22,8 +21,6 @@ import leetcode.tag.type.DP;
  Minimum cost: 2 + 5 + 3 = 10.
 
  */
-
-@LinkedIn
 
 @Easy
 @DP

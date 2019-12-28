@@ -1,7 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
@@ -33,8 +32,6 @@ import java.util.List;
  [3]
  ]
  */
-
-@Microsoft
 
 @Easy
 @BFS

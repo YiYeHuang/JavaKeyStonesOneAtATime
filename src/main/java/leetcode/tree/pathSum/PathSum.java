@@ -2,7 +2,6 @@ package leetcode.tree.pathSum;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Tree;
 
@@ -29,7 +28,6 @@ import leetcode.tag.type.Tree;
  */
 
 @Amazon
-@Microsoft
 
 @Easy
 @Tree

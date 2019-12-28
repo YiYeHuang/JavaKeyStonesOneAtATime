@@ -1,6 +1,5 @@
 package leetcode.dp;
 
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.DP;
 
@@ -19,7 +18,6 @@ import leetcode.tag.type.DP;
  * Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
  */
 
-@LinkedIn
 public class MaximumProductSubarray {
 
     /**

@@ -1,14 +1,11 @@
 package leetcode.hashtable;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.SalesForce;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.Hash;
 import leetcode.tag.type.HashTableTag;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  532. K-diff Pairs in an Array
@@ -36,7 +33,6 @@ import java.util.Set;
  All the integers in the given input belong to the range: [-1e7, 1e7].
  */
 @Amazon
-@SalesForce
 
 @Easy
 @HashTableTag

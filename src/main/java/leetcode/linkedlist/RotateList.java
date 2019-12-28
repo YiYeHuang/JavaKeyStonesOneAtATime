@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -15,8 +14,6 @@ import leetcode.tag.type.LinkedListTag;
  * 
  * 
  */
-
-@Microsoft
 
 @Medium
 @LinkedListTag

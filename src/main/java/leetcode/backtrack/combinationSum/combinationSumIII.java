@@ -1,11 +1,9 @@
 package leetcode.backtrack.combinationSum;
 
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,8 +24,6 @@ import java.util.List;
  * Input: k = 3, n = 9
  * Output: [[1,2,6], [1,3,5], [2,3,4]]
  */
-
-@Microsoft
 
 @Medium
 @BackTrack
