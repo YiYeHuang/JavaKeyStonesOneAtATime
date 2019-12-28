@@ -1,7 +1,8 @@
 package dataStructure.bitMask;
 
 /**
- * Question: 给定一个最多包含40亿个随机排列的32位整数的顺序文件，找出一个不在文件中的32位整数(在文件中至少缺失这样一个数——为什么？)。在具有足够内存的情况下，如何解决该问题
+ * Question:
+ * Give a 4 billion random 32 bit int file, find a number not in the file.
  *
  * use index as number, and label 1 or 0 as exist or non-exist
  *
