@@ -1,9 +1,10 @@
 package javabasic.designPattern.factory;
 
 interface AbstractFactory {
-
+	/** 生产汽车门 */
 	public Door createDoor();
 
+	/** 生产汽车轮子 */
 	public Wheel createWheel();
 
 }
