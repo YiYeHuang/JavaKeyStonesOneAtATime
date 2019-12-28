@@ -2,7 +2,6 @@ package leetcode.sort;
 
 import baseObj.Interval;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Sorting;
 
@@ -27,7 +26,6 @@ import java.util.Arrays;
  */
 
 @Amazon
-@Facebook
 
 @Easy
 @Sorting

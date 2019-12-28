@@ -1,13 +1,6 @@
 package leetcode.dp;
 
-import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
-import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.DP;
 
 /**
@@ -22,16 +15,7 @@ import leetcode.tag.type.DP;
  Output: 6
  Explanation: [4,-1,2,1] has the largest sum = 6.
  Follow up:
-
-
-
-
  */
-
-@Amazon
-@Apple
-@Google
-@LinkedIn
 
 @Easy
 @DP

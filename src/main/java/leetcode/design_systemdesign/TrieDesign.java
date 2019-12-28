@@ -2,10 +2,6 @@ package leetcode.design_systemdesign;
 
 import baseObj.TrieNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Trie;
 
@@ -34,11 +30,7 @@ import leetcode.tag.type.Trie;
  All inputs are guaranteed to be non-empty strings.
  */
 
-@Google
-@Facebook
-@Microsoft
 @Amazon
-@Apple
 
 @Medium
 @Trie

@@ -1,6 +1,5 @@
 package leetcode.palinDrome;
 
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Easy;
 
 /**
@@ -23,7 +22,6 @@ import leetcode.tag.level.Easy;
  * The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
  */
 
-@Facebook
 @Easy
 public class ValidPalinDromeII {
 

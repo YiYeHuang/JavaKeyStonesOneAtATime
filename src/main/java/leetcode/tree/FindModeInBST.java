@@ -2,7 +2,6 @@ package leetcode.tree;
 
 import algorithm.sorting.BSTUtil;
 import baseObj.TreeNode;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Tree;
 
@@ -38,8 +37,6 @@ import java.util.Map;
 
  Follow up: Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).
  */
-
-@Google
 
 @Easy
 @Tree

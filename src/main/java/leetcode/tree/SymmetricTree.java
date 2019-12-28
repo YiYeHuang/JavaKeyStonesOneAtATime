@@ -1,8 +1,5 @@
 package leetcode.tree;
 
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -30,9 +27,6 @@ import java.util.Queue;
  *
  */
 
-@Microsoft
-@Bloomberg
-@LinkedIn
 public class SymmetricTree {
 
     @Tree

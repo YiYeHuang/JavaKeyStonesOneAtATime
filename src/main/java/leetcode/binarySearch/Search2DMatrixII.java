@@ -1,15 +1,9 @@
 package leetcode.binarySearch;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.TwoPointer;
-
-import javax.jws.WebMethod;
 
 /**
  240. Search a 2D Matrix II
@@ -34,11 +28,7 @@ import javax.jws.WebMethod;
  Given target = 20, return false.
  */
 
-@Microsoft
 @Amazon
-@Google
-@Bloomberg
-@Facebook
 
 @Medium
 @BinarySearch

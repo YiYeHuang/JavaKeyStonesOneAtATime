@@ -1,9 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
@@ -32,10 +29,6 @@ import leetcode.tag.type.LinkedListTag;
  The given node will not be the tail and it will always be a valid node of the linked list.
  Do not return anything from your function.
  */
-
-@Apple
-@Google
-@Microsoft
 
 @Easy
 @LinkedListTag

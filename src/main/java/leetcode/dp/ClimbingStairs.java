@@ -1,9 +1,6 @@
 package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
@@ -34,10 +31,7 @@ import leetcode.tag.type.DP;
 
  */
 
-@Google
 @Amazon
-@Microsoft
-@Bloomberg
 
 @Easy
 @DP

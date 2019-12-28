@@ -1,10 +1,6 @@
 package leetcode.linkedlist;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
@@ -25,9 +21,7 @@ import java.util.Queue;
  * m.next(5) = (10 + 3 + 5) / 3
  */
 
-@Facebook
 @Amazon
-@Google
 
 @Easy
 @LinkedListTag

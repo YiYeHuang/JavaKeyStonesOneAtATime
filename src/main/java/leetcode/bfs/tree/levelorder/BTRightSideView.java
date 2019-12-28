@@ -1,8 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.*;
-import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -27,13 +25,7 @@ import java.util.List;
  *  \     \
  *   5     4       <---
  */
-@Facebook
-@Amazon
-@Apple
-@Microsoft
-@Bloomberg
 
-@Medium
 @Tree
 @DFS
 @BFS

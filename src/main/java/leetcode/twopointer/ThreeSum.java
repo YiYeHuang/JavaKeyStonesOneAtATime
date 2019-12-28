@@ -1,9 +1,6 @@
 package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BinarySearch;
@@ -12,7 +9,6 @@ import leetcode.tag.type.TwoPointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,10 +31,7 @@ import java.util.List;
  * ]
  */
 
-@Facebook
-@Microsoft
 @Amazon
-@Bloomberg
 
 @Medium
 @Sorting

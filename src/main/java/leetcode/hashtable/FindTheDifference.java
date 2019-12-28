@@ -1,6 +1,5 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BitManipulation;
 import leetcode.tag.type.Hash;
@@ -26,8 +25,6 @@ import leetcode.tag.type.Hash;
  * Explanation:
  * 'e' is the letter that was added.
  */
-
-@Google
 
 @Easy
 @Hash

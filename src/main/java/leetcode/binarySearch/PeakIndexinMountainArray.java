@@ -1,8 +1,5 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 
@@ -27,10 +24,6 @@ import leetcode.tag.type.BinarySearch;
  * 0 <= A[i] <= 10^6
  * A is a mountain, as defined above.
  */
-
-@Google
-@Bloomberg
-@Facebook
 
 @Easy
 @BinarySearch

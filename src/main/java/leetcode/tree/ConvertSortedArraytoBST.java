@@ -2,8 +2,6 @@ package leetcode.tree;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Tree;
@@ -33,8 +31,6 @@ import leetcode.tag.type.Tree;
 
  */
 
-@Google
-@Microsoft
 @Amazon
 
 @Easy

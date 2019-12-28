@@ -1,10 +1,6 @@
 package leetcode.hashtable;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Hash;
 
@@ -32,11 +28,7 @@ import leetcode.tag.type.Hash;
  What if the inputs contain unicode characters? How would you adapt your solution to such case?
  */
 
-@Bloomberg
-@Google
 @Amazon
-@Microsoft
-@Facebook
 
 @Easy
 @Hash

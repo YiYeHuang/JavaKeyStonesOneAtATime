@@ -1,9 +1,6 @@
 package leetcode.string;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.type.StringModify;
 
 /**
@@ -19,9 +16,6 @@ import leetcode.tag.type.StringModify;
  */
 
 @Amazon
-@Google
-@Microsoft
-@Bloomberg
 public class FisrtUniqueCharacterInString
 {
     @StringModify

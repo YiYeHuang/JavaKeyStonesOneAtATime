@@ -1,11 +1,6 @@
 package leetcode.binarySearch;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 
@@ -31,12 +26,7 @@ import leetcode.tag.type.BinarySearch;
  n is a 32-bit signed integer, within the range [−231, 231 − 1]
  */
 
-@Facebook
 @Amazon
-@LinkedIn
-@Google
-@Microsoft
-@Bloomberg
 
 @Medium
 @BinarySearch

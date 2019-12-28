@@ -1,10 +1,6 @@
 package leetcode.forwardANDbackward;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.ForwardBackward;
 
@@ -23,11 +19,7 @@ import leetcode.tag.type.ForwardBackward;
  (The output array does not count as extra space for the purpose of space complexity analysis.)
  */
 
-@Facebook
-@Microsoft
 @Amazon
-@LinkedIn
-@Apple
 
 @ForwardBackward
 public class ProductArrayExceptSelf

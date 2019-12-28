@@ -1,9 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -17,9 +14,6 @@ import leetcode.tag.type.LinkedListTag;
  * Follow up:
  * Can you solve it without using extra space?
  */
-@Microsoft
-@Bloomberg
-@Google
 
 @Medium
 @LinkedListTag

@@ -1,8 +1,5 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Hash;
 
@@ -28,10 +25,6 @@ import leetcode.tag.type.Hash;
  * Input: s = "paper", t = "title"
  * Output: true
  */
-
-@Google
-@LinkedIn
-@Bloomberg
 
 @Easy
 @Hash

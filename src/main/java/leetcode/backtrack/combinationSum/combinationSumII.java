@@ -1,7 +1,5 @@
 package leetcode.backtrack.combinationSum;
 
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -39,9 +37,6 @@ import java.util.List;
  *   [5]
  * ]
  */
-@LinkedIn
-@Microsoft
-
 @Medium
 @BackTrack
 public class combinationSumII {

@@ -1,8 +1,6 @@
 package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 import leetcode.tag.type.Hash;
@@ -16,8 +14,6 @@ import leetcode.tag.type.Hash;
  Output: 4
  Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
  */
-@Microsoft
-@Apple
 
 @Easy
 @Hash

@@ -1,11 +1,9 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.HashTableTag;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -23,10 +21,7 @@ import java.util.Set;
  * Output: [9,4]
  */
 
-@Facebook
 @Amazon
-@Google
-@LinkedIn
 
 @Easy
 @BinarySearch

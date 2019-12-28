@@ -1,10 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
@@ -29,11 +25,6 @@ import leetcode.tag.type.LinkedListTag;
  * You may assume there are no cycles anywhere in the entire linked structure.
  * Your code should preferably run in O(n) time and use only O(1) memory.
  */
-
-@Microsoft
-@LinkedIn
-@Google
-@Facebook
 
 @Easy
 @LinkedListTag

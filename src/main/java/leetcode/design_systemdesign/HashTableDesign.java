@@ -1,7 +1,5 @@
 package leetcode.design_systemdesign;
 
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.HashTableTag;
 
@@ -35,8 +33,6 @@ import java.util.Arrays;
  * Please do not use the built-in HashMap library.
  */
 
-@Microsoft
-@Apple
 @Easy
 
 @HashTableTag

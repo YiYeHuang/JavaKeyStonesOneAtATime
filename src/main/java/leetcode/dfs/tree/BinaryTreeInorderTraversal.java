@@ -3,10 +3,6 @@ package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.StackTag;
@@ -32,11 +28,7 @@ import java.util.Stack;
  Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 
-@Facebook
-@Google
-@Microsoft
 @Amazon
-@Bloomberg
 
 @Medium
 @Tree

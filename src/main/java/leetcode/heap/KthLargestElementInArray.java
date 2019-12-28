@@ -1,9 +1,6 @@
 package leetcode.heap;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Heap;
 import leetcode.tag.type.Sorting;
@@ -28,10 +25,7 @@ import java.util.PriorityQueue;
  You may assume k is always valid, 1 ≤ k ≤ array's length.
  */
 
-@Facebook
 @Amazon
-@Google
-@Microsoft
 
 @Medium
 @Heap

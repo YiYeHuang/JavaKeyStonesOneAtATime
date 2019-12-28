@@ -1,6 +1,5 @@
 package leetcode.backtrack;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -26,11 +25,7 @@ import java.util.List;
  * ]
  */
 
-@LinkedIn
-@Google
-@Facebook
 @Amazon
-@Bloomberg
 
 @Medium
 @BackTrack

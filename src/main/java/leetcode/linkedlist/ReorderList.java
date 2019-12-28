@@ -1,9 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -22,10 +19,6 @@ import leetcode.tag.type.LinkedListTag;
  *
  * Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
  */
-
-@Facebook
-@Microsoft
-@Google
 
 @Medium
 @LinkedListTag

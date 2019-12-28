@@ -1,7 +1,6 @@
 package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DFS;
 
@@ -41,8 +40,6 @@ import java.util.List;
  Both of the given trees will have between 1 and 100 nodes.
 
  */
-
-@Google
 
 @DFS
 @Easy

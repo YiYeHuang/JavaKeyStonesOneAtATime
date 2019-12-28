@@ -1,7 +1,6 @@
 package leetcode.tree.bst;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Tree;
@@ -25,8 +24,6 @@ import leetcode.tag.type.Tree;
  *
  * Output: 4
  */
-
-@Facebook
 
 @Easy
 @BinarySearch

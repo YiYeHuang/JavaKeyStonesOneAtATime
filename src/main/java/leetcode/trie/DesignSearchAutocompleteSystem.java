@@ -1,7 +1,6 @@
 package leetcode.trie;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Heap;
 import leetcode.tag.type.Trie;
@@ -84,7 +83,6 @@ import java.util.PriorityQueue;
  as static/class variables are persisted across multiple test cases. Please see here for more details.
  */
 
-@Google
 @Amazon
 
 @Medium

@@ -1,6 +1,5 @@
 package leetcode.tree;
 
-import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DFS;
 import baseObj.TreeNode;
@@ -39,8 +38,6 @@ import leetcode.tag.type.Tree;
  *
  * Output: false
  */
-
-@Bloomberg
 
 @Easy
 @DFS

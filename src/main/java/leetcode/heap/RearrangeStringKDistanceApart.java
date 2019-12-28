@@ -1,6 +1,5 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Hard;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Greedy;
@@ -30,8 +29,6 @@ import java.util.*;
  * Output: "abacabcd"
  * Explanation: The same letters are at least distance 2 from each other.
  */
-
-@Google
 
 @Hard
 @Medium

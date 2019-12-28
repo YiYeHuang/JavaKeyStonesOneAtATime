@@ -1,8 +1,5 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Hash;
 import leetcode.tag.type.HashTableTag;
@@ -26,9 +23,6 @@ import leetcode.tag.type.HashTableTag;
  * Input: "carerac"
  * Output: true
  */
-@Google
-@Facebook
-@Microsoft
 
 @Easy
 @HashTableTag

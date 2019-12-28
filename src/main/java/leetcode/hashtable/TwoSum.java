@@ -1,6 +1,5 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Hash;
@@ -23,11 +22,6 @@ import java.util.Map;
  */
 
 @Amazon
-@Facebook
-@Microsoft
-@Bloomberg
-@LinkedIn
-@Apple
 @Easy
 public class TwoSum
 {

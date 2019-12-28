@@ -1,8 +1,6 @@
 package leetcode.hashtable;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Zenefit;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.*;
 
@@ -27,7 +25,6 @@ import java.util.Map;
  Input: [2,2,1,1,1,2,2]
  Output: 2
  */
-@Google
 @Amazon
 
 @Easy

@@ -1,8 +1,6 @@
 package leetcode.design_systemdesign;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Hard;
 
 import java.util.HashMap;
@@ -37,8 +35,6 @@ import java.util.LinkedHashSet;
     *cache.get(4);       // returns 4
  */
 @Amazon
-@Bloomberg
-@Microsoft
 @Hard
 
 /**

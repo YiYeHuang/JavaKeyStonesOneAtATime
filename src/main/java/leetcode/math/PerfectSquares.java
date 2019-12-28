@@ -1,6 +1,5 @@
 package leetcode.math;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DP;
@@ -20,8 +19,6 @@ import leetcode.tag.type.Mathematics;
  * Output: 2
  * Explanation: 13 = 4 + 9.
  */
-
-@Google
 
 @Medium
 @DP

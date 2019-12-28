@@ -1,6 +1,5 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 
@@ -21,7 +20,6 @@ import leetcode.tag.type.BinarySearch;
  * Input: n = 10, pick = 6
  * Output: 6
  */
-@Google
 
 @Easy
 @BinarySearch

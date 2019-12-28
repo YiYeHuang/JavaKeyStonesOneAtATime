@@ -1,9 +1,6 @@
 package leetcode.binarySearch;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 
@@ -30,9 +27,6 @@ import leetcode.tag.type.BinarySearch;
  */
 
 @Amazon
-@Facebook
-@Bloomberg
-@Microsoft
 
 @Medium
 @BinarySearch

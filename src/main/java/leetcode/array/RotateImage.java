@@ -1,10 +1,5 @@
 package leetcode.array;
 
-import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
 
@@ -53,12 +48,6 @@ import leetcode.tag.type.ArrayTag;
  ]
 
  */
-
-@Microsoft
-@Amazon
-@Apple
-@Google
-@Facebook
 
 @Medium
 @ArrayTag

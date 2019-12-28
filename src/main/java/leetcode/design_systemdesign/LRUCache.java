@@ -1,8 +1,6 @@
 package leetcode.design_systemdesign;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Design;
 import leetcode.tag.type.LinkedListTag;
@@ -38,8 +36,6 @@ import java.util.HashMap;
  */
 
 @Amazon
-@Bloomberg
-@Facebook
 
 @Design
 @LinkedListTag

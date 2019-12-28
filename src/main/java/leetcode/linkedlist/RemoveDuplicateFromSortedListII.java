@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 

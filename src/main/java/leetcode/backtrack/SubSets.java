@@ -1,9 +1,6 @@
 package leetcode.backtrack;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.level.Easy;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -32,9 +29,7 @@ import java.util.List;
  *   []
  * ]
  */
-@Facebook
 @Amazon
-@Apple
 
 @Medium
 @BackTrack

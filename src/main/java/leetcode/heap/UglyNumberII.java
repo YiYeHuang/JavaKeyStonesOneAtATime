@@ -1,6 +1,5 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DP;
 import leetcode.tag.type.Heap;
@@ -24,8 +23,6 @@ import java.util.PriorityQueue;
  1 is typically treated as an ugly number.
  n does not exceed 1690.
  */
-
-@Google
 
 @Medium
 @DP

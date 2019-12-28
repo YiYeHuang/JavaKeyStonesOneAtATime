@@ -1,7 +1,6 @@
 package leetcode.trie;
 
 import baseObj.TrieNode;
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Trie;
 
@@ -27,11 +26,7 @@ import leetcode.tag.type.Trie;
  search("b..") -> true
  */
 
-@Google
-@Facebook
-@Microsoft
 @Amazon
-@Apple
 
 @Medium
 @Trie

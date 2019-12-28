@@ -1,8 +1,5 @@
 package leetcode.palinDrome;
 
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.StringTag;
 import leetcode.tag.type.TwoPointer;
@@ -21,10 +18,6 @@ import leetcode.tag.type.TwoPointer;
  Input: "race a car"
  Output: false
  */
-
-@Facebook
-@Apple
-@Microsoft
 
 @Easy
 @StringTag

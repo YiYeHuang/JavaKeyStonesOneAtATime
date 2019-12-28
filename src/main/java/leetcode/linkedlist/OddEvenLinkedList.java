@@ -1,10 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
-import leetcode.tag.level.Easy;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -29,9 +25,6 @@ import leetcode.tag.type.LinkedListTag;
  * The first node is considered odd, the second node even and so on ...
  *
  */
-@Microsoft
-@Google
-@Bloomberg
 
 @Medium
 @LinkedListTag

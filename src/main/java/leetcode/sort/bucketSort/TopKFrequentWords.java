@@ -1,7 +1,6 @@
 package leetcode.sort.bucketSort;
 
 import baseObj.TrieNode;
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Heap;
@@ -34,11 +33,7 @@ import java.util.*;
  * Input words contain only lowercase letters.
  */
 
-@Microsoft
-@Bloomberg
 @Amazon
-@Google
-@Facebook
 
 @Medium
 @HashTableTag

@@ -1,6 +1,5 @@
 package leetcode.array;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Mathematics;
@@ -24,7 +23,6 @@ import leetcode.tag.type.Mathematics;
  Explanation: The array represents the integer 4321.
  */
 
-@Google
 @Easy
 public class plusOne
 {

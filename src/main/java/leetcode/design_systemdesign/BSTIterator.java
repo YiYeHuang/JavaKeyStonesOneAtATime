@@ -1,7 +1,6 @@
 package leetcode.design_systemdesign;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -20,10 +19,6 @@ import java.util.Stack;
  */
 
 @Amazon
-@Microsoft
-@Facebook
-@Bloomberg
-@LinkedIn
 
 @Medium
 @Tree

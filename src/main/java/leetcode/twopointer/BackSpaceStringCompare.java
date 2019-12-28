@@ -1,7 +1,5 @@
 package leetcode.twopointer;
 
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.StackTag;
 import leetcode.tag.type.TwoPointer;
@@ -42,9 +40,6 @@ import java.util.Stack;
  *
  * Can you solve it in O(N) time and O(1) space?
  */
-
-@Google
-@Facebook
 
 @Easy
 @TwoPointer

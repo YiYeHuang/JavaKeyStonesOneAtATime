@@ -1,7 +1,5 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.HashTableTag;
@@ -33,9 +31,6 @@ import java.util.List;
  * What if nums1's size is small compared to nums2's size? Which algorithm is better?
  * What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
  */
-
-@Facebook
-@Google
 
 @Easy
 @HashTableTag

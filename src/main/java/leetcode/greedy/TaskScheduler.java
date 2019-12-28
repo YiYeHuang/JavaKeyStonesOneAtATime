@@ -1,6 +1,5 @@
 package leetcode.greedy;
 
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Greedy;
 import leetcode.tag.type.Heap;
@@ -33,8 +32,6 @@ import java.util.*;
  * The number of tasks is in the range [1, 10000].
  * The integer n is in the range [0, 100].
  */
-
-@Facebook
 
 @Medium
 @Greedy

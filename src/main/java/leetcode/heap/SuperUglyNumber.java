@@ -1,6 +1,5 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Heap;
 import leetcode.tag.type.Mathematics;
@@ -27,7 +26,6 @@ import java.util.PriorityQueue;
  0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000.
  The nth super ugly number is guaranteed to fit in a 32-bit signed integer.
  */
-@Google
 
 @Medium
 @Heap

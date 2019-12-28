@@ -1,8 +1,6 @@
 package leetcode.dfs;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
@@ -30,9 +28,6 @@ import java.util.Stack;
  15     7
  return its depth = 3.
  */
-
-@LinkedIn
-@Google
 
 @Easy
 @Tree

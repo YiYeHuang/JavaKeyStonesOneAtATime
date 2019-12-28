@@ -1,15 +1,9 @@
 package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
-import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.SlidingWindow;
-import leetcode.tag.type.TwoPointer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -32,11 +26,7 @@ import java.util.Set;
  * 
  */
 
-@Facebook
 @Amazon
-@Google
-@Bloomberg
-@Microsoft
 
 @Medium
 @SlidingWindow

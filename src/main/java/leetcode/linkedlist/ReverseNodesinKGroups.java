@@ -2,13 +2,8 @@ package leetcode.linkedlist;
 
 import baseObj.ListNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Hard;
-import leetcode.tag.level.Medium;
 import leetcode.tag.type.DivideConquer;
-import leetcode.tag.type.Heap;
 import leetcode.tag.type.LinkedListTag;
 
 /**
@@ -32,10 +27,7 @@ import leetcode.tag.type.LinkedListTag;
  * You may not alter the values in the list's nodes, only nodes itself may be changed.
  */
 
-@Facebook
-@Microsoft
 @Amazon
-@Google
 
 @Hard
 @LinkedListTag

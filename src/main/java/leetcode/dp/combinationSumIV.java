@@ -1,7 +1,6 @@
 package leetcode.dp;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -34,7 +33,6 @@ import leetcode.tag.type.BackTrack;
  */
 
 @Amazon
-@Facebook
 
 @Medium
 @BackTrack

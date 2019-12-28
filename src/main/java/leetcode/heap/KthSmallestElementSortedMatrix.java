@@ -1,13 +1,8 @@
 package leetcode.heap;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
-import leetcode.tag.type.Hash;
 import leetcode.tag.type.Heap;
 
 import java.util.PriorityQueue;
@@ -31,11 +26,7 @@ import java.util.PriorityQueue;
 
  return 13.
  */
-@Google
-@Facebook
 @Amazon
-@Microsoft
-@Apple
 
 @Medium
 @BinarySearch

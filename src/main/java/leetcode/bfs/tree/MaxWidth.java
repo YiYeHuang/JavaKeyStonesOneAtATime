@@ -1,8 +1,6 @@
 package leetcode.bfs.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.Tree;
@@ -73,8 +71,6 @@ import java.util.Queue;
 
  Note: Answer will in the range of 32-bit signed integer.
  */
-@Bloomberg
-@Microsoft
 
 @Medium
 @BFS

@@ -1,9 +1,6 @@
 package leetcode.backtrack;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -25,10 +22,6 @@ import java.util.List;
  *   "()()()"
  * ]
  */
-@Microsoft
-@Amazon
-@Google
-@Bloomberg
 
 @Medium
 @BackTrack

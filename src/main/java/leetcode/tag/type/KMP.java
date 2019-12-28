@@ -1,4 +1,4 @@
-package leetcode.tag.company;
+package leetcode.tag.type;
 
 import leetcode.tag.Tag;
 
@@ -11,6 +11,6 @@ import static java.lang.annotation.ElementType.TYPE;
 
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("Zenefit")
-public @interface Zenefit {
+@Tag("KMP")
+public @interface KMP {
 }

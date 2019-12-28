@@ -1,9 +1,7 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
-import leetcode.tag.type.LinkedListTag;
 
 /**
  * Implement int sqrt(int x).
@@ -23,11 +21,6 @@ import leetcode.tag.type.LinkedListTag;
  * Explanation: The square root of 8 is 2.82842..., and since
  *              the decimal part is truncated, 2 is returned.
  */
-@Google
-@Apple
-@LinkedIn
-@Bloomberg
-@Microsoft
 
 @Easy
 @BinarySearch

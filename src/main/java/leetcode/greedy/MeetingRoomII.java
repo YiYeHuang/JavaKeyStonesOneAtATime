@@ -2,11 +2,6 @@ package leetcode.greedy;
 
 import baseObj.Interval;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Greedy;
 import leetcode.tag.type.Heap;
@@ -31,12 +26,7 @@ import java.util.PriorityQueue;
 
  */
 
-@Facebook
-@Microsoft
-@Google
-@Bloomberg
 @Amazon
-@Apple
 
 @Medium
 @Heap

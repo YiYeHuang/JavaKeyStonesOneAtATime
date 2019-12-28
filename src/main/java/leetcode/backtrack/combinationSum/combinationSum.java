@@ -1,6 +1,5 @@
 package leetcode.backtrack.combinationSum;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -38,10 +37,6 @@ import java.util.List;
  * ]
  */
 @Amazon
-@Google
-@Microsoft
-@Apple
-@LinkedIn
 
 @Medium
 @BackTrack

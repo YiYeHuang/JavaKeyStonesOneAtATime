@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -23,12 +22,6 @@ import leetcode.tag.type.LinkedListTag;
  *
  * Could you do this in one pass?
  */
-
-@Microsoft
-@Facebook
-@Google
-@Apple
-@Bloomberg
 
 @Medium
 @LinkedListTag

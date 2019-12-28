@@ -1,7 +1,6 @@
 package leetcode.tree.pathSum;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -35,8 +34,6 @@ import java.util.Stack;
  *    [5,8,4,5]
  * ]
  */
-
-@Google
 
 @Medium
 @Tree

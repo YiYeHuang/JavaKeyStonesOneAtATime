@@ -2,10 +2,6 @@ package leetcode.linkedlist;
 
 import baseObj.ListNode;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -24,10 +20,6 @@ import leetcode.tag.type.LinkedListTag;
  */
 
 @Amazon
-@Microsoft
-@Apple
-@Bloomberg
-@Google
 
 @Medium
 @LinkedListTag

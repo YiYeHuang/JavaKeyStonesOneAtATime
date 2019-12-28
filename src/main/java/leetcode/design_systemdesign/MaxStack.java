@@ -1,14 +1,10 @@
 package leetcode.design_systemdesign;
 
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.LinkedIn;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.StackTag;
 
 import java.util.Stack;
 
-@LinkedIn
-@Facebook
 @Easy
 @StackTag
 /**

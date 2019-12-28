@@ -1,7 +1,6 @@
 package leetcode.sort;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 import leetcode.tag.type.Sorting;
@@ -31,7 +30,6 @@ import leetcode.tag.type.Sorting;
  * Input: -1->5->3->4->0
  * Output: -1->0->3->4->5
  */
-@Bloomberg
 
 @Medium
 @Sorting

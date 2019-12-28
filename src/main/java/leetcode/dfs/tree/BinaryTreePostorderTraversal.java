@@ -2,7 +2,6 @@ package leetcode.dfs.tree;
 
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.StackTag;
@@ -26,8 +25,6 @@ import java.util.List;
  Output: [3,2,1]
  Follow up: Recursive solution is trivial, could you do it iteratively?
  */
-
-@Facebook
 
 @Hard
 @Tree

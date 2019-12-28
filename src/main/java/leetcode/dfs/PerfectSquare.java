@@ -1,7 +1,6 @@
 package leetcode.dfs;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DP;
@@ -27,7 +26,6 @@ import java.util.Queue;
  Explanation: 13 = 4 + 9.
  */
 @Amazon
-@Facebook
 
 @Medium
 @DP

@@ -1,6 +1,5 @@
 package leetcode.bfs;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
@@ -29,10 +28,6 @@ import leetcode.tag.type.DFS;
  */
 
 @Amazon
-@Facebook
-@Microsoft
-@Google
-@Zenefit
 
 @Medium
 @BFS

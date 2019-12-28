@@ -1,6 +1,5 @@
 package leetcode.backtrack;
 
-import leetcode.tag.company.Google;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -25,8 +24,6 @@ import java.util.List;
  *   [1,4],
  * ]
  */
-
-@Google
 
 @Medium
 @BackTrack

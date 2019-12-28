@@ -2,17 +2,10 @@ package leetcode.sort;
 
 import baseObj.Interval;
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.LinkedIn;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -34,11 +27,6 @@ import java.util.List;
  Explanation: Intervals [1,4] and [4,5] are considered overlapping.
  */
 
-@Facebook
-@Google
-@Bloomberg
-@Microsoft
-@LinkedIn
 @Amazon
 
 @Medium

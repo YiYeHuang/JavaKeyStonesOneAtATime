@@ -1,6 +1,5 @@
 package leetcode.slidingWindow;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.DeQueue;
 import leetcode.tag.type.Heap;
@@ -37,11 +36,6 @@ import java.util.PriorityQueue;
  */
 
 @Amazon
-@Facebook
-@Bloomberg
-@Google
-@Microsoft
-@Apple
 
 @Hard
 @Heap

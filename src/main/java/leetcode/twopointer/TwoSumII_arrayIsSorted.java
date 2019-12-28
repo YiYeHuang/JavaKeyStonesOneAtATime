@@ -1,8 +1,6 @@
 package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 
@@ -23,8 +21,6 @@ import leetcode.tag.type.BinarySearch;
  */
 
 @Amazon
-@Microsoft
-@Facebook
 
 @Easy
 @BinarySearch

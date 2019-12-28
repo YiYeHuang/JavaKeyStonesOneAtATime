@@ -1,6 +1,5 @@
 package leetcode.greedy;
 
-import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.Greedy;
@@ -31,8 +30,6 @@ import leetcode.tag.type.Greedy;
  * Output: 0
  * Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
-
-@Bloomberg
 
 @Easy
 @ArrayTag

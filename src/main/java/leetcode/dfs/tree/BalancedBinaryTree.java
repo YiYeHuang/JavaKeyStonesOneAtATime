@@ -1,9 +1,6 @@
 package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DFS;
 
@@ -41,9 +38,6 @@ import leetcode.tag.type.DFS;
  * Return false.
  *
  */
-@Google
-@Microsoft
-@Facebook
 
 @Easy
 @DFS

@@ -1,6 +1,5 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.*;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Heap;
@@ -26,11 +25,7 @@ import java.util.*;
  * Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
  */
 
-@Facebook
-@Google
 @Amazon
-@Bloomberg
-@Microsoft
 
 @Medium
 @HashTableTag

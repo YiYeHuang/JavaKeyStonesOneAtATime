@@ -1,7 +1,6 @@
 package leetcode.bfs.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Bloomberg;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.Tree;
@@ -37,8 +36,6 @@ import java.util.Queue;
  * Output:
  * 7
  */
-
-@Bloomberg
 
 @Medium
 @Tree

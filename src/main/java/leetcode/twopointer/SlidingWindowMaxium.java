@@ -1,11 +1,6 @@
 package leetcode.twopointer;
 
 import leetcode.tag.company.Amazon;
-import leetcode.tag.company.Apple;
-import leetcode.tag.company.Bloomberg;
-import leetcode.tag.company.Facebook;
-import leetcode.tag.company.Google;
-import leetcode.tag.company.Microsoft;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Heap;
 
@@ -41,11 +36,6 @@ import java.util.PriorityQueue;
  */
 
 @Amazon
-@Facebook
-@Bloomberg
-@Google
-@Microsoft
-@Apple
 
 @Hard
 @Heap
