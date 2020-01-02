@@ -1,6 +1,6 @@
 package leetcode.dp;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.SlidingWindow;
@@ -25,8 +25,6 @@ import java.util.Set;
  * 
  * 
  */
-
-@Amazon
 
 @Medium
 @SlidingWindow

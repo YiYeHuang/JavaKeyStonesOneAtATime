@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Hash;
 import leetcode.tag.type.HashTableTag;
@@ -20,8 +20,6 @@ import java.util.Random;
  Design the encode and decode methods for the TinyURL service. There is no restriction on how your
  encode/decode algorithm should work. You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL can be decoded to the original URL.
  */
-@Amazon
-
 @Medium
 @HashTableTag
 @Hash

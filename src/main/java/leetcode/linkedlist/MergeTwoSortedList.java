@@ -16,8 +16,6 @@ import leetcode.tag.type.LinkedListTag;
  Output: 1->1->2->3->4->4
  */
 
-@Amazon
-
 @Easy
 @LinkedListTag
 public class MergeTwoSortedList

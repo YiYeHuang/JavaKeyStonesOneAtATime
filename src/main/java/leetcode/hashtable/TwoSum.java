@@ -21,7 +21,6 @@ import java.util.Map;
  return [0, 1].
  */
 
-@Amazon
 @Easy
 public class TwoSum
 {

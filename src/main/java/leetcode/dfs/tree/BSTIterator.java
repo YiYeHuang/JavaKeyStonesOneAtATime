@@ -1,7 +1,7 @@
 package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -18,8 +18,6 @@ import java.util.Stack;
  * Credits:
  * Special thanks to @ts for adding this problem and creating all test cases.
  */
-
-@Amazon
 
 @Medium
 @Tree

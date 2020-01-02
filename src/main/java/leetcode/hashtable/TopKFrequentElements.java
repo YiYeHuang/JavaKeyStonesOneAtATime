@@ -25,8 +25,6 @@ import java.util.*;
  * Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
  */
 
-@Amazon
-
 @Medium
 @HashTableTag
 @Heap

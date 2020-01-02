@@ -1,6 +1,6 @@
 package leetcode.math;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 import leetcode.tag.type.Mathematics;
@@ -32,8 +32,6 @@ import leetcode.tag.type.Mathematics;
  1 is typically treated as an ugly number.
  Input is within the 32-bit signed integer range: [−231,  231 − 1].
  */
-
-@Amazon
 
 @Easy
 @DP

@@ -1,6 +1,6 @@
 package leetcode.linkedlist;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
@@ -20,9 +20,6 @@ import java.util.Queue;
  * m.next(3) = (1 + 10 + 3) / 3 
  * m.next(5) = (10 + 3 + 5) / 3
  */
-
-@Amazon
-
 @Easy
 @LinkedListTag
 public class MovingAverageFromDataStream

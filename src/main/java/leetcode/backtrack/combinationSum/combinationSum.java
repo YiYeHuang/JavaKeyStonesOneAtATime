@@ -36,7 +36,6 @@ import java.util.List;
  *   [3,5]
  * ]
  */
-@Amazon
 
 @Medium
 @BackTrack

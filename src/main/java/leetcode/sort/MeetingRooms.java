@@ -1,7 +1,7 @@
 package leetcode.sort;
 
 import baseObj.Interval;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Sorting;
 
@@ -24,9 +24,6 @@ import java.util.Arrays;
  Input: [[7,10],[2,4]]
  Output: true
  */
-
-@Amazon
-
 @Easy
 @Sorting
 public class MeetingRooms {

@@ -1,7 +1,7 @@
 package leetcode.heap;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Heap;
 
@@ -22,7 +22,6 @@ import java.util.PriorityQueue;
  ]
  Output: 1->1->2->3->4->4->5->6
  */
-@Amazon
 
 @Hard
 @Heap

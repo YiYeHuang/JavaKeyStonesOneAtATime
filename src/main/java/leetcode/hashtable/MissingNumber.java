@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BitManipulation;
@@ -23,8 +23,6 @@ import leetcode.tag.type.Mathematics;
  * Note:
  * Your algorithm should run in linear runtime complexity. Could you implement it using only constant extra space complexity?
  */
-
-@Amazon
 
 @Easy
 @ArrayTag

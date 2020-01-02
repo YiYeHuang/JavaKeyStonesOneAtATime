@@ -1,7 +1,6 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
@@ -18,8 +17,6 @@ import leetcode.tag.type.LinkedListTag;
  Output: 7 -> 0 -> 8
  Explanation: 342 + 465 = 807.
  */
-
-@Amazon
 
 @Medium
 @LinkedListTag

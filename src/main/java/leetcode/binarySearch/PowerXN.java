@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 
@@ -25,8 +25,6 @@ import leetcode.tag.type.BinarySearch;
  -100.0 < x < 100.0
  n is a 32-bit signed integer, within the range [−231, 231 − 1]
  */
-
-@Amazon
 
 @Medium
 @BinarySearch

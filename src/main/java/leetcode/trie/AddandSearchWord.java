@@ -25,9 +25,6 @@ import leetcode.tag.type.Trie;
  search(".ad") -> true
  search("b..") -> true
  */
-
-@Amazon
-
 @Medium
 @Trie
 public class AddandSearchWord {

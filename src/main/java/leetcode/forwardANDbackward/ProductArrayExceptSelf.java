@@ -1,6 +1,6 @@
 package leetcode.forwardANDbackward;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.ForwardBackward;
 
@@ -18,8 +18,6 @@ import leetcode.tag.type.ForwardBackward;
  Could you solve it with constant space complexity?
  (The output array does not count as extra space for the purpose of space complexity analysis.)
  */
-
-@Amazon
 
 @ForwardBackward
 public class ProductArrayExceptSelf

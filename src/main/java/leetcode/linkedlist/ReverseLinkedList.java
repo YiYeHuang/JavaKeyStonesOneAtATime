@@ -1,7 +1,7 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 
@@ -16,8 +16,6 @@ import leetcode.tag.type.LinkedListTag;
 
  A linked list can be reversed either iteratively or recursively. Could you implement both?
  */
-
-@Amazon
 
 @Easy
 @LinkedListTag

@@ -1,6 +1,5 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.DeQueue;
 import leetcode.tag.type.Heap;
@@ -23,7 +22,7 @@ import java.util.PriorityQueue;
 
  Window position                Max
  ---------------               -----
- [1  3  -1] -3  5  3  6  7       3
+ [1  3  -1] -3  5  3  6  7       3F
  1 [3  -1  -3] 5  3  6  7       3
  1  3 [-1  -3  5] 3  6  7       5
  1  3  -1 [-3  5  3] 6  7       5
@@ -35,8 +34,6 @@ import java.util.PriorityQueue;
  Follow up:
  Could you solve it in linear time?
  */
-
-@Amazon
 
 @Hard
 @Heap

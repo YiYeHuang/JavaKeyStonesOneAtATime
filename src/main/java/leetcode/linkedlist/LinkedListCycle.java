@@ -12,7 +12,6 @@ import leetcode.tag.type.LinkedListTag;
  * Follow up: Can you solve it without using extra space?
  * 
  */
-@Amazon
 
 @Easy
 @LinkedListTag

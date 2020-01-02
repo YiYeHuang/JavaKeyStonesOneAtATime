@@ -25,8 +25,6 @@ import java.util.List;
  * ]
  */
 
-@Amazon
-
 @Medium
 @BackTrack
 public class Permutations {

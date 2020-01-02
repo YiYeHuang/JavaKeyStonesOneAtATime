@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.HashTableTag;
 
@@ -32,8 +32,6 @@ import java.util.Map;
  The length of the array won't exceed 10,000.
  All the integers in the given input belong to the range: [-1e7, 1e7].
  */
-@Amazon
-
 @Easy
 @HashTableTag
 public class KdiffPairsinArray {

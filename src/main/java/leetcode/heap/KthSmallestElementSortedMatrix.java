@@ -1,6 +1,6 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Heap;
@@ -26,7 +26,6 @@ import java.util.PriorityQueue;
 
  return 13.
  */
-@Amazon
 
 @Medium
 @BinarySearch

@@ -1,6 +1,6 @@
 package leetcode.design_systemdesign;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Heap;
 
@@ -30,8 +30,6 @@ import java.util.PriorityQueue;
  addNum(3)
  findMedian() -> 2
  */
-
-@Amazon
 
 @Hard
 @Heap

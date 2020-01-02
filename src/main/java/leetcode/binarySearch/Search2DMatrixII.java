@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.TwoPointer;
@@ -27,8 +27,6 @@ import leetcode.tag.type.TwoPointer;
 
  Given target = 20, return false.
  */
-
-@Amazon
 
 @Medium
 @BinarySearch

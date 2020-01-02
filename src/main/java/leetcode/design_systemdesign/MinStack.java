@@ -1,6 +1,6 @@
 package leetcode.design_systemdesign;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Design;
 import leetcode.tag.type.StackTag;
@@ -18,7 +18,6 @@ import java.util.Stack;
  * element in the stack.
  */
 
-@Amazon
 @Easy
 @Design
 @StackTag

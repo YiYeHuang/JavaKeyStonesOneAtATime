@@ -1,6 +1,6 @@
 package leetcode.design_systemdesign.searchAutocompleteSystem;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Trie;
 
@@ -81,8 +81,6 @@ import java.util.PriorityQueue;
  Please remember to RESET your class variables declared in class AutocompleteSystem,
  as static/class variables are persisted across multiple test cases. Please see here for more details.
  */
-
-@Amazon
 
 @Medium
 @Trie

@@ -1,6 +1,5 @@
 package leetcode.twopointer;
 
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BinarySearch;
@@ -30,8 +29,6 @@ import java.util.List;
  *   [-1, -1, 2]
  * ]
  */
-
-@Amazon
 
 @Medium
 @Sorting

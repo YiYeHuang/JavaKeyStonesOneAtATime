@@ -1,6 +1,6 @@
 package leetcode.deQueue;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.DeQueue;
 import leetcode.tag.type.Heap;
@@ -35,8 +35,6 @@ import java.util.PriorityQueue;
  Follow up:
  Could you solve it in linear time?
  */
-
-@Amazon
 
 @Hard
 @Heap

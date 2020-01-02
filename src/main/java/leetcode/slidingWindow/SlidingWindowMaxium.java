@@ -35,8 +35,6 @@ import java.util.PriorityQueue;
  Could you solve it in linear time?
  */
 
-@Amazon
-
 @Hard
 @Heap
 @DeQueue

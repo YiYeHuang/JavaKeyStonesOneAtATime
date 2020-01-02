@@ -1,7 +1,7 @@
 package leetcode.tree.bst;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.DFS;
@@ -38,9 +38,6 @@ import java.util.Stack;
  * Follow up:
  * What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
  */
-
-@Amazon
-
 @Medium
 @BinarySearch
 @DFS

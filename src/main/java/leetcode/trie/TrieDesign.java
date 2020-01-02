@@ -29,8 +29,6 @@ import leetcode.tag.type.Trie;
  All inputs are guaranteed to be non-empty strings.
  */
 
-@Amazon
-
 @Medium
 @Trie
 public class TrieDesign {

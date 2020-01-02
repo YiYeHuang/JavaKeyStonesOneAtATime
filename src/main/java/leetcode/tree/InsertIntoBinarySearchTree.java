@@ -1,7 +1,7 @@
 package leetcode.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Tree;
 
@@ -36,8 +36,6 @@ import leetcode.tag.type.Tree;
  *          \
  *           4
  */
-
-@Amazon
 
 @Medium
 @Tree

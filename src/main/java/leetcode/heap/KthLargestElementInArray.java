@@ -1,6 +1,6 @@
 package leetcode.heap;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Heap;
 import leetcode.tag.type.Sorting;
@@ -24,8 +24,6 @@ import java.util.PriorityQueue;
  Note:
  You may assume k is always valid, 1 ≤ k ≤ array's length.
  */
-
-@Amazon
 
 @Medium
 @Heap

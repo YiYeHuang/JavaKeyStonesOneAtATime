@@ -1,6 +1,6 @@
 package leetcode.array;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BinarySearch;
@@ -24,8 +24,6 @@ import leetcode.tag.type.TwoPointer;
  * Your runtime complexity should be less than O(n2).
  * There is only one duplicate number in the array, but it could be repeated more than once.
  */
-
-@Amazon
 
 @Medium
 @ArrayTag

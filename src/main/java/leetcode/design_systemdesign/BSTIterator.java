@@ -18,8 +18,6 @@ import java.util.Stack;
  * Special thanks to @ts for adding this problem and creating all test cases.
  */
 
-@Amazon
-
 @Medium
 @Tree
 @DFS

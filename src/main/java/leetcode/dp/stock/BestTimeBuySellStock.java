@@ -1,6 +1,6 @@
 package leetcode.dp.stock;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
@@ -23,8 +23,6 @@ import leetcode.tag.type.DP;
  Output: 0
  Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
-
-@Amazon
 
 @Easy
 @DP

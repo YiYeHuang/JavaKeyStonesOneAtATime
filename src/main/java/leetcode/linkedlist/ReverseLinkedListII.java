@@ -15,8 +15,6 @@ import leetcode.tag.type.LinkedListTag;
  * Output: 1->4->3->2->5->NULL
  */
 
-@Amazon
-
 @Medium
 @LinkedListTag
 public class ReverseLinkedListII {

@@ -1,6 +1,6 @@
 package leetcode.twopointer;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.ArrayTag;
 import leetcode.tag.type.BinarySearch;
@@ -20,8 +20,6 @@ import leetcode.tag.type.TwoPointer;
  * Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2
  *
  */
-
-@Amazon
 
 @Easy
 @ArrayTag

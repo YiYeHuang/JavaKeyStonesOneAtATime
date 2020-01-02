@@ -26,9 +26,6 @@ import leetcode.tag.type.DFS;
  * to under stand that, water == land once notice that there is a land
  * connected, just clean it out to be "water" once reach water, stop
  */
-
-@Amazon
-
 @Medium
 @BFS
 @DFS

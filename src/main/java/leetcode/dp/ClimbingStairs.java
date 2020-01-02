@@ -1,6 +1,6 @@
 package leetcode.dp;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
@@ -30,8 +30,6 @@ import leetcode.tag.type.DP;
  3. 2 steps + 1 step
 
  */
-
-@Amazon
 
 @Easy
 @DP

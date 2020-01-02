@@ -1,7 +1,7 @@
 package leetcode.linkedlist;
 
 import baseObj.ListNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.DivideConquer;
 import leetcode.tag.type.LinkedListTag;
@@ -26,9 +26,6 @@ import leetcode.tag.type.LinkedListTag;
  * Only constant extra memory is allowed.
  * You may not alter the values in the list's nodes, only nodes itself may be changed.
  */
-
-@Amazon
-
 @Hard
 @LinkedListTag
 @DivideConquer

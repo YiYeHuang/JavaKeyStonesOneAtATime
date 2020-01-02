@@ -1,7 +1,7 @@
 package leetcode.tree;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Tree;
@@ -30,8 +30,6 @@ import leetcode.tag.type.Tree;
  -10  5
 
  */
-
-@Amazon
 
 @Easy
 @Tree

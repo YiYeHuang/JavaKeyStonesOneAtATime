@@ -1,6 +1,6 @@
 package leetcode.dp;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DP;
 
@@ -23,8 +23,6 @@ import leetcode.tag.type.DP;
  cost will have a length in the range [2, 1000].
  Every cost[i] will be an integer in the range [0, 999].
  */
-
-@Amazon
 
 @Easy
 @DP

@@ -18,7 +18,7 @@ package leetcode.string;
  * Explanation: Six palindromic
  * strings: "a", "a", "a", "aa", "aa", "aaa".
  */
-public class PalindromicSubstrings_facebook
+public class PalindromicSubstrings
 {
     public static int countSubstrings(String s)
     {

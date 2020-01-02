@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.*;
 
@@ -25,7 +25,6 @@ import java.util.Map;
  Input: [2,2,1,1,1,2,2]
  Output: 2
  */
-@Amazon
 
 @Easy
 @Hash

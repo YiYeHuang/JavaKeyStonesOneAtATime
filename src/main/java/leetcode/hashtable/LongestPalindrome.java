@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Hash;
 import leetcode.tag.type.HashTableTag;
@@ -16,8 +16,6 @@ import leetcode.tag.type.HashTableTag;
  * Note:
  * Assume the length of given string will not exceed 1,010.
  */
-
-@Amazon
 
 @Easy
 @Hash

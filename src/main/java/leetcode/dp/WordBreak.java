@@ -1,4 +1,4 @@
-package leetcode.string;
+package leetcode.dp;
 
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DP;

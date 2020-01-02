@@ -1,6 +1,5 @@
 package leetcode.string;
 
-import leetcode.tag.company.Amazon;
 import leetcode.tag.type.StringModify;
 
 import java.util.ArrayList;
@@ -39,8 +38,7 @@ import java.util.List;
 
  */
 
-@Amazon
-public class FindAllAnagram_amazon
+public class FindAllAnagram
 {
     @StringModify
     public static List<Integer> findAnagrams(String s, String p)

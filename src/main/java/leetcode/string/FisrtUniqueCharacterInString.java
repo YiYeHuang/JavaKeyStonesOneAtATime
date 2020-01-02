@@ -1,6 +1,6 @@
 package leetcode.string;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.type.StringModify;
 
 /**
@@ -14,8 +14,6 @@ import leetcode.tag.type.StringModify;
  s = "loveleetcode",
  return 2.
  */
-
-@Amazon
 public class FisrtUniqueCharacterInString
 {
     @StringModify

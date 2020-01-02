@@ -1,7 +1,7 @@
 package leetcode.design_systemdesign;
 
 import baseObj.TrieNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Trie;
 
@@ -29,8 +29,6 @@ import leetcode.tag.type.Trie;
  You may assume that all inputs are consist of lowercase letters a-z.
  All inputs are guaranteed to be non-empty strings.
  */
-
-@Amazon
 
 @Medium
 @Trie

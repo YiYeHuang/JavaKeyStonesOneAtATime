@@ -1,7 +1,7 @@
 package leetcode.trie;
 
 import baseObj.TrieNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Trie;
@@ -27,8 +27,6 @@ import java.util.*;
  * Explanation:
  * Both "apply" and "apple" can be built from other words in the dictionary. However, "apple" is lexicographically smaller than "apply".
  */
-
-@Amazon
 
 @Easy
 @Trie

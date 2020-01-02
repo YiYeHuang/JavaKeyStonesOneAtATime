@@ -1,6 +1,6 @@
 package leetcode.greedy;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Greedy;
 
@@ -53,8 +53,6 @@ import leetcode.tag.type.Greedy;
  0 <= bills.length <= 10000
  bills[i] will be either 5, 10, or 20.
  */
-
-@Amazon
 
 @Easy
 @Greedy

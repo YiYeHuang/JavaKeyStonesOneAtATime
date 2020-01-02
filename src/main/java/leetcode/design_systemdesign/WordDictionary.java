@@ -1,7 +1,7 @@
 package leetcode.design_systemdesign;
 
 import baseObj.TrieNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 import leetcode.tag.type.Trie;
@@ -27,8 +27,6 @@ import leetcode.tag.type.Trie;
  search(".ad") -> true
  search("b..") -> true
  */
-
-@Amazon
 
 @Medium
 @Trie

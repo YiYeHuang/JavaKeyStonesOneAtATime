@@ -1,7 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.Tree;
@@ -33,8 +32,6 @@ import java.util.Queue;
  The range of node's value is in the range of 32-bit signed integer.
 
  */
-
-@Amazon
 
 @Easy
 @BFS

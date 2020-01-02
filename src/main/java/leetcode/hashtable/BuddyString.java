@@ -55,7 +55,9 @@ public class BuddyString {
         if (A.length() != B.length()) return false;
         if (A.equals(B)) {
             Set<Character> s = new HashSet<>();
-            for (char c : A.toCharArray()) s.add(c);
+            for (char c : A.toCharArray()) {
+                s.add(c);
+            }
             return s.size() < A.length();
         }
         List<Integer> diff = new ArrayList<>();

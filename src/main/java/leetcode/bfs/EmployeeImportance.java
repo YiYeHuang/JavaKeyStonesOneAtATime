@@ -1,7 +1,6 @@
 package leetcode.bfs;
 
 import baseObj.Employee;
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 

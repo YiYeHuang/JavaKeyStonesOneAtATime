@@ -33,8 +33,6 @@ import java.util.*;
  * Input words contain only lowercase letters.
  */
 
-@Amazon
-
 @Medium
 @HashTableTag
 @Heap

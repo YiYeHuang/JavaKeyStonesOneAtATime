@@ -21,8 +21,6 @@ import java.util.Set;
  * Output: [9,4]
  */
 
-@Amazon
-
 @Easy
 @BinarySearch
 @HashTableTag

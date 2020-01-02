@@ -1,6 +1,6 @@
 package leetcode.dp;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BackTrack;
 
@@ -31,8 +31,6 @@ import leetcode.tag.type.BackTrack;
  * How does it change the problem?
  * What limitation we need to add to the question to allow negative numbers?
  */
-
-@Amazon
 
 @Medium
 @BackTrack

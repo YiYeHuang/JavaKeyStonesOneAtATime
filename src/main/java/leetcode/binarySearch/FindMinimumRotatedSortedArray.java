@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 
@@ -25,8 +25,6 @@ import leetcode.tag.type.BinarySearch;
  Input: [4,5,6,7,0,1,2]
  Output: 0
  */
-
-@Amazon
 
 @Medium
 @BinarySearch

@@ -1,6 +1,6 @@
 package leetcode.binarySearch;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BinarySearch;
 
@@ -33,7 +33,6 @@ import leetcode.tag.type.BinarySearch;
  Output: false
 
  */
-@Amazon
 
 @Medium
 @BinarySearch

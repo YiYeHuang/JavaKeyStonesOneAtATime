@@ -1,6 +1,6 @@
 package leetcode.design_systemdesign;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Design;
 import leetcode.tag.type.LinkedListTag;
@@ -34,8 +34,6 @@ import java.util.HashMap;
  * cache.get(3);       // returns 3
  * cache.get(4);       // returns 4
  */
-
-@Amazon
 
 @Design
 @LinkedListTag

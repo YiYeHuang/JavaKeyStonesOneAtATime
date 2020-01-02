@@ -1,6 +1,6 @@
 package leetcode.hashtable;
 
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Hash;
 
@@ -27,8 +27,6 @@ import leetcode.tag.type.Hash;
  Follow up:
  What if the inputs contain unicode characters? How would you adapt your solution to such case?
  */
-
-@Amazon
 
 @Easy
 @Hash

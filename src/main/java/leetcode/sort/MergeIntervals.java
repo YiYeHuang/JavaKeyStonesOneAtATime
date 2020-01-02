@@ -1,7 +1,6 @@
 package leetcode.sort;
 
 import baseObj.Interval;
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 
@@ -26,8 +25,6 @@ import java.util.List;
  Output: [[1,5]]
  Explanation: Intervals [1,4] and [4,5] are considered overlapping.
  */
-
-@Amazon
 
 @Medium
 @Sorting

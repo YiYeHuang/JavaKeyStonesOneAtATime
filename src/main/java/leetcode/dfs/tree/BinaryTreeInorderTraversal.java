@@ -2,7 +2,7 @@ package leetcode.dfs.tree;
 
 
 import baseObj.TreeNode;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.StackTag;
@@ -27,8 +27,6 @@ import java.util.Stack;
  Output: [1,3,2]
  Follow up: Recursive solution is trivial, could you do it iteratively?
  */
-
-@Amazon
 
 @Medium
 @Tree

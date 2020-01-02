@@ -1,7 +1,7 @@
 package leetcode.heap;
 
 import baseObj.Interval;
-import leetcode.tag.company.Amazon;
+
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Greedy;
 import leetcode.tag.type.Heap;
@@ -25,8 +25,6 @@ import java.util.PriorityQueue;
  Output: 1
 
  */
-
-@Amazon
 
 @Medium
 @Heap
