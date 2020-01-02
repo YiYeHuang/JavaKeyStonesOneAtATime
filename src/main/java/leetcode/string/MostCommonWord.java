@@ -1,8 +1,7 @@
 package leetcode.string;
 
-
-import leetcode.tag.company.Amazon;
 import leetcode.tag.level.Easy;
+import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.StringModify;
 
 import java.util.HashMap;
@@ -44,11 +43,11 @@ import java.util.Set;
  Words only consist of letters, never apostrophes or other punctuation symbols.
 
  */
-@Amazon
+
 @Easy
+@HashTableTag
 public class MostCommonWord {
 
-    @StringModify
     public static String mostCommonWord(String paragraph, String[] banned) {
         Set<String> bannedSet = new HashSet<>();
         Map<String, Integer> dictionary = new HashMap<>();
