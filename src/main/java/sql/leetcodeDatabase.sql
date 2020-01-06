@@ -290,3 +290,129 @@ from
 	Department D
 WHERE E.DepartmentId = D.id
   AND (DepartmentId,Salary) in (SELECT DepartmentId, max(Salary) as max FROM Employee GROUP BY DepartmentId)
+
+
+--1179. Reformat Department Table
+--
+--SQL Schema
+--Table: Department
+--
+--+---------------+---------+
+--| Column Name   | Type    |
+--+---------------+---------+
+--| id            | int     |
+--| revenue       | int     |
+--| month         | varchar |
+--+---------------+---------+
+--(id, month) is the primary key of this table.
+--The table has information about the revenue of each department per month.
+--The month has values in ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].
+--
+--
+--Write an SQL query to reformat the table such that there is a department id column and a revenue column for each month.
+--
+--The query result format is in the following example:
+--
+--Department table:
+--+------+---------+-------+
+--| id   | revenue | month |
+--+------+---------+-------+
+--| 1    | 8000    | Jan   |
+--| 2    | 9000    | Jan   |
+--| 3    | 10000   | Feb   |
+--| 1    | 7000    | Feb   |
+--| 1    | 6000    | Mar   |
+--+------+---------+-------+
+--
+--Result table:
+--+------+-------------+-------------+-------------+-----+-------------+
+--| id   | Jan_Revenue | Feb_Revenue | Mar_Revenue | ... | Dec_Revenue |
+--+------+-------------+-------------+-------------+-----+-------------+
+--| 1    | 8000        | 7000        | 6000        | ... | null        |
+--| 2    | 9000        | null        | null        | ... | null        |
+--| 3    | null        | 10000       | null        | ... | null        |
+--+------+-------------+-------------+-------------+-----+-------------+
+--
+--Note that the result table has 13 columns (1 for the department id + 12 for the months).
+
+select id,
+	sum(case when month = 'jan' then revenue else null end) as Jan_Revenue,
+	sum(case when month = 'feb' then revenue else null end) as Feb_Revenue,
+	sum(case when month = 'mar' then revenue else null end) as Mar_Revenue,
+	sum(case when month = 'apr' then revenue else null end) as Apr_Revenue,
+	sum(case when month = 'may' then revenue else null end) as May_Revenue,
+	sum(case when month = 'jun' then revenue else null end) as Jun_Revenue,
+	sum(case when month = 'jul' then revenue else null end) as Jul_Revenue,
+	sum(case when month = 'aug' then revenue else null end) as Aug_Revenue,
+	sum(case when month = 'sep' then revenue else null end) as Sep_Revenue,
+	sum(case when month = 'oct' then revenue else null end) as Oct_Revenue,
+	sum(case when month = 'nov' then revenue else null end) as Nov_Revenue,
+	sum(case when month = 'dec' then revenue else null end) as Dec_Revenue
+from department
+group by id
+order by id
+
+--627. Swap Salary
+--
+--Given a table salary, such as the one below, that has m=male and f=female values.
+--Swap all f and m values (i.e., change all f values to m and vice versa) with a single update statement and no intermediate temp table.
+--
+--Note that you must write a single update statement, DO NOT write any select statement for this problem.
+--
+--
+--
+--Example:
+--
+--| id | name | sex | salary |
+--|----|------|-----|--------|
+--| 1  | A    | m   | 2500   |
+--| 2  | B    | f   | 1500   |
+--| 3  | C    | m   | 5500   |
+--| 4  | D    | f   | 500    |
+--After running your update statement, the above salary table should have the following rows:
+--| id | name | sex | salary |
+--|----|------|-----|--------|
+--| 1  | A    | f   | 2500   |
+--| 2  | B    | m   | 1500   |
+--| 3  | C    | f   | 5500   |
+--| 4  | D    | m   | 500    |
+
+update salary set sex = TRIM(sex from "fm");
+
+UPDATE salary
+    SET sex  = (CASE WHEN sex = 'm'
+        THEN  'f'
+        ELSE 'm'
+        END)
+
+--620. Not Boring Movies
+--
+--Share
+--SQL Schema
+--X city opened a new cinema, many people would like to go to this cinema.
+--The cinema also gives out a poster indicating the movies’ ratings and descriptions.
+--Please write a SQL query to output movies with an odd numbered ID and a description that is not 'boring'. Order the result by rating.
+--
+--
+--
+--For example, table cinema:
+--
+--+---------+-----------+--------------+-----------+
+--|   id    | movie     |  description |  rating   |
+--+---------+-----------+--------------+-----------+
+--|   1     | War       |   great 3D   |   8.9     |
+--|   2     | Science   |   fiction    |   8.5     |
+--|   3     | irish     |   boring     |   6.2     |
+--|   4     | Ice song  |   Fantacy    |   8.6     |
+--|   5     | House card|   Interesting|   9.1     |
+--+---------+-----------+--------------+-----------+
+--For the example above, the output should be:
+--+---------+-----------+--------------+-----------+
+--|   id    | movie     |  description |  rating   |
+--+---------+-----------+--------------+-----------+
+--|   5     | House card|   Interesting|   9.1     |
+--|   1     | War       |   great 3D   |   8.9     |
+--+---------+-----------+--------------+-----------+
+
+SELECT * FROM cinema WHERE (id % 2 = 1) AND (description <> 'boring') ORDER BY rating DESC
+
