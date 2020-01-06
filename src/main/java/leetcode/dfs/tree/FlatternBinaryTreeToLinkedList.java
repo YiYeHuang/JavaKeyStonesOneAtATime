@@ -38,19 +38,36 @@ The flattened tree should look like:
 @DFS
 public class FlatternBinaryTreeToLinkedList {
 
+    public void flatten(TreeNode root) {
+        if (root == null) return;
+        Stack<TreeNode> stk = new Stack<TreeNode>();
+        stk.push(root);
+        while (!stk.isEmpty()){
+            TreeNode curr = stk.pop();
+            if (curr.right!=null)
+                stk.push(curr.right);
+            if (curr.left!=null)
+                stk.push(curr.left);
+            if (!stk.isEmpty())
+                curr.right = stk.peek();
+            curr.left = null;  // dont forget this!!
+        }
+    }
+
     public void flatten_itr(TreeNode root) {
         if (root == null) return;
+
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
 
         while (!stack.isEmpty()) {
             TreeNode current = stack.pop();
 
-            if (root.right != null) {
-                stack.push(root.right);
+            if (current.right != null) {
+                stack.push(current.right);
             }
-            if (root.left != null) {
-                stack.push(root.left);
+            if (current.left != null) {
+                stack.push(current.left);
             }
 
             if (!stack.isEmpty()) {
