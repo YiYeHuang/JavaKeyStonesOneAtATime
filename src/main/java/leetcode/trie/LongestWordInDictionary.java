@@ -47,6 +47,7 @@ public class LongestWordInDictionary {
         for (String word : words) {
             if (word.length() == 1 || search.contains(word.substring(0, word.length() - 1))) {
                 result = word.length() > result.length()? word:result;
+                search.add(word);
             }
         }
 
