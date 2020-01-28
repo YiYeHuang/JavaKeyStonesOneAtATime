@@ -51,14 +51,14 @@ class BenzDoor implements Door {
 class AudiDoor implements Door {
 
 	public AudiDoor() {
-		System.out.println("produce audi door");
+		System.out.println("生产奥迪汽车门");
 	}
 }
 
 class BenzWheel implements Wheel {
 
 	public BenzWheel() {
-		System.out.println("produce benz wheel");
+		System.out.println("生产奔驰轮子");
 	}
 
 
@@ -68,7 +68,7 @@ class AudiWheel implements Wheel {
 
 	public AudiWheel() {
 
-		System.out.println("produce audi wheel");
+		System.out.println("生产奥迪轮子");
 	}
 
 	public static void main(String[] args) {

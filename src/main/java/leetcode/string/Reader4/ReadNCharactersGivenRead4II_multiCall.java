@@ -81,6 +81,8 @@ public class ReadNCharactersGivenRead4II_multiCall extends Reader4 {
      * @param buf Destination buffer
      * @param n   Number of characters to read
      * @return    The number of actual characters read
+     *
+     * 读多次 的关键是 全球变量， aka，java写起来好蛋疼, this question description is fucked up
      */
 
     private int bufferPtr = 0;

@@ -64,7 +64,7 @@ public class PerfectSquare {
 	 * DP[13] = DP[13-3x3] + DP[3x3] = DP[4] + 1 = 2;
 	 *
 	 *
-	 * sub question
+	 * 子问题：
 	 * D[n] = 1 + min (dp[i-j*j] for j*j<=i)
 	 *
 	 dp[0] = 0
@@ -89,7 +89,7 @@ public class PerfectSquare {
 	 dp[n] = Min{ dp[n - i*i] + 1 },  n - i*i >=0 && i >= 1
 	 */
 	public static  int numSquaresDP(int n) {
-
+		// 造状态转移
 		int[] dp = new int[n + 1];
 		Arrays.fill(dp, Integer.MAX_VALUE);
 		dp[0] = 0;

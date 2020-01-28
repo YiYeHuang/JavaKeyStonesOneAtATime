@@ -51,6 +51,15 @@ public class ReverseLinkedList
      * 3. point previous node to current  to iterate to next
      * 4. move current node to next node.
      */
+
+    //
+    // 过往初始一场空
+    // 新人从头向前冲
+    // 起首踏步回头看
+    // 过往起首连向前
+    //
+    // re 过往
+
     public static ListNode reverseListInplace(ListNode head)
     {
         ListNode prev = null;

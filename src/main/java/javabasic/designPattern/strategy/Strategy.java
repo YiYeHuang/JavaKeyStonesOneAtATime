@@ -33,6 +33,7 @@ class AdvancedMemberStrategy implements Strategy {
 }
 
 class Price {
+	//持有一个具体的策略对象
 	private Strategy strategy;
 
 	public Price(Strategy strategy){
