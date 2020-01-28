@@ -3,7 +3,6 @@ package leetcode.string;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Mathematics;
 import leetcode.tag.type.StringTag;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
  6. ZigZag Conversion

@@ -35,7 +35,7 @@ import leetcode.tag.type.StringTag;
 
  Input: version1 = "1.01", version2 = "1.001"
  Output: 0
- Explanation: Ignoring leading zeroes, both “01” and “001" represent the same number “1”
+ Explanation: Ignoring leading zeroes, both 01 and 001 represent the same number 1
  Example 5:
 
  Input: version1 = "1.0", version2 = "1.0.0"

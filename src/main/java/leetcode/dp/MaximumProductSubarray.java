@@ -76,15 +76,6 @@ public class MaximumProductSubarray {
     }
 
     /**
-     *两个dp数组，其中f[i]表示子数组[0, i]范围内的最大子数组乘积，g[i]表示子数组[0, i]范围内的最小子数组乘积，
-     * 初始化时f[0]和g[0]都初始化为nums[0]，
-     * 其余都初始化为0。那么从数组的第二个数字开始遍历，那么此时的最大值和最小值只会在这三个数字之间产生，
-     * 即
-     * f[i-1]*nums[i]，
-     * g[i-1]*nums[i]，
-     * nums[i]。
-     *
-     * 所以我们用三者中的最大值来更新f[i]，用最小值来更新g[i]，然后用f[i]来更新结果res即可
      *
      * Besides keeping track of the largest product, we also need to keep track of the smallest product.
      * Why? The smallest product,
