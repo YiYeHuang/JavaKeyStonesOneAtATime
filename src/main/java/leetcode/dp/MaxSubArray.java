@@ -23,11 +23,9 @@ public class MaxSubArray
 {
 
     /**
-     * 极端的例子1: [-11, -23, -123, -13, -33, -1, -21] 当所有都是负数的时候最大值就是取 一位，-1
-     * 我们便希望尽可能避免负数，取正数
      *
-     * 子问题:   Max(A[], i, j) where A[i, j] sum is max
-     * return的是sum, 问题便不需要用2D array求解
+     * subquestion Max(A[], i, j) where A[i, j] sum is max
+     * return sum no 2d array
      *
      * Input: [-2,1,-3,4,-1,2,1,-5,4],
      *

@@ -61,7 +61,7 @@ public class reflection
         Person per2 = null;
         Person per3 = null;
         Person per4 = null;
-        // 取得全部的构造函数
+
         Constructor<?> cons[] = demo.getConstructors();
         try
         {
@@ -89,11 +89,11 @@ public class reflection
         {
             e.printStackTrace();
         }
-        // 保存所有的接口
+
         Class<?> intes[] = demo.getInterfaces();
         for (int i = 0; i < intes.length; i++)
         {
-            System.out.println("实现的接口   " + intes[i].getName());
+            System.out.println("interface " + intes[i].getName());
         }
     }
 
@@ -101,14 +101,14 @@ public class reflection
     {
         Object array = Array.newInstance(String.class, 10); // 等价于 new
                                                             // String[10]
-        Array.set(array, 0, "Hello"); // 等价于array[0] = "Hello"
-        Array.set(array, 1, "World"); // 等价于array[1] = "World"
+        Array.set(array, 0, "Hello"); // array[0] = "Hello"
+        Array.set(array, 1, "World"); // array[1] = "World"
         System.out.println(Array.get(array, 0)); // 等价于array[0]
     }
 
     public static void javaField() throws NoSuchFieldException, SecurityException
     {
-        Field field = Person.class.getDeclaredField("myList"); // myList的类型是List
+        Field field = Person.class.getDeclaredField("myList");
         Type type = field.getGenericType();
         if (type instanceof ParameterizedType)
         {
