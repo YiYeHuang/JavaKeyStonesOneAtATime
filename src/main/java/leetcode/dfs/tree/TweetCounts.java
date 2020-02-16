@@ -20,7 +20,7 @@ The first time interval always starts from the startTime, so the time intervals 
  ... ,
  [startTime + delta*i, min(startTime + delta*(i+1), endTime + 1)>
 
- for some non-negative number i and delta (which depends on freq).  
+ for some non-negative number i and delta (which depends on freq).
 
 Example:
 
