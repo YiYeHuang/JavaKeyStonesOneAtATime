@@ -16,7 +16,6 @@ public class QuickSort {
         quickSortInternally(a, 0, n-1);
     }
 
-
     private static void quickSortInternally(int[] arr, int start, int end) {
         if (start >= end) {
             return;
