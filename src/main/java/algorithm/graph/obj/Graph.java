@@ -1,10 +1,12 @@
-package algorithm.graph;
+package algorithm.graph.obj;
 
+import algorithm.graph.Vertex;
+import algorithm.graph.obj.Edge;
 import java.util.*;
 
 public class Graph<T> {
     private List<Edge<T>> allEdges;
-    private Map<Long,Vertex<T>> allVertex;
+    private Map<Long, Vertex<T>> allVertex;
     boolean isDirected = false;
 
     public Graph(boolean isDirected){

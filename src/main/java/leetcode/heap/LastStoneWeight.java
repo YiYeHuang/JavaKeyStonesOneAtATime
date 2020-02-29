@@ -2,6 +2,7 @@ package leetcode.heap;
 
 import leetcode.tag.level.Easy;
 import leetcode.tag.level.Hard;
+import leetcode.tag.type.Greedy;
 import leetcode.tag.type.Heap;
 
 import java.util.PriorityQueue;
@@ -22,6 +23,7 @@ import java.util.PriorityQueue;
 
 @Easy
 @Heap
+@Greedy
 public class LastStoneWeight {
 
     public int lastStoneWeight(int[] stones) {

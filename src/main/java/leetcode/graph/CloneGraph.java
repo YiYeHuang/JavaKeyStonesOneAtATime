@@ -1,8 +1,7 @@
 package leetcode.graph;
 
 
-import baseObj.Node;
-import baseObj.NodeGraph;
+import algorithm.graph.obj.NodeGraph;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
