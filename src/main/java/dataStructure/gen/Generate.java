@@ -33,9 +33,7 @@ public class Generate {
     for (int i = 0; i < 10; i ++) {
       result.get(0);
     }
-
   }
-
 
   public static int[][] load(int size) throws IOException {
     // The name of the file to open.

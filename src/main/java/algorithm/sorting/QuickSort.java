@@ -16,12 +16,17 @@ public class QuickSort {
         quickSortInternally(a, 0, n-1);
     }
 
-
+    /**
+     * - pivot and swap
+     * - reset pivot and split left half
+     * - reset pivot and split right half
+     */
     private static void quickSortInternally(int[] arr, int start, int end) {
         if (start >= end) {
             return;
         }
 
+        // choose the end of array as initial pivot
         int pivotPointIndex = partition(arr, start, end);
 
         quickSortInternally(arr, start, pivotPointIndex -1);
@@ -42,6 +47,8 @@ public class QuickSort {
     private static int partition(int[] arr, int start , int endPivot) {
         int pivot = arr[endPivot];
         int i = start;
+
+        // two pointer i, j starting to swap compare the pivot
         for(int j = start; j < endPivot; ++j) {
             if (arr[j] < pivot) {
                 int tmp = arr[i];
@@ -62,5 +69,8 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] test = {6, 11, 3, 9, 8};
         quickSort(test, test.length);
+        for (int ele : test) {
+            System.out.print(ele + " ");
+        }
     }
 }

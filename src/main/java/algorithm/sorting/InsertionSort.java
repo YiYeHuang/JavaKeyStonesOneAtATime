@@ -9,7 +9,6 @@ public class InsertionSort {
     private static int size = 0;
     private static int next = 0;
 
-
     /**
      * Best: O(n) insert in order
      * Worst: O(n^2) all reverse sorted
