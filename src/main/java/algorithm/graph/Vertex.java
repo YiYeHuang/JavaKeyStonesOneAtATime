@@ -1,5 +1,6 @@
 package algorithm.graph;
 
+import algorithm.graph.obj.Edge;
 import java.util.ArrayList;
 import java.util.List;
 

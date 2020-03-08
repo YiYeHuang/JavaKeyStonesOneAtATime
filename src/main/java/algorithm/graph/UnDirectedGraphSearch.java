@@ -1,6 +1,6 @@
 package algorithm.graph;
 
-import baseObj.NodeGraph;
+import algorithm.graph.obj.NodeGraph;
 
 import java.util.*;
 

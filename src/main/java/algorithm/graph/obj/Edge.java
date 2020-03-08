@@ -1,4 +1,6 @@
-package algorithm.graph;
+package algorithm.graph.obj;
+
+import algorithm.graph.Vertex;
 
 public class Edge<T> {
     private boolean isDirected = false;
