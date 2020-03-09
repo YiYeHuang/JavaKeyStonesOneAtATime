@@ -1,4 +1,4 @@
-package leetcode.divideConquer;
+package algorithm.divideCon;
 
 import java.util.Arrays;
 
