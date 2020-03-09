@@ -1,4 +1,4 @@
-package algorithm.sorting;
+package algorithm.divideCon;
 
 import algorithm.graph.obj.LoadFileUtil;
 import java.io.IOException;

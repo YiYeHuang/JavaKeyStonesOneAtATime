@@ -1,4 +1,4 @@
-package algorithm.sorting;
+package algorithm.divideCon;
 
 import java.util.Arrays;
 
