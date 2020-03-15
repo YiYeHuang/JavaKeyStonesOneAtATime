@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Vertex {
     public int id;
-    public List<Edge> neighbours;
+    public List<UndirectedEdge> neighbours;
 
     public Vertex(int id){
         this.id = id;

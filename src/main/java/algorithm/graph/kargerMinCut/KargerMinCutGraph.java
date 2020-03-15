@@ -23,7 +23,7 @@ import java.util.*;
 
 public class KargerMinCutGraph {
     private Map<Integer, Vertex> vertices;
-    private ArrayList<Edge> edges;
+    private ArrayList<UndirectedEdge> edges;
 
     public KargerMinCutGraph(String inputFile) throws FileNotFoundException {
         String inputFileName = inputFile;
@@ -60,13 +60,11 @@ public class KargerMinCutGraph {
      * would ensure a (1-1/n) rate of success on finding the minCut.
      * int nRepeat = (int) (Math.pow(n, 2) * Math.log(n))
      */
-
-
     private void randomContract() {
         Random generator = new Random();
         while (vertices.size() > 2) {
             int index = generator.nextInt(edges.size());
-            Edge toRemove = edges.get(index);
+            UndirectedEdge toRemove = edges.get(index);
             int idV = toRemove.v.id;
             Vertex u = toRemove.u;
             Vertex v = toRemove.v;
@@ -85,7 +83,7 @@ public class KargerMinCutGraph {
     private void addEdge(Vertex u, Vertex v, int count) {
         int idU = u.id;
         int idV = v.id;
-        Edge e = new Edge(vertices.get(Math.min(idU, idV)), vertices.get(Math.max(idU, idV)));
+        UndirectedEdge e = new UndirectedEdge(vertices.get(Math.min(idU, idV)), vertices.get(Math.max(idU, idV)));
         for (int i = 0; i < count; i++) {
             vertices.get(idU).neighbours.add(e);
             vertices.get(idV).neighbours.add(e);
@@ -97,7 +95,7 @@ public class KargerMinCutGraph {
         int count = 0;
         int idU = u.id;
         int idV = v.id;
-        Edge targetEdge = new Edge(vertices.get(Math.min(idU, idV)), vertices.get(Math.max(idU, idV)));
+        UndirectedEdge targetEdge = new UndirectedEdge(vertices.get(Math.min(idU, idV)), vertices.get(Math.max(idU, idV)));
         // remove all U's edge to V
         for (int i = 0; i < u.neighbours.size(); i++) {
             if (u.neighbours.get(i).isSame(targetEdge)) {
@@ -128,13 +126,13 @@ public class KargerMinCutGraph {
 
         for (Integer id : vertices.keySet()) {
             System.out.print(id + ": ");
-            for (Edge e : vertices.get(id).neighbours) {
+            for (UndirectedEdge e : vertices.get(id).neighbours) {
                 System.out.print(e.u.id + "-" + e.v.id + " ");
             }
             System.out.println();
         }
         System.out.println("edges:");
-        for (Edge e : edges){
+        for (UndirectedEdge e : edges){
             System.out.print(e.u.id + "-" + e.v.id + " ");
         }
         System.out.println();

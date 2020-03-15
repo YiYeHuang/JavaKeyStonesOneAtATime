@@ -1,14 +1,14 @@
 package algorithm.graph.kargerMinCut;
 
-public class Edge {
+public class UndirectedEdge {
     public Vertex u;
     public Vertex v;
-    public Edge(Vertex u, Vertex v){
+    public UndirectedEdge(Vertex u, Vertex v){
         this.u = u;
         this.v = v;
     }
 
-    public boolean isSame(Edge e){
+    public boolean isSame(UndirectedEdge e){
         if (e.u == this.u && e.v == this.v){
             return true;
         } else {
