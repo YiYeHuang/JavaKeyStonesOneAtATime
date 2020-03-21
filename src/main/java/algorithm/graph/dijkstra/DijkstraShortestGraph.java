@@ -84,7 +84,7 @@ public class DijkstraShortestGraph {
                 for (DirectedEdge edge : verticesMap.get(node).edges) {
                     // if neighbour is not explored
                     if (!exploredVertices.contains(edge.to.id)) {
-                        // on the first path, it would always be
+                        // on the first path, it would always be 0.
                         if (shortestPath[node - 1] + edge.cost < shortestCost) {
                             nextPathNeighbourId = edge.to.id;
                             shortestCost = shortestPath[node - 1] + edge.cost;
