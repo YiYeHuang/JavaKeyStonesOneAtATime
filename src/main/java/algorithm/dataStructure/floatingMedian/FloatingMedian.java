@@ -1,4 +1,4 @@
-package algorithm.graph.floatingMedian;
+package algorithm.dataStructure.floatingMedian;
 
 import java.io.File;
 import java.io.FileNotFoundException;
