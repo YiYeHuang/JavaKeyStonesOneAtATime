@@ -1,6 +1,7 @@
 package leetcode.trie;
 
-import baseObj.TrieNode;
+import leetcode.trie.basicObj.TrieNode;
+import leetcode.trie.basicObj.TrieNodeWithWord;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Trie;
@@ -64,11 +65,13 @@ public class ReplaceWords {
         for (char c:token.toCharArray()) {
             result.append(c);
             if (walker.children[c - 'a'] != null) {
+                // append the result until word end here
                 if (walker.children[c - 'a'].wordEndHere) {
                     return result.toString();
                 }
                 walker = walker.children[c - 'a'];
             } else {
+                // mis match, return the original words
                 return token;
             }
         }

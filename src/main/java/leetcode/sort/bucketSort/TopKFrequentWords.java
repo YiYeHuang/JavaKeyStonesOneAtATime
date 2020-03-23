@@ -1,6 +1,6 @@
 package leetcode.sort.bucketSort;
 
-import baseObj.TrieNode;
+import leetcode.trie.basicObj.TrieNodeWithWord;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.HashTableTag;
 import leetcode.tag.type.Heap;
@@ -86,11 +86,11 @@ public class TopKFrequentWords {
         }
 
         // build the buckets and trie
-        TrieNode[] bucketRoot = new TrieNode[words.length + 1];
+        TrieNodeWithWord[] bucketRoot = new TrieNodeWithWord[words.length + 1];
         for(String word : map.keySet()) {
             int freq = map.get(word);
             if(bucketRoot[freq] == null) {
-                bucketRoot[freq] = new TrieNode();
+                bucketRoot[freq] = new TrieNodeWithWord();
             }
             addWord(bucketRoot[freq], word);
         }
@@ -108,7 +108,7 @@ public class TopKFrequentWords {
         return result;
     }
 
-    private void getwords(TrieNode node, List<String> list, int k) {
+    private void getwords(TrieNodeWithWord node, List<String> list, int k) {
         if(node == null) return;
         if(node.word != null) {
             list.add(node.word);
@@ -121,11 +121,11 @@ public class TopKFrequentWords {
         }
     }
 
-    private boolean addWord(TrieNode root, String word) {
-        TrieNode curr = root;
+    private boolean addWord(TrieNodeWithWord root, String word) {
+        TrieNodeWithWord curr = root;
         for(char c : word.toCharArray()) {
             if(curr.children[c - 'a'] == null) {
-                curr.children[c - 'a'] = new TrieNode();
+                curr.children[c - 'a'] = new TrieNodeWithWord();
             }
             curr = curr.children[c - 'a'];
         }

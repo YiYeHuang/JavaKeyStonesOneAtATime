@@ -1,6 +1,7 @@
 package leetcode.trie;
 
-import baseObj.TrieNode;
+import leetcode.trie.basicObj.TrieNode;
+import leetcode.trie.basicObj.TrieNodeWithWord;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Trie;
 

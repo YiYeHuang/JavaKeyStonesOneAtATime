@@ -39,7 +39,8 @@ public class ConvertSortedArraytoBST {
 	/**
 	 * the trick is to create a complete binary tree, should insert everything from middle as possible
 	 *
-	 * so search the everything mid
+	 * recursion: very each root (sub root) the root should be as middle as possible of that interval,
+	 * so that the left value is almost same as right value to the tree is very balanced.
 	 */
 	public TreeNode sortedArrayToBST(int[] nums) {
 		if (nums == null || nums.length == 0) return null;

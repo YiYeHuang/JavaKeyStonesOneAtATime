@@ -1,6 +1,6 @@
 package leetcode.trie;
 
-import baseObj.TrieNode;
+import leetcode.trie.basicObj.TrieNodeWithWord;
 
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.HashTableTag;
@@ -58,10 +58,10 @@ public class LongestWordInDictionary {
      * trie solution
      * Build trie, BFS to find the longest path
      */
-    private TrieNode root;
+    private TrieNodeWithWord root;
 
     public String longestWordTrie(String[] words) {
-        TrieNode trie = new TrieNode();
+        TrieNodeWithWord trie = new TrieNodeWithWord();
         for (String word : words) {
             insert(word);
         }
@@ -70,11 +70,11 @@ public class LongestWordInDictionary {
     }
 
     public void insert(String word) {
-        TrieNode node = root;
+        TrieNodeWithWord node = root;
         for (int i = 0; i < word.length(); i++) {
             int idx = word.charAt(i) - 'a';
             if (node.children[idx] == null) {
-                node.children[idx] = new TrieNode();
+                node.children[idx] = new TrieNodeWithWord();
             }
             node = node.children[idx];
         }
@@ -84,12 +84,12 @@ public class LongestWordInDictionary {
 
     public String findLongestWord() {
         String result = null;
-        Queue<TrieNode> queue = new LinkedList<>();
+        Queue<TrieNodeWithWord> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
-                TrieNode node = queue.poll();
+                TrieNodeWithWord node = queue.poll();
                 for (int j = 25; j >= 0; j--) {
                     if (node.children[j] != null && node.children[j].wordEndHere) {
                         result = node.children[j].word;

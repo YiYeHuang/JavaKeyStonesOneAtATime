@@ -3,9 +3,7 @@ package leetcode.sort;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 /*
 1333. Filter Restaurants by Vegan-Friendly, Price and Distance
@@ -69,5 +67,8 @@ public class FilterRestaurants {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
     }
 }
