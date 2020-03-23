@@ -1,10 +1,13 @@
-package leetcode.tree;
+package leetcode.dfs.tree;
 
 import baseObj.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import leetcode.tag.level.Easy;
+import leetcode.tag.type.BFS;
+import leetcode.tag.type.Tree;
 
 /**
  * 404. Sum of Left Leaves
@@ -21,6 +24,9 @@ import java.util.Stack;
  *
  * There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
  */
+@Easy
+@Tree
+@BFS
 public class SumOfLeftLeaves {
 
     /**

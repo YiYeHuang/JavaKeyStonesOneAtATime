@@ -1,7 +1,8 @@
-package leetcode.tree.pathSum;
+package leetcode.dfs.tree.pathSum;
 
 import baseObj.TreeNode;
 import leetcode.tag.level.Easy;
+import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
 
 /**
@@ -28,6 +29,7 @@ import leetcode.tag.type.Tree;
 
 @Easy
 @Tree
+@DFS
 public class PathSum {
 
     public boolean hasPathSum(TreeNode root, int sum) {

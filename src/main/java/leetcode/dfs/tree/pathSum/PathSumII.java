@@ -1,4 +1,4 @@
-package leetcode.tree.pathSum;
+package leetcode.dfs.tree.pathSum;
 
 import baseObj.TreeNode;
 import leetcode.tag.level.Medium;
