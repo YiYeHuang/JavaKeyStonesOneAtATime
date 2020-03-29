@@ -81,6 +81,7 @@ public class TimeNeededToInformAllEmployees {
     // map manager id to sub manager id
     final Map<Integer, List<Integer>> graph = new HashMap<>();
     int total = 0;
+    // build graph
     for (int i = 0; i < manager.length; i++) {
       int j = manager[i];
       if (!graph.containsKey(j))
@@ -126,7 +127,9 @@ public class TimeNeededToInformAllEmployees {
       ans = Math.max(ans, p.time);
       if(informTime[p.node] != 0) {
         List<Integer> children = map.get(p.node);
-        for(int i = 0; i < children.size(); i++) q.add(new Pair(children.get(i), p.time + informTime[p.node]));
+        for(int i = 0; i < children.size(); i++) {
+          q.add(new Pair(children.get(i), p.time + informTime[p.node]));
+        }
       }
     }
     return ans;
