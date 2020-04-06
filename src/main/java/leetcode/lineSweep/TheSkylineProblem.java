@@ -152,5 +152,4 @@ public class TheSkylineProblem {
 
     rII.getSkyline(test);
   }
-
 }
