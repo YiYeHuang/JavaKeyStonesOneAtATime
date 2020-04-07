@@ -1,10 +1,11 @@
 package algorithm.greedy.mst;
 
-import leetcode.tag.type.Hash;
-
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 /*
 Question 3
