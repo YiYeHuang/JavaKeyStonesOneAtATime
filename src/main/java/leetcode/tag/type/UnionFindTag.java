@@ -12,6 +12,6 @@ import static java.lang.annotation.ElementType.TYPE;
 @Target({TYPE, METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Tag("UnionFind")
-public @interface UnionFind {
+public @interface UnionFindTag {
 }
 
