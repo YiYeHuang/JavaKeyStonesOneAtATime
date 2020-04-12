@@ -1,5 +1,8 @@
 package leetcode.string;
 
+import leetcode.tag.level.Medium;
+import leetcode.tag.type.DP;
+
 /**
  * Given a string s, find the longest palindromic substring in s. You may assume
  * that the maximum length of s is 1000.
@@ -13,6 +16,9 @@ package leetcode.string;
  * 
  * 
  */
+
+@DP
+@Medium
 public class LongestPalindromicSubstring
 {
     // Brute Force: Find all the possible combine
