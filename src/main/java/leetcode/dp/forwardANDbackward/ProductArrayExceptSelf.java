@@ -1,11 +1,13 @@
-package leetcode.forwardANDbackward;
+package leetcode.dp.forwardANDbackward;
 
 
+import leetcode.tag.level.Medium;
 import leetcode.tag.type.ArrayTag;
+import leetcode.tag.type.DP;
 import leetcode.tag.type.ForwardBackward;
 
 /**
- Given an array nums of n integers where n > 1,
+ 238.  Given an array nums of n integers where n > 1,
  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
 
  Example:
@@ -20,6 +22,8 @@ import leetcode.tag.type.ForwardBackward;
  */
 
 @ForwardBackward
+@Medium
+@DP
 public class ProductArrayExceptSelf
 {
     /**
@@ -29,6 +33,12 @@ public class ProductArrayExceptSelf
      *
      * T: O(2n)
      * S: O(n)
+     *
+     * 1:   \2  3  4
+     * 2: 1  \  3  4
+     * 3: 1 2 \    4
+     * 4: 1 2 3\
+     *
      */
     @ArrayTag
     public static int[] productExceptSelf(int[] nums)
