@@ -25,7 +25,6 @@ import java.util.PriorityQueue;
 
 @Hard
 @Heap
-
 public class MergeKSortedList {
 
 	/**
