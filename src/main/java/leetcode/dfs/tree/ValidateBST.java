@@ -52,7 +52,9 @@ public class ValidateBST {
 			}
 			root = stack.pop();
 
-			if (prevousCache != null && prevousCache.val >= root.val) return false;
+			if (prevousCache != null && prevousCache.val >= root.val) {
+				return false;
+			}
 
 			prevousCache = root;
 			root = root.right;
