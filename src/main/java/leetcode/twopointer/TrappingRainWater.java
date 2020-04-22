@@ -22,7 +22,7 @@ Output: 6
 @TwoPointer
 public class TrappingRainWater {
 
-    public int trap(int[] height) {
+    public static int trap(int[] height) {
 
         if (height == null || height.length == 0) {
             return 0;
@@ -57,4 +57,9 @@ public class TrappingRainWater {
         return result;
     }
 
+    public static void main(String[] args)
+    {
+        int[] nums = {0,1,0,2,1,0,1,3,2,1,2,1};
+        System.out.println(trap(nums));
+    }
 }
