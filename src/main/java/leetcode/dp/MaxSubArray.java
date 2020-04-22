@@ -40,15 +40,13 @@ public class MaxSubArray
      *
      */
     public static int maxSubArray(int[] nums) {
-
+        // DP sub problem
+        // either accumulate with previous result or use the current value alone
         for(int i = 1; i < nums.length; i++) {
-            if (nums[i - 1] < 0) {
-                nums[i] = nums[i];
-            } else {
-                nums[i] += nums[i - 1];
-            }
+            nums[i] = Math.max(nums[i], nums[i] + nums[i - 1]);
         }
         int max = nums[0];
+
         for(int i = 1; i < nums.length; i++) {
             if (nums[i] > max) max = nums[i];
         }
