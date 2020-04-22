@@ -73,6 +73,7 @@ public class DijkstraShortestGraph {
         exploredVertices = new HashSet<Integer>();
         int[] shortestPath = new int[n];
         exploredVertices.add(1); // node id 1
+        // as Dijkstra is single point shortest path, the first node is the shortest path root
         shortestPath[0] = 0; // node to itself is 0
 
         while (exploredVertices.size() < n) {
