@@ -61,13 +61,17 @@ public class ValidateBST {
 	}
 
 	// recursively iterating over the tree while defining interval <minVal, maxVal> for each node which value must fit in.
-	public boolean isValidBSTRec(TreeNode root) {
-		return isValidBSTre(root, Long.MIN_VALUE, Long.MAX_VALUE);
+	public boolean isValidBST_Rec(TreeNode root) {
+		return helper(root, null, null);
 	}
 
-	public boolean isValidBSTre(TreeNode root, long minVal, long maxVal) {
-		if (root == null) return true;
-		if (root.val >= maxVal || root.val <= minVal) return false;
-		return isValidBSTre(root.left, minVal, root.val) && isValidBSTre(root.right, root.val, maxVal);
+	boolean helper(TreeNode root, Integer min, Integer max) {
+		if (root == null)
+			return true;
+
+		if ((min != null && root.val <= min) || (max != null && root.val >= max))
+			return false;
+
+		return helper(root.left, min, root.val) && helper(root.right, root.val, max);
 	}
 }
