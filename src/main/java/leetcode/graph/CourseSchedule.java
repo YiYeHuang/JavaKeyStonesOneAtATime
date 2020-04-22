@@ -1,6 +1,11 @@
 package leetcode.graph;
 
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Stack;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Graph;
 
@@ -38,4 +43,120 @@ You may assume that there are no duplicate edges in the input prerequisites.
 @Graph
 public class CourseSchedule {
 
+  public static int[] findOrder(int numCourses, int[][] prerequisites) {
+    int[] incLinkCounts = new int[numCourses];
+    List<List<Integer>> edges = new ArrayList<>(numCourses);
+
+    // build graph
+    int n = incLinkCounts.length;
+    while (n-- > 0) {
+      edges.add(new ArrayList<>());
+    }
+    // build edges
+    for (int[] edge : prerequisites) {
+      int toNodeId = edge[0];
+      incLinkCounts[toNodeId]++;
+
+      // this is a directed graph, build edge with from node point to to node
+      edges.get(edge[1]).add(edge[0]);
+    }
+
+    // topological sort bfs
+    return solveByBFS(incLinkCounts, edges);
+  }
+
+  private static int[] solveByBFS(int[] incLinkCounts, List<List<Integer>> edges){
+    int[] order = new int[incLinkCounts.length];
+
+    // queue for BFS, which will only hold courses currently upon which no other courses depend
+    Queue<Integer> toVisit = new ArrayDeque<>();
+
+    for (int i = 0; i < incLinkCounts.length; i++) {
+      // start from courses upon which no other courses depend. These courses should come last in the order list
+      if (incLinkCounts[i] == 0) {
+        toVisit.offer(i);
+      }
+    }
+
+    int courseTaken = 0;
+
+    while (!toVisit.isEmpty()) {
+      int from = toVisit.poll();
+      order[courseTaken] = from;
+      courseTaken++;
+
+      for (int to : edges.get(from)) {
+        incLinkCounts[to]--;
+        if (incLinkCounts[to] == 0) {
+          // if the to node has dependency resolved, added to queue
+          toVisit.offer(to);
+        }
+      }
+    }
+
+    return courseTaken == incLinkCounts.length ? order : new int[0];
+  }
+
+  /****
+   * DFS =============================================================================
+   *
+   */
+  public static int[] findOrder_DFS(int numCourses, int[][] prerequisites) {
+    int[] incLinkCounts = new int[numCourses];
+    List<List<Integer>> edges = new ArrayList<>(numCourses);
+
+    // build graph
+    int n = incLinkCounts.length;
+    while (n-- > 0) {
+      edges.add(new ArrayList<>());
+    }
+    // build edges
+    for (int[] edge : prerequisites) {
+      int toNodeId = edge[0];
+      incLinkCounts[toNodeId]++;
+
+      // this is a directed graph, build edge with from node point to to node
+      edges.get(edge[1]).add(edge[0]);
+    }
+
+    // solve by dfs
+    boolean[] visited = new boolean[numCourses];
+    Stack<Integer> stack = new Stack<>();
+    for (int i = 0; i < numCourses; i++) {
+      if (!solveByDFS(edges, i, stack, visited, new boolean[numCourses])) {
+        return new int[0];
+      }
+    }
+
+    int i = 0;
+    int[] result = new int[numCourses];
+    while (!stack.isEmpty()) {
+      result[i++] = stack.pop();
+    }
+    return result;
+  }
+
+  private static boolean solveByDFS(List<List<Integer>> edges, int v, Stack<Integer> stack, boolean[] visited, boolean[] isCycle) {
+    if (visited[v]) return true;
+    if (isCycle[v]) return false;
+
+    isCycle[v] = true;
+    for (Integer u : edges.get(v)) {
+      // dfs until it hits a cycle
+      if (!solveByDFS(edges, u, stack, visited, isCycle)) {
+        return false;
+      }
+    }
+
+    visited[v] = true;
+    stack.push(v);
+    return true;
+  }
+
+
+  public static void main(String[] args) {
+    int[][] test = {{1,0},{2,0},{3,1},{3,2},{0, 3}};
+
+    findOrder_DFS(4, test);
+  }
 }
