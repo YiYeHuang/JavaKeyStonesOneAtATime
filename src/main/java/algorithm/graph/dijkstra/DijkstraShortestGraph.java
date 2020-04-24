@@ -70,7 +70,7 @@ public class DijkstraShortestGraph {
 
     public int[] shortestPath() {
         int n = verticesMap.size();
-        exploredVertices = new HashSet<Integer>();
+        exploredVertices = new HashSet<>();
         int[] shortestPath = new int[n];
         exploredVertices.add(1); // node id 1
         // as Dijkstra is single point shortest path, the first node is the shortest path root
@@ -82,21 +82,28 @@ public class DijkstraShortestGraph {
 
             for (int node : exploredVertices) {
                 // go through all edge
-                for (DirectedEdge edge : verticesMap.get(node).edges) {
+                List<DirectedEdge> edgeAll = verticesMap.get(node).edges;
+                for (DirectedEdge edge : edgeAll) {
                     // if neighbour is not explored
                     if (!exploredVertices.contains(edge.to.id)) {
                         // on the first path, it would always be 0.
+                        // find the neighbour with the lowest visit cost, store the nextPathNeighbourId index
                         if (shortestPath[node - 1] + edge.cost < shortestCost) {
                             nextPathNeighbourId = edge.to.id;
+
+                            // update the current shortest path value
                             shortestCost = shortestPath[node - 1] + edge.cost;
                         }
                     }
                 }
             }
-            // there is a shortest path update
+
+            // there is a shortest path update found
             if (nextPathNeighbourId != -1) {
+                System.out.println("Select node "+ nextPathNeighbourId + " to explore next");
                 exploredVertices.add(nextPathNeighbourId);
                 shortestPath[nextPathNeighbourId - 1] = shortestCost; // update the shortest path from node 1 to node nextPathNeighbourId
+                printPath(shortestPath);
             } else {
                 // no shortest path update on the node, mark all unexplored node as not reachable
                 for (int i = 0; i < n; i++){
@@ -111,14 +118,22 @@ public class DijkstraShortestGraph {
         return shortestPath;
     }
 
+    public static void printPath(int[] path) {
+        System.out.print(" [");
+        for (int i = 0; i < path.length; i++) {
+            System.out.print(path[i] + " ");
+        }
+        System.out.println("]");
+    }
+
     public static void main(String[] args) throws FileNotFoundException{
         //Graph g = new Graph("SimpleInput.txt");
-        DijkstraShortestGraph g = new DijkstraShortestGraph("resource/DijkstraData.txt");
+        DijkstraShortestGraph g = new DijkstraShortestGraph("resource/DijkstraSmall.txt");
         int[] paths = g.shortestPath();
-        System.out.println(paths[6] + "," + paths[36] + "," + paths[58] + "," +
-                paths[81] + "," + paths[98] + "," + paths[114] + "," +
-                paths[132] + "," + paths[164] + "," + paths[187] +
-                "," + paths[196]); //7,37,59,82,99,115,133,165,188,197
-        //System.out.println(Arrays.toString(paths));
+//        System.out.println(paths[6] + "," + paths[36] + "," + paths[58] + "," +
+//                paths[81] + "," + paths[98] + "," + paths[114] + "," +
+//                paths[132] + "," + paths[164] + "," + paths[187] +
+//                "," + paths[196]); //7,37,59,82,99,115,133,165,188,197
+//        //System.out.println(Arrays.toString(paths));
     }
 }

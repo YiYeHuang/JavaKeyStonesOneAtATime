@@ -28,12 +28,12 @@ public class SegmentTree {
      * Build tree from root, root has full start and end
      * split range in half and build child node until all child node has same start and end
      */
-    public SegmentTreeNode build(int[] nums, int start, int end) {
-        if (start > end) {
-            return null;
-        } else {
-            
-        }
-    }
+//    public SegmentTreeNode build(int[] nums, int start, int end) {
+//        if (start > end) {
+//            return null;
+//        } else {
+//
+//        }
+//    }
 
 }

@@ -25,4 +25,8 @@ public class DirectedEdge {
         }
         return to;
     }
+
+    public String toString() {
+        return "[From " + from + " to " + to + " - c: " + cost + "]";
+    }
 }

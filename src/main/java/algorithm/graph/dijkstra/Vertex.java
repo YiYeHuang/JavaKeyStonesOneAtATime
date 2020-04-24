@@ -11,4 +11,8 @@ public class Vertex {
         this.id = id;
         this.edges = new ArrayList<>();
     }
+
+    public String toString() {
+        return "[Vid: " + id + "]";
+    }
 }

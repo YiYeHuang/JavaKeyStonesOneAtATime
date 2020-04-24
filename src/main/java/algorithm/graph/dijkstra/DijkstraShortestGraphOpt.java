@@ -47,11 +47,11 @@ public class DijkstraShortestGraphOpt {
      */
 
     public DijkstraShortestGraphOpt(String inputFileName) throws FileNotFoundException{
-        vertices = new ArrayList<ArrayList<int[]>>();
+        vertices = new ArrayList<>();
         Scanner in = new Scanner(new File(inputFileName));
         //add all vertices
         while (in.hasNextLine()){
-            vertices.add(new ArrayList<int[]>());
+            vertices.add(new ArrayList<>());
             String[] line = in.nextLine().split("\t");
             int node = Integer.parseInt(line[0]);
             for (int i = 1; i < line.length; i++){
@@ -97,18 +97,20 @@ public class DijkstraShortestGraphOpt {
      * @return paths an array of integer indicates the path distances from 1 to
      * every node, e.g. paths[i] is the path distance from 1 to i+1.
      */
-
     public int[] shortestPath(){
         int n = vertices.size();
-        explored = new HashSet<Integer>();
+        explored = new HashSet<>();
         Comparator<int[]> comparator = new PathComparator();
-        crossingEdges = new PriorityQueue<int[]>(comparator);
+        crossingEdges = new PriorityQueue<>(comparator);
+
         int[] paths = new int[n];
         explored.add(1);
         paths[0] = 0;
+
         for (int[] edge : vertices.get(0)) {
             crossingEdges.add(edge);
         }
+
         while (!crossingEdges.isEmpty()){
             int[] toExplore = crossingEdges.poll();
             while (explored.contains(toExplore[0])) {
