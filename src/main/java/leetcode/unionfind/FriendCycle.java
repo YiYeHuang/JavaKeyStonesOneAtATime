@@ -42,7 +42,7 @@ If M[i][j] = 1, then M[j][i] = 1.
 @Medium
 public class FriendCycle {
 
-    public int findCircleNum(int[][] M) {
+    public static int findCircleNum(int[][] M) {
         UnionFind uf = new UnionFind(M.length);
 
         for (int i = 0; i < M.length; i++) {
@@ -54,5 +54,11 @@ public class FriendCycle {
         }
 
         return uf.components();
+    }
+
+    public static void main(String[] args) {
+        int[][] test = {{1,1,0},{1,1,0},{0,0,1}};
+
+        findCircleNum(test);
     }
 }
