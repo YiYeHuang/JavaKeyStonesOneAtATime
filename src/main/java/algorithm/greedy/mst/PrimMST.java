@@ -80,14 +80,19 @@ public class PrimMST {
 
             // edge[node id, cost]
             for (int[] edge : vertices.get(i)) {
+                // build only the edge connected to root node (node 1)
                 if (edge[0] == 1 && edge[1] < minCost) {
                     minCost = edge[1];
                 }
             }
             unexplored.put(i, minCost);
         }
+
+        // starting from root 2
         for (int i = 1; i < numberOfVertices; i++) {
+            // keep finding the next min edge, ideally using a heap
             int[] u = getMinEdge();
+            //
             for (int[] edge : vertices.get(u[0])) {
                 int v = edge[0];
                 if (!explored[v - 1]) {
@@ -103,6 +108,7 @@ public class PrimMST {
         return sumCost;
     }
 
+    //
     public int[] getMinEdge() {
         int minCost = Integer.MAX_VALUE;
         int minIndex = -1;
