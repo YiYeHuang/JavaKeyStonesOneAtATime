@@ -1,13 +1,15 @@
-package simulation;
+package simulation.game2048;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Game2048Board {
 
-  int[][] gameBoard = new int[4][4];
+  private int[][] gameBoard = new int[4][4];
 
   // location map to block
-  Set<String> location = new HashSet<>();
+  private Set<String> location = new HashSet<>();
 
   private int score;
   private int availableSlot;
@@ -20,10 +22,9 @@ public class Game2048Board {
     printBoard();
   }
 
-  public void initBoard() {
+  private void initBoard() {
     for (int i = 0; i < 4; i++) {
       for (int j = 0; j < 4; j++) {
-        Block b = new Block(i, j, 0);
         String indexKey = i + "," + j;
         location.add(indexKey);
       }
@@ -184,8 +185,6 @@ public class Game2048Board {
           }
         }
       }
-      System.out.println("Step");
-      printBoard();
     }
     updateScore();
   }
@@ -217,10 +216,11 @@ public class Game2048Board {
   }
 
   public static void main(String[] args) {
-    Game2048Board board = new Game2048Board();
 
+    System.out.println("NEW GAME++++++++++++++++++++++++++++");
+    Game2048Board board = new Game2048Board();
     Scanner sc = new Scanner(System.in);
-    System.out.println("Printing the file passed in:");
+    System.out.println("Input the moving direction (a/s/d/w):");
     while(sc.hasNextLine()) {
       String move = sc.nextLine();
       if (move.equals("s")) {
