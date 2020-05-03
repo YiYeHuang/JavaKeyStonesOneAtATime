@@ -112,6 +112,7 @@ public class CourseSchedule {
       }
     }
 
+    // index counter
     int courseTaken = 0;
 
     while (!toVisit.isEmpty()) {
