@@ -1,5 +1,21 @@
 package algorithm.dataStructure;
 
+
+/*
+ *
+ *
+ *
+ *
+ *
+ *                               36[0, 7]
+ *
+ *             15[0, 3]                           21[4, 7]
+ *
+ *      5[0,1]          10[2,3]           15[4,5]            6[6,7]
+ *
+ *   2[0]   3[1]     4[2]     6[3]     7[4]     8[5]      1[6]    5[7]
+ *
+ */
 public class SegmentTree {
 
     static class SegmentTreeNode {
@@ -16,24 +32,77 @@ public class SegmentTree {
             this.right = null;
             this.sum = 0;
         }
+
+        @Override
+        public String toString() {
+            return sum + "[" + start + "," + end + "]";
+        }
     }
 
     private SegmentTreeNode root = null;
 
     public SegmentTree(int[] nums) {
-
+        root = buildTree(nums, 0, nums.length - 1);
     }
 
     /**
      * Build tree from root, root has full start and end
      * split range in half and build child node until all child node has same start and end
      */
-//    public SegmentTreeNode build(int[] nums, int start, int end) {
-//        if (start > end) {
-//            return null;
-//        } else {
-//
-//        }
-//    }
+    private SegmentTreeNode buildTree(int[] nums, int start, int end) {
+        if (start > end) {
+            return null;
+        } else {
+            SegmentTreeNode ret = new SegmentTreeNode(start, end);
 
+            if (start == end) {
+                ret.sum = nums[start];
+            } else {
+                int mid = start  + (end - start) / 2;
+                ret.left = buildTree(nums, start, mid);
+                ret.right = buildTree(nums, mid + 1, end);
+                ret.sum = ret.left.sum + ret.right.sum;
+            }
+
+            return ret;
+        }
+    }
+
+    public void update(int i, int val) {
+        update(root, i, val);
+    }
+
+    private void update(SegmentTreeNode root, int pos, int val) {
+        if (root.start == root.end) {
+            root.sum = val;
+        } else {
+            int mid = root.start + (root.end - root.start)/2;
+            if (pos <= mid) {
+                update(root.left, pos, val);
+            } else {
+                update(root.right, pos, val);
+            }
+
+            root.sum = root.left.sum + root.right.sum;
+        }
+    }
+
+    public int sumRange(int i, int j) {
+        return sumRange(root, i, j);
+    }
+
+    private int sumRange(SegmentTreeNode root, int start, int end) {
+        if (root.end == end && root.start == start) {
+            return root.sum;
+        } else {
+            int mid = root.start + (root.end - root.start) / 2;
+            if (end <= mid) {
+                return sumRange(root.left, start, end);
+            } else if (start >= mid+1) {
+                return sumRange(root.right, start, end);
+            }  else {
+                return sumRange(root.right, mid+1, end) + sumRange(root.left, start, mid);
+            }
+        }
+    }
 }
