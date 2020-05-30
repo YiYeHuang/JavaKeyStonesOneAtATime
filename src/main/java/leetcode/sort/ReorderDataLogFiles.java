@@ -1,11 +1,12 @@
 package leetcode.sort;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.Sorting;
 import leetcode.tag.type.StringTag;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 /*
 937. Reorder Data in Log Files
@@ -82,5 +83,44 @@ public class ReorderDataLogFiles {
         });
 
         return logs;
+    }
+
+
+    public List<String> reorderLines(int logFileSize, List<String> logLines) {
+
+        if (logFileSize == 0) {
+            return new ArrayList<String>();
+        }
+
+        // sort list by rules
+        logLines.sort((l1, l2) -> {
+            String[] splitLog1 = l1.split(" ", 2);
+            String[] splitLog2 = l2.split(" ", 2);
+
+            // find out if digit
+            boolean isDigitLog1 = Character.isDigit(splitLog1[1].charAt(0));
+            boolean isDigitLog2 = Character.isDigit(splitLog2[1].charAt(0));
+
+            // case 1 both not digit
+            if (!isDigitLog1 && !isDigitLog2) {
+                int comp = splitLog1[1].compareTo(splitLog2[1]);
+                if (comp == 0) {
+                    // same log message, compare identifier
+                    return splitLog1[0].compareTo(splitLog2[0]);
+                } else {
+                    return comp;
+                }
+            } else if (isDigitLog1 && isDigitLog2) {
+                // both digit, original order
+                return 0;
+            } else if (isDigitLog1 && !isDigitLog2) {
+                // letter goes first
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+
+        return logLines;
     }
 }
