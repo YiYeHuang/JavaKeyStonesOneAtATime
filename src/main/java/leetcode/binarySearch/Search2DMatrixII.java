@@ -33,6 +33,11 @@ import leetcode.tag.type.TwoPointer;
 @TwoPointer
 public class Search2DMatrixII {
 
+	// the most reliable list to look up is the left most column
+	// bottom right is guarantee the largest number in the matrix
+	// search from the top right corner,
+	// - if less than, then the guarantee value is on that row
+	// - if larger than, keep moving down the row.
 	public static boolean searchMatrix(int[][] matrix, int target) {
 		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) return false;
 
