@@ -36,24 +36,31 @@ Space complexity: O(n)
 @LineSweep
 @Medium
 public class RemoveInterval {
-    public List<int[]> removeInterval(List<int[]> intervals, int[] r) {
+    public List<int[]> removeInterval(List<int[]> intervals, int[] remove) {
+
+        int start = 0;
+        int end = 1;
+
         List<int[]> result = new ArrayList<>();
+
         for (int[] interval : intervals) {
             // does not interact with remove interval
-            if (interval[1] <= r[0] || interval[0] >= r[1]) {
+            if (interval[end] <= remove[start] || interval[start] >= remove[end]) {
                 result.add(interval);
             } else {
                 // left side of interval is outside remove interval
-                if (interval[0] < r[0]) {
-                    interval[1] = r[0];
+                if (interval[start] < remove[start]) {
+                    interval[end] = remove[start];
                     result.add(interval);
                 }
+
                 // right side of interval is outside remove interval
-                if (interval[1] > r[1]) {
-                    interval[0] = r[1];
+                if (interval[end] > remove[end]) {
+                    interval[start] = remove[end];
                     result.add(interval);
                 }
                 // otherwise the entire interval is inside
+                // not add
             }
         }
         return result;
