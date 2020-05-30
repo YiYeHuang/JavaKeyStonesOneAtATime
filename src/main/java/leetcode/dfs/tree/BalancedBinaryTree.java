@@ -44,14 +44,17 @@ import leetcode.tag.type.DFS;
 public class BalancedBinaryTree {
 
     /**
+     * n^2
      * directly base off max height of the tree, the logic is very clear,
      * but two recursion is no good
      */
     public boolean isBalanced(TreeNode root) {
         if (root == null)
             return true;
-        if (Math.abs(depth(root.left) - depth(root.right)) >1)
+        if (Math.abs(depth(root.left) - depth(root.right)) >1) {
             return false;
+        }
+
         return isBalanced(root.left) && isBalanced(root.right);
     }
 
@@ -66,24 +69,24 @@ public class BalancedBinaryTree {
      * We determine recursively the height of the root node but when the recursion is coming upwards
      * we return UNBALANCED instead of the actual height if we know that the tree is already known to be unbalanced.
      */
-    private static final int UNBALANCED = -99;
+    private static final int UNBALANCED = -1;
 
-    public boolean isBalancedOPT(TreeNode root) {
-        if (root == null) {
-            return true;
-        }
-        return getHeight(root) != UNBALANCED;
+    public boolean isBalanced_2(TreeNode root) {
+        return heightCheck(root) != UNBALANCED;
     }
 
-    private int getHeight(TreeNode root) {
-        if (root == null) {
-            return -1;
+    // return the height of the tree if balanced
+    int heightCheck(TreeNode root) {
+        if (root == null) return 0;
+
+        int leftHight = heightCheck(root.left);
+        int rightHight = heightCheck(root.right);
+        int diff = Math.abs(leftHight - rightHight);
+
+        if ((leftHight != UNBALANCED && rightHight != UNBALANCED ) &&  (diff <= 1)) {
+            return Math.max(leftHight,rightHight) + 1;
         }
-        int left = getHeight(root.left);
-        int right = getHeight(root.right);
-        if (left == UNBALANCED || right == UNBALANCED || Math.abs(left-right) > 1) {
-            return UNBALANCED;
-        }
-        return 1 + Math.max(left,right);
+
+        return UNBALANCED;
     }
 }
