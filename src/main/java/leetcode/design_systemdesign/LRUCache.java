@@ -8,19 +8,19 @@ import leetcode.tag.type.LinkedListTag;
 import java.util.HashMap;
 
 /**
- * Design and implement a data structure for Least Recently Used (LRU) cache. 
+ * Design and implement a data structure for Least Recently Used (LRU) cache.
  * It should support the following operations: get and put.
- * 
- * get(key) - 
- * Get the value (will always be positive) of the key if the key exists in the cache, 
- * otherwise return -1. 
- * 
- * put(key, value) - 
- * Set or insert the value if the key is not already present. 
+ *
+ * get(key) -
+ * Get the value (will always be positive) of the key if the key exists in the cache,
+ * otherwise return -1.
+ *
+ * put(key, value) -
+ * Set or insert the value if the key is not already present.
  * When the cache reached its capacity,
  * it should invalidate the least recently used item before inserting a new
  * item.
- * 
+ *
  * Follow up: Could you do both operations in O(1) time complexity?
  *
  *
@@ -45,70 +45,45 @@ import java.util.HashMap;
  */
 public class LRUCache
 {
-    
-    class DLinkedNode
+
+    class LinkedNode
     {
         int key;
         int value;
-        DLinkedNode pre;
-        DLinkedNode next;
+        LinkedNode pre;
+        LinkedNode next;
 
-        public DLinkedNode(int key, int value)
-        {
+        public LinkedNode(int key, int value) {
             this.key = key;
             this.value = value;
         }
 
         @Override
-        public String toString()
-        {
+        public String toString() {
             return key + "|" + value;
         }
     }
 
     /**
-     * Set the current node pre and next, and skip itself. 
-     */
-    private void deleteNode(DLinkedNode node)
-    {
-        node.pre.next = node.next;
-        node.next.pre = node.pre;
-    }
-
-    /**
-     * for updating the new hit to the top of the list
-     */
-    private void addToHead(DLinkedNode new_node)
-    {
-        // link to previous head
-        new_node.next = m_head.next;
-        // previous head link to current head
-        new_node.next.pre = new_node;
-        // current point to head
-        new_node.pre = m_head;
-        // head point to current
-        m_head.next = new_node;
-    }
-
-    /**
      * Fill in the cache if there are rooms, evict the least recent used cache if no room
      * -> FIFO
-     * 
+     *
      * Update recent order if the cache is re-hit
      */
 
     private int m_capacity;
-    private HashMap<Integer, DLinkedNode> m_cache;
-    private DLinkedNode m_head;
-    private DLinkedNode m_tail;
+    // map key to the linked Node
+    private HashMap<Integer, LinkedNode> m_cache;
+    private LinkedNode m_head;
+    private LinkedNode m_tail;
     private int m_currentCount;
 
     public LRUCache(int capacity)
     {
         this.m_capacity = capacity;
-        this.m_cache = new HashMap<Integer, DLinkedNode>();
-        this.m_head = new DLinkedNode(0, 0);
-        this.m_tail = new DLinkedNode(0, 0);
+        this.m_cache = new HashMap<>();
+        this.m_head = new LinkedNode(0, 0);
+        this.m_tail = new LinkedNode(0, 0);
         m_head.next = m_tail;
         m_tail.pre = m_head;
         m_head.pre = null;
@@ -122,11 +97,12 @@ public class LRUCache
         if (m_cache.get(key) != null)
         {
             // Cache the reference
-            DLinkedNode node = m_cache.get(key);
+            LinkedNode node = m_cache.get(key);
             deleteNode(node);
             addToHead(node);
             return node.value;
         }
+        //miss
         return -1;
     }
 
@@ -135,7 +111,7 @@ public class LRUCache
         // update the value of the key.
         if (m_cache.get(key) != null)
         {
-            DLinkedNode node = m_cache.get(key);
+            LinkedNode node = m_cache.get(key);
             node.value = value;
             deleteNode(node);
             addToHead(node);
@@ -143,7 +119,7 @@ public class LRUCache
         else
         {
             //Create the node first;
-            DLinkedNode node = new DLinkedNode(key, value);
+            LinkedNode node = new LinkedNode(key, value);
             m_cache.put(key, node);
             // didn't hit capa, just add to the head
             if (m_currentCount < m_capacity)
@@ -154,11 +130,35 @@ public class LRUCache
             else
             {
                 // remove the least recent used cache
+
                 m_cache.remove(m_tail.pre.key);
+
                 deleteNode(m_tail.pre);
                 addToHead(node);
             }
         }
+    }
+
+    /**
+     * Set the current node pre and next, and skip itself.
+     */
+    private void deleteNode(LinkedNode node) {
+        node.pre.next = node.next;
+        node.next.pre = node.pre;
+    }
+
+    /**
+     * for updating the new hit to the top of the list
+     */
+    private void addToHead(LinkedNode new_node) {
+        // link to previous head
+        new_node.next = m_head.next;
+        // previous head link to current head
+        new_node.next.pre = new_node;
+        // current point to head
+        new_node.pre = m_head;
+        // head point to current
+        m_head.next = new_node;
     }
 
     @Override
@@ -166,7 +166,7 @@ public class LRUCache
     {
         StringBuilder sb = new StringBuilder();
 
-        DLinkedNode itr = m_head;
+        LinkedNode itr = m_head;
         while(itr.next != null)
         {
             sb.append(itr.toString()).append("-");
@@ -182,7 +182,7 @@ public class LRUCache
         test.put(2, 2);
         test.put(3, 3);
         test.get(2);
-        
+
         test.put(4, 4);
         test.put(5, 5);
         test.put(6, 6);
