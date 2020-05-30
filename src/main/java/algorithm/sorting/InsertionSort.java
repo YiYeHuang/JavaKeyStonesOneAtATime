@@ -27,7 +27,7 @@ public class InsertionSort {
             int insertValue = a[i];
             int j = i - 1;
 
-            for (; j >= 0; --j) {
+            for (; j >= 0; j--) {
                 if (a[j] > insertValue) {
                     a[j+1] = a[j];
                 } else {
