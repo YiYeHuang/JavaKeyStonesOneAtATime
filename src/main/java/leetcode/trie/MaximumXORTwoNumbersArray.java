@@ -8,7 +8,7 @@ import leetcode.trie.basicObj.TrieNode;
 /*
 421. Maximum XOR of Two Numbers in an Array
 
-Given a non-empty array of numbers, a0, a1, a2, … , an-1, where 0 ? ai < 2^31.
+Given a non-empty array of numbers, a0, a1, a2, ï¿½ , an-1, where 0 ? ai < 2^31.
 Find the maximum result of ai XOR aj, where 0 ? i, j < n.
 Could you do this in O(n) runtime?
 
@@ -25,6 +25,7 @@ public class MaximumXORTwoNumbersArray {
 
     TrieBinary root;
 
+    // 31 n
     public void insert(int num) {
         TrieBinary cur = root;
         /*
@@ -34,14 +35,14 @@ public class MaximumXORTwoNumbersArray {
         int j = 1 << 30;
         for (int i = 0; i < 31; i++) {
             // determine whether number's highest digit is 1 or 0
-            int b = (j & num) == 0 ? 0 : 1;
-            if (b == 0 && cur.zero == null) {
+            int bit = (j & num) == 0 ? 0 : 1;
+            if (bit == 0 && cur.zero == null) {
                 cur.zero = new TrieBinary();
             }
-            if (b == 1 && cur.one == null) {
+            if (bit == 1 && cur.one == null) {
                 cur.one = new TrieBinary();
             }
-            cur = b == 0 ? cur.zero : cur.one;
+            cur = bit == 0 ? cur.zero : cur.one;
             // j shift to right one position
             j >>= 1;
         }
