@@ -44,24 +44,24 @@ public class ProductArrayExceptSelf
     public static int[] productExceptSelf(int[] nums)
     {
         int leng = nums.length;
-        int[] ret = new int[leng];
+        int[] result = new int[leng];
         if(leng == 0)
-            return ret;
+            return result;
 
         int runningprefix = 1;
 
         for(int i = 0; i < leng; i++){
-            ret[i] = runningprefix;
+            result[i] = runningprefix;
             runningprefix*= nums[i];
         }
         int runningsufix = 1;
         for(int i = leng -1; i >= 0; i--){
-            ret[i] *= runningsufix;
+            result[i] *= runningsufix;
             runningsufix *= nums[i];
         }
-        return ret;
+        return result;
     }
- 
+
     public static void main(String[] args)
     {
         int[] test = {1,2,3,4};
