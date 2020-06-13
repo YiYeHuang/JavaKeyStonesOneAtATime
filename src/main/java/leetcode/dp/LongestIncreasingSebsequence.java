@@ -35,66 +35,7 @@ Follow up: Could you improve it to O(n log n) time complexity?
 @Medium
 @DP
 @BinarySearch
-public class LongestIncreasingSebsequence
-{
-    public static int lengthOfLIS(int[] nums)
-    {
-        int[] dp = new int[nums.length];
-
-        int globalMaxResult = 0;
-
-        for (int i =0; i< nums.length; i++)
-        {
-            dp[i] = 1;
-            int localMax = nums[i];
-            int localresult = 1;
-            for (int j = i+1; j < nums.length; j++)
-            {
-                if (nums[j] == nums[i])
-                    dp[j] = 1;
-                else if (nums[j] > nums[i])
-                {
-
-                    if (nums[i] == localMax)
-                    {
-                        localMax = nums[j];
-                        dp[j] = ++localresult;
-                        continue;
-                    }
-
-                    if (nums[j] <= localMax)
-                    {
-                        for (int k = j-1; k >=i ; k--)
-                        {
-                            if (nums[j] > nums[k] && nums[k]!=0)
-                            {
-                                dp[j] = dp[k]+1;
-                                if (dp[k]+1 > localresult)
-                                {
-                                    localresult = dp[k]+1;
-                                }
-                                break;
-                            }
-                        }
-                    }
-                    else
-                    {
-                        localMax = nums[j];
-                        dp[j] = ++localresult;
-                    }
-
-
-                }
-            }
-            if (localresult > globalMaxResult)
-            {
-                globalMaxResult = localresult;
-            }
-
-        }
-
-        return globalMaxResult;
-    }
+public class LongestIncreasingSebsequence {
 
     public static void lengthOfLIS1(int[] nums) {
         if(nums==null || nums.length==0){
@@ -123,9 +64,28 @@ public class LongestIncreasingSebsequence
         System.out.println(result);
     }
 
+    // if number[j] > number[i] then number[j] > all number[i] counter before i
+    public static int lengthOfLIS(int[] nums) {
+        if(nums==null || nums.length==0){
+            return 0;
+        }
+        int[] dp = new int[nums.length];
+
+        for(int i=0; i<nums.length;i++) {
+            dp[i] = 1;
+            for(int j=0; j<i; j++){
+                if (nums[i] > nums[j]) {
+                    dp[i] = dp[j] + 1;
+                }
+            }
+        }
+
+        return 1;
+    }
+
     public static void main(String[] args)
     {
         int[] test = {10, 9, 2, 5, 3, 7, 101, 18, 19, 1, 3};
-        lengthOfLIS1(test);
+        lengthOfLIS(test);
     }
 }
