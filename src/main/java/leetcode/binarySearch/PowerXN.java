@@ -46,10 +46,14 @@ public class PowerXN {
 			x = 1/x;
 		}
 
-		return (n%2==0)? myPow(x*x, n/2):x*myPow(x*x, n/2);
+		// double x and reduce n
+		return (n%2==0)?
+				myPow(x * x, n/2):
+				x * myPow(x * x, n/2);
 	}
 
 	public static void main(String[] args) {
-		myPow(2.00000, -10);
+		myPow(2.00000, Integer.MIN_VALUE);
+		System.out.println(Math.abs(Integer.MAX_VALUE + 1));
 	}
 }
