@@ -38,6 +38,8 @@ import java.util.PriorityQueue;
 public class kthCloestestPointtoOrigin {
 
     public int[][] kClosest(int[][] points, int K) {
+
+        // PQ in java is default min heap
         PriorityQueue<int[]> maxheap = new PriorityQueue<>(
                 (p1, p2)->(p2[0]*p2[0] + p2[1]*p2[1] - p1[0]*p1[0] - p1[1]*p1[1])
         );
@@ -45,6 +47,8 @@ public class kthCloestestPointtoOrigin {
         for (int i = 0; i < points.length; i++) {
             maxheap.offer(points[i]);
             if (maxheap.size() > K) {
+                // BUT we want to pop out the current largest when larger than k
+                // if using min heap, we pop out the small distance first, and it is wrong
                 maxheap.poll();
             }
         }
