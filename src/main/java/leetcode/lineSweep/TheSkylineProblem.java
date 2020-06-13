@@ -1,8 +1,8 @@
 package leetcode.lineSweep;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -86,6 +86,7 @@ public class TheSkylineProblem {
       return a.x - b.x;
     });
 
+    // hight map to leaving
     TreeMap<Integer, Integer> map = new TreeMap<>();
     int preX = -1;
     int preY = -1;
@@ -99,6 +100,7 @@ public class TheSkylineProblem {
 
       map.put(p.y, map.getOrDefault(p.y, 0) + p.val);
 
+      // when there is x level move
       if (i == data.size() - 1 || data.get(i + 1).x > p.x) {
         if (preX > -1) {
           if (lastHight == -1 || lastHight != preY) {
@@ -108,6 +110,7 @@ public class TheSkylineProblem {
             resultSet.add(preY);
             result.add(resultSet);
 
+            // update current Y
             lastHight = preY;
           }
         }
@@ -151,5 +154,61 @@ public class TheSkylineProblem {
     int[][] test = { {2,9,10}, {3 ,7 ,15}, {5, 12, 12}, {15, 20, 10}, {19, 24, 8} };
 
     rII.getSkyline(test);
+  }
+
+  /**
+   * ===============================================================================================
+   */
+
+  public List<List<Integer>> getSkyline_s2(int[][] buildings) {
+
+    List<int[]> height = new ArrayList<>();
+    for(int[] b:buildings) {
+      // start point has negative height value
+      height.add(new int[]{b[0], -b[2]});
+      // end point has normal height value
+      height.add(new int[]{b[1], b[2]});
+    }
+
+    // sort $height, based on the first value, if necessary, use the second to
+    // break ties
+    height.sort((a, b) -> {
+      if (a[0] != b[0])
+        return a[0] - b[0];
+      return a[1] - b[1];
+    });
+
+    // Use a maxHeap to store possible heights
+    TreeMap<Integer, Integer> pq = new TreeMap<>((a, b) -> (b - a));
+
+    // Provide a initial value to make it more consistent
+    pq.put(0, 1);
+
+    // Before starting, the previous max height is 0;
+    int prev = 0;
+
+    List<List<Integer>> result = new ArrayList<>();
+    // visit all points in order
+    for(int[] h:height) {
+      if(h[1] < 0) { // a start point, add height
+        pq.put(-h[1], pq.getOrDefault(-h[1], 0) + 1);
+      } else {  // a end point, remove height
+        if (pq.get(h[1])> 1) {
+          pq.put(h[1], pq.get(h[1]) - 1);
+        } else {
+          pq.remove(h[1]);
+        }
+      }
+      int cur = pq.firstKey(); // current max height;
+
+      // compare current max height with previous max height, update result and
+      // previous max height if necessary
+      if(prev != cur) {
+        result.add(Arrays.asList(h[0], cur));
+        prev = cur;
+      }
+    }
+
+    return result;
   }
 }
