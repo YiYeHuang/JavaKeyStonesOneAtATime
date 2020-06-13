@@ -1,10 +1,8 @@
 package leetcode.graph;
 
-import leetcode.tag.level.Easy;
+import java.util.Arrays;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Graph;
-
-import java.util.Arrays;
 
 /*
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance
