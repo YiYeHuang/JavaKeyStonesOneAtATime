@@ -34,14 +34,18 @@ public class MeetingSchedule {
         Arrays.sort(slot2, (a,b) -> a[0] - b[0]);
 
         List<Integer> result = new ArrayList<>();
+
         int slot1Index = 0;
         int slot2Index = 0;
+
+        int start = 0;
+        int end  = 1;
 
         while (slot1Index < slot1.length && slot2Index < slot2.length) {
 
             // the meeting interval is between the later start and earlier end
-            int meetingCanStart = Math.max(slot1[slot1Index][0], slot2[slot2Index][0]);
-            int meetingCanEnd = Math.min(slot1[slot1Index][1], slot2[slot2Index][1]);
+            int meetingCanStart = Math.max(slot1[slot1Index][start], slot2[slot2Index][start]);
+            int meetingCanEnd = Math.min(slot1[slot1Index][end], slot2[slot2Index][end]);
 
             if (meetingCanEnd - meetingCanStart >= duration) {
                 result.add(meetingCanStart);
@@ -49,7 +53,7 @@ public class MeetingSchedule {
                 return result;
             } else {
                 // earlier end user search for the next slot
-                if (slot1[slot1Index][1] == meetingCanEnd) {
+                if (slot1[slot1Index][end] == meetingCanEnd) {
                     slot1Index++;
                 } else {
                     slot2Index++;
