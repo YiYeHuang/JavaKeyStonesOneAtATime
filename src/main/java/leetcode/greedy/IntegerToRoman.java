@@ -52,6 +52,10 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 @Medium
 @Greedy
 public class IntegerToRoman {
+
+    /**
+     * greedy the way down and attach digit
+     */
     public String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
         while(num > 0){
