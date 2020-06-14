@@ -44,14 +44,17 @@ public class MeetingSchedule {
         while (slot1Index < slot1.length && slot2Index < slot2.length) {
 
             // the meeting interval is between the later start and earlier end
+            // then compare the diff with the duration
             int meetingCanStart = Math.max(slot1[slot1Index][start], slot2[slot2Index][start]);
             int meetingCanEnd = Math.min(slot1[slot1Index][end], slot2[slot2Index][end]);
 
+            // case success, add to result
             if (meetingCanEnd - meetingCanStart >= duration) {
                 result.add(meetingCanStart);
                 result.add(meetingCanStart + duration);
                 return result;
             } else {
+                // case failed, the user slot end earlier will move to next slot
                 // earlier end user search for the next slot
                 if (slot1[slot1Index][end] == meetingCanEnd) {
                     slot1Index++;
