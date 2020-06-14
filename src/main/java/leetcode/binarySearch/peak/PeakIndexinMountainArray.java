@@ -1,4 +1,4 @@
-package leetcode.binarySearch;
+package leetcode.binarySearch.peak;
 
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
@@ -41,7 +41,7 @@ public class PeakIndexinMountainArray {
         while (low < high) {
             int mid = low + (high - low)/2;
 
-            // up fill
+            // up hill
             if (A[mid] < A[mid+1]) {
                 low = mid + 1;
             } else {
