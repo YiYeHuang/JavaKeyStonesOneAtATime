@@ -1,4 +1,4 @@
-package leetcode.binarySearch;
+package leetcode.binarySearch.peak;
 
 
 /*
@@ -51,7 +51,8 @@ public class FindPeakElement {
         low = mid+1;
       }
       else {
-        // peak is at the left of the mid, since mid is not peak, high can be mid -1
+        // peak is at the left of the mid (or both, but then it would have two peak, we go and find in the left side),
+        // since mid is not peak, high can be mid -1
         high = mid-1;
       }
     }
