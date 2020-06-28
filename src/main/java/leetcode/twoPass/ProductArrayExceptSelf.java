@@ -1,4 +1,4 @@
-package leetcode.dp.forwardANDbackward;
+package leetcode.twoPass;
 
 
 import leetcode.tag.level.Medium;
