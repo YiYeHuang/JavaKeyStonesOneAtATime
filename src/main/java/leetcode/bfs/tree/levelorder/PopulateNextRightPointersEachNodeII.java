@@ -1,6 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
-import baseObj.TreeLinkNode;
+import leetcode.basicDto.TreeLinkNode;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  * 117. Populating Next Right Pointers in Each Node II
- * 
+ *
  Given a binary tree
 
  struct TreeLinkNode {

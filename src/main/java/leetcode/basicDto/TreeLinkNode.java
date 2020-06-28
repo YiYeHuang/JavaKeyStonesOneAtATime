@@ -1,4 +1,4 @@
-package baseObj;
+package leetcode.basicDto;
 
  public class TreeLinkNode {
       int val;

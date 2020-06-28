@@ -1,6 +1,6 @@
 package leetcode.bfs.tree.levelorder;
 
-import baseObj.Node;
+import leetcode.basicDto.Node;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 

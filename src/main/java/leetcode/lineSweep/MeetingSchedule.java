@@ -27,11 +27,11 @@ Output: []
 @Medium
 public class MeetingSchedule {
 
-    public List<Integer> minAvailableDuration(int[][] slot1, int[][] slot2, int duration) {
-        if (slot1.length == 0 || slot2.length == 0) return new ArrayList<>();
+    public List<Integer> minAvailableDuration(int[][] slots1, int[][] slots2, int duration) {
+        if (slots1.length == 0 || slots2.length == 0) return new ArrayList<>();
 
-        Arrays.sort(slot1, (a,b) -> a[0] - b[0]);
-        Arrays.sort(slot2, (a,b) -> a[0] - b[0]);
+        Arrays.sort(slots1, (a,b) -> a[0] - b[0]);
+        Arrays.sort(slots2, (a,b) -> a[0] - b[0]);
 
         List<Integer> result = new ArrayList<>();
 
@@ -41,12 +41,12 @@ public class MeetingSchedule {
         int start = 0;
         int end  = 1;
 
-        while (slot1Index < slot1.length && slot2Index < slot2.length) {
+        while (slot1Index < slots1.length && slot2Index < slots2.length) {
 
             // the meeting interval is between the later start and earlier end
             // then compare the diff with the duration
-            int meetingCanStart = Math.max(slot1[slot1Index][start], slot2[slot2Index][start]);
-            int meetingCanEnd = Math.min(slot1[slot1Index][end], slot2[slot2Index][end]);
+            int meetingCanStart = Math.max(slots1[slot1Index][start], slots2[slot2Index][start]);
+            int meetingCanEnd = Math.min(slots1[slot1Index][end], slots2[slot2Index][end]);
 
             // case success, add to result
             if (meetingCanEnd - meetingCanStart >= duration) {
@@ -56,7 +56,7 @@ public class MeetingSchedule {
             } else {
                 // case failed, the user slot end earlier will move to next slot
                 // earlier end user search for the next slot
-                if (slot1[slot1Index][end] == meetingCanEnd) {
+                if (slots1[slot1Index][end] < slots2[slot2Index][end]) {
                     slot1Index++;
                 } else {
                     slot2Index++;

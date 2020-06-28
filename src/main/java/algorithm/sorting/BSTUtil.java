@@ -1,7 +1,7 @@
 package algorithm.sorting;
 
-import baseObj.TreeLinkNode;
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeLinkNode;
+import leetcode.basicDto.TreeNode;
 
 public class BSTUtil {
 

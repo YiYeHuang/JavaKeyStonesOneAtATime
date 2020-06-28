@@ -1,6 +1,6 @@
 package leetcode.tree;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 /**
  105. Construct Binary Tree from Preorder and Inorder Traversal

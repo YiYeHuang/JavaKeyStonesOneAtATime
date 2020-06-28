@@ -1,6 +1,6 @@
 package leetcode.tree.bst;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.BinarySearch;
 import leetcode.tag.type.Tree;

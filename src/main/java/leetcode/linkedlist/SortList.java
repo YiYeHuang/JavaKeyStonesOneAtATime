@@ -1,12 +1,12 @@
 package leetcode.linkedlist;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 
 /**
  * 148. Sort List
- * 
+ *
  * Sort a linked list in O(n log n) time using constant space complexity.
  *
  * Example 1:

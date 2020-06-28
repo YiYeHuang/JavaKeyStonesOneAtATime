@@ -1,6 +1,6 @@
 package leetcode.bfs.tree;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.BFS;
 

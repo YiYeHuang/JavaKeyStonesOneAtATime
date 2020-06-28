@@ -1,6 +1,6 @@
 package leetcode.linkedlist;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.LinkedListTag;
 

@@ -1,6 +1,6 @@
 package leetcode.heap;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Heap;

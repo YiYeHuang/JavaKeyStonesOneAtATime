@@ -1,7 +1,7 @@
 package leetcode.dfs.tree;
 
 import algorithm.sorting.BSTUtil;
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
 

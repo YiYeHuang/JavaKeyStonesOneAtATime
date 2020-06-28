@@ -1,6 +1,6 @@
 package leetcode.dfs.tree;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;

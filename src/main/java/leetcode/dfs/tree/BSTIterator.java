@@ -1,6 +1,6 @@
 package leetcode.dfs.tree;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
@@ -28,7 +28,7 @@ import java.util.Stack;
  */
 public class BSTIterator {
     Stack<TreeNode> stack = new Stack<>();
-    
+
     public BSTIterator(TreeNode root) {
         TreeNode cur = root;
         while(cur != null){

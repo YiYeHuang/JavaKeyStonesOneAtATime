@@ -1,11 +1,11 @@
-package leetcode.tree;
+package leetcode.tree.bst;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
+import java.util.Stack;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.StackTag;
 import leetcode.tag.type.Tree;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,7 +23,6 @@ import java.util.Queue;
 
  Note: Do not use class member/global/static variables to store states. Your serialize and deserialize algorithms should be stateless.
  */
-
 @Medium
 @StackTag
 @Tree
@@ -31,6 +30,7 @@ public class SerializeDeserializeBST {
 
 	private static final String SEP = ",";
 	private static final String NULL = "null";
+
 	/**
 	 *      5
 	 *   2     6
@@ -46,53 +46,52 @@ public class SerializeDeserializeBST {
 	// Encodes a tree to a single string.
 	public String serialize(TreeNode root) {
 		StringBuilder sb = new StringBuilder();
-		serialize(root, sb);
-		return sb.toString();
-	}
+		if (root == null) return NULL;
+		//traverse it recursively if you want to, I am doing it iteratively here
+		Stack<TreeNode> st = new Stack<>();
+		st.push(root);
+		while (!st.empty()) {
+			root = st.pop();
 
-	/**
-	 * preorder is the best way to serialize
-	 */
-	public void serialize(TreeNode root, StringBuilder sb) {
-		if (root == null) return;
-		sb.append(root.val).append(",");
-		serialize(root.left, sb);
-		serialize(root.right, sb);
+			sb.append(root.val).append(SEP);
+
+			if (root.right != null) st.push(root.right);
+			if (root.left != null) st.push(root.left);
+		}
+		return sb.toString();
 	}
 
 	// Decodes your encoded data to tree.
 	public TreeNode deserialize(String data) {
-		if (data.isEmpty()) return null;
-		Queue<String> q = new LinkedList<>(Arrays.asList(data.split(",")));
-		return deserialize(q, Integer.MIN_VALUE, Integer.MAX_VALUE);
+		if (data.equals(NULL)) return null;
+
+		String[] strs = data.split(SEP);
+		Queue<Integer> q = new LinkedList<>();
+		for (String e : strs) {
+			q.offer(Integer.parseInt(e));
+		}
+		return buildTree(q);
 	}
 
-	public TreeNode deserialize(Queue<String> q, int lower, int upper) {
-		if (q.isEmpty()) {
-			return null;
-		}
-		String s = q.peek();
-		int val = Integer.parseInt(s);
 
-		/**
-		 * key here
-		 * for pre order get get
-		 *
-		 * root left1 left2 leftX right1 rightX
-		 *
-		 * If we look at the value of the pre-order traversal we get this:
-		 * rootValue (<rootValue) (<rootValue) (<rootValue) |separate line| (>rootValue) (>rootValue)
-		 *
-		 * so the upper bound of left side is root value
-		 * the lower bound of right side is root value
-		 */
-		if (val < lower || val > upper) {
-			return null;
+	//   5
+	//  3 6
+	// 2   7
+	public TreeNode buildTree(Queue<Integer> q) {
+		if (q.isEmpty()) return null;
+
+		// from example 5 3 2 6 7
+		TreeNode currentRoot = new TreeNode(q.poll());//root (5)
+		Queue<Integer> samllerQueue = new LinkedList<>();
+
+		while (!q.isEmpty() && q.peek() < currentRoot.val) {
+			samllerQueue.offer(q.poll());
 		}
-		q.poll();
-		TreeNode root = new TreeNode(val);
-		root.left = deserialize(q, lower, val);
-		root.right = deserialize(q, val, upper);
-		return root;
+
+		//smallerQueue : 3,2   storing elements smaller than 5 (root)
+		currentRoot.left = buildTree(samllerQueue);
+		//q: 6,7   storing elements bigger than 5 (root)
+		currentRoot.right = buildTree(q);
+		return currentRoot;
 	}
 }

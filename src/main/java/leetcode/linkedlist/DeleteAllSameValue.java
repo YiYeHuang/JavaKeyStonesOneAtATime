@@ -1,11 +1,11 @@
 package leetcode.linkedlist;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 
 /**
  * Remove all elements from a linked list of integers that have value val.
- * 
- * Example Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, 
+ *
+ * Example Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6,
  * val = 6 Return: 1 --> 2 --> 3 --> 4 --> 5
  */
 public class DeleteAllSameValue
@@ -24,7 +24,7 @@ public class DeleteAllSameValue
             {
                 pointer.next = pointer.next.next;
             }
-            else 
+            else
             {
                 pointer = pointer.next;
             }

@@ -1,6 +1,6 @@
 package leetcode.linkedlist;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 
 /**
  * Reverse a link list between begin and end exclusively

@@ -36,9 +36,9 @@ public class BasicCalculator {
 
     public static int calculate(String s) {
 
-        int operand = 0;
+        int currentNumber = 0;
         int n = 0;
-        Stack<Object> stack = new Stack<Object>();
+        Stack<Object> stack = new Stack<>();
 
         for (int i = s.length() - 1; i >= 0; i--) {
 
@@ -47,71 +47,46 @@ public class BasicCalculator {
             if (Character.isDigit(ch)) {
 
                 // Forming the operand - in reverse order.
-                operand = (int) Math.pow(10, n) * (int) (ch - '0') + operand;
+                currentNumber = (int) Math.pow(10, n) * (int) (ch - '0') + currentNumber;
                 n += 1;
 
             } else if (ch != ' ') {
                 if (n != 0) {
-
                     // Save the operand on the stack
                     // As we encounter some non-digit.
-                    stack.push(operand);
+                    stack.push(currentNumber);
                     n = 0;
-                    operand = 0;
-
+                    currentNumber = 0;
                 }
                 if (ch == '(') {
 
                     int res = calculateStackPre(stack);
                     stack.pop();
-
                     // Append the evaluated result to the stack.
                     // This result could be of a sub-expression within the parenthesis.
                     stack.push(res);
 
                 } else {
-                    // For other non-digits just push onto the stack.
+                    // when reach here, it has to be operator just push onto the stack.
                     stack.push(ch);
                 }
             } else if (ch == ' ') {
-                stack.push(operand);
+                stack.push(currentNumber);
                 n = 0;
-                operand = 0;
+                currentNumber = 0;
             }
         }
 
         //Push the last operand to stack, if any.
         if (n != 0) {
-            stack.push(operand);
+            stack.push(currentNumber);
         }
 
         // Evaluate any left overs in the stack.
         return calculateStackPre(stack);
     }
 
-    public static int calculateStack(Stack<Object> stack) {
-
-        int res = 0;
-
-        if (!stack.empty()) {
-            res = (int) stack.pop();
-        }
-
-        // Evaluate the expression till we get corresponding ')'
-        while (!stack.empty() && !((char) stack.peek() == ')')) {
-
-            char sign = (char) stack.pop();
-
-            if (sign == '+') {
-                res += (int) stack.pop();
-            } else {
-                res -= (int) stack.pop();
-            }
-        }
-        return res;
-    }
-
-    public static int calculateStackPre(Stack<Object> stack) {
+    private static int calculateStackPre(Stack<Object> stack) {
 
         int res1 = 0;
         int res2 = 0;
@@ -135,6 +110,49 @@ public class BasicCalculator {
 
         return res1;
     }
+
+
+    public static int calculate_front(String s) {
+        Stack<Integer> stack = new Stack<>();
+        int result = 0;
+        int number = 0;
+        int sign = 1;
+        for(int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            // if digit
+            if(Character.isDigit(c)){
+                number = 10 * number + (int)(c - '0');
+            } else if(c == '+'){
+                result += sign * number;
+                // reset significant number
+                number = 0;
+                sign = 1;
+            } else if(c == '-'){
+                result += sign * number;
+                number = 0;
+                sign = -1;
+            }else if(c == '('){
+                //we push the result first, then sign;
+                stack.push(result);
+                stack.push(sign);
+                //reset the sign and result for the value in the parenthesis
+                sign = 1;
+                result = 0;
+            }else if(c == ')'){
+                result += sign * number;
+                result *= stack.pop();    //stack.pop() is the sign before the parenthesis
+                result += stack.pop();   //stack.pop() now is the result calculated before the parenthesis
+
+                number = 0;
+            }
+        }
+
+        if(number != 0) {
+            result += sign * number;
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         String test = "(-10(+2 11))";

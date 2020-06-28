@@ -1,6 +1,9 @@
 package leetcode.design_systemdesign;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import leetcode.tag.level.Hard;
 import leetcode.tag.type.Heap;
 
@@ -40,9 +43,9 @@ public class FindMedianfromDataStream {
 	 *       \    /     \    /
 	 *         18         19
 	 *          \        /
-	 *              15
+	 *              15        min
 	 *
-	 *              14
+	 *              14        max
 	 *            /    \
 	 *          10     11
 	 *        /  \     /  \
@@ -64,6 +67,9 @@ public class FindMedianfromDataStream {
 
 	// EVEN: min heap get value
 	// ODD: max heap get value
+	//
+	// 0: max add -> push to min    -> median get from min
+	// 1: min add -> push to max    -> median get from min + max /2
 	public void addNum(int num) {
 		if (even) {
 			maxHeap.offer(num);
@@ -85,9 +91,11 @@ public class FindMedianfromDataStream {
 	public static void main(String[] args) {
 		FindMedianfromDataStream fm = new FindMedianfromDataStream();
 		fm.addNum(1);
+		System.out.println(fm.findMedian());
 		fm.addNum(2);
 		fm.addNum(3);
 
 		System.out.println(fm.findMedian());
 	}
+
 }

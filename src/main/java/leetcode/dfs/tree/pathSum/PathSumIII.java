@@ -1,6 +1,6 @@
 package leetcode.dfs.tree.pathSum;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 /**
  * 437. Path Sum III

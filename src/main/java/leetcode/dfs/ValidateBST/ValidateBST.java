@@ -1,6 +1,6 @@
 package leetcode.dfs.ValidateBST;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 import leetcode.tag.type.StackTag;
 import leetcode.tag.type.Tree;
 

@@ -1,18 +1,18 @@
 package leetcode.linkedlist;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.LinkedListTag;
 
 /**
  * 61 Rotate List
  * Given a list, rotate the list to the right by k places, where k is non-negative.
- * 
- * For example: 
- * Given 1->2->3->4->5->NULL and k = 2, 
+ *
+ * For example:
+ * Given 1->2->3->4->5->NULL and k = 2,
  * return 4->5->1->2->3->NULL.
- * 
- * 
+ *
+ *
  */
 
 @Medium
@@ -42,7 +42,7 @@ public class RotateList
         k = k%len;
 
         tail.next = head;
-        
+
         //   1->2->3
         //   ^     |
         //   5 <- 4
@@ -53,7 +53,7 @@ public class RotateList
         }
         head = tail.next;
         tail.next = null;
-        
+
         return head;
     }
 }

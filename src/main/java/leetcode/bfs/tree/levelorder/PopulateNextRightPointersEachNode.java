@@ -1,7 +1,7 @@
 package leetcode.bfs.tree.levelorder;
 
 import algorithm.sorting.BSTUtil;
-import baseObj.TreeLinkNode;
+import leetcode.basicDto.TreeLinkNode;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;

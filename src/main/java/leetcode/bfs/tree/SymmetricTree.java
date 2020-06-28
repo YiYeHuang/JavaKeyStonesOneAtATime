@@ -4,11 +4,10 @@ import leetcode.tag.level.Easy;
 import leetcode.tag.type.BFS;
 import leetcode.tag.type.DFS;
 import leetcode.tag.type.Tree;
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import leetcode.tag.type.Trie;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).

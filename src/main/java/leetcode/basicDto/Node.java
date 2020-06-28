@@ -1,4 +1,4 @@
-package baseObj;
+package leetcode.basicDto;
 
 import java.util.List;
 

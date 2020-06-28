@@ -1,6 +1,6 @@
 package leetcode.sort;
 
-import baseObj.Interval;
+import leetcode.basicDto.Interval;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 

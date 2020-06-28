@@ -1,6 +1,6 @@
 package algorithm;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Stack;
 
 /**
  * DFS is stack, BFS is queue
- * 
+ *
  * 5 3 8 1 4 7 10 6 9 11 12
  */
 public class DFSandBFS

@@ -1,7 +1,7 @@
 package leetcode.dfs.tree;
 
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.DFS;

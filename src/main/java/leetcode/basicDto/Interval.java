@@ -1,4 +1,4 @@
-package baseObj;
+package leetcode.basicDto;
 
 public class Interval {
 	public int start;

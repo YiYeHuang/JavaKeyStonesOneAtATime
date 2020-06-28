@@ -1,6 +1,6 @@
 package leetcode.dfs.tree;
 
-import baseObj.TreeNode;
+import leetcode.basicDto.TreeNode;
 import leetcode.tag.level.Easy;
 import leetcode.tag.type.DFS;
 
@@ -8,18 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 872. Leaf-Similar Trees
- Easy
+ 872. Leaf-Similar Trees
 
- 295
-
- 15
-
- Favorite
-
- Share
- Consider all the leaves of a binary tree.  From left to right order, the values of those leaves form a leaf value sequence.
-
+ Consider all the leaves of a binary tree.
+ From left to right order, the values of those leaves form a leaf value sequence.
 
 
  For example, in the given tree above, the leaf value sequence is (6, 7, 4, 9, 8).
@@ -53,13 +45,19 @@ public class LeafSimiliarTrees {
 		build(root, l1);
 		build(root2, l2);
 
-		if (l1.size() != l2.size()) return false;
+		if (l1.size() != l2.size()) {
+			return false;
+		}
+
 		for (int i = 0; i<l1.size(); i++) {
-			if (l1.get(i) != l2.get(i)) return false;
+			if (l1.get(i) != l2.get(i)) {
+				return false;
+			}
 		}
 		return true;
 	}
 
+	// pre order traversal, build the result
 	public static void build(TreeNode root, List<Integer> list) {
 		if (root == null) return;
 		if (root.left == null && root.right == null) {

@@ -1,6 +1,6 @@
 package leetcode.sort;
 
-import baseObj.ListNode;
+import leetcode.basicDto.ListNode;
 import leetcode.tag.level.Medium;
 import leetcode.tag.type.Sorting;
 
