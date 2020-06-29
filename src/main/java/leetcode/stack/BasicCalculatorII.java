@@ -32,11 +32,19 @@ import java.util.Stack;
 @Medium
 public class BasicCalculatorII {
 
+    /**
+     * e.g. 3*4 + 5*4 + 6/3
+     *
+     * each 3*4  5*4  6/3 is one group, calculate and push result to stack
+     */
     public static int calculate(String s) {
 
         if (s == null || s.length() == 0) return 0;
         Stack<Integer> stack = new Stack<>();
+
+        // ensure the last number get to the queue
         s += '+';
+        // ensure the first number get to the queue
         char operator = '+';
 
         int n = 0;
@@ -62,6 +70,8 @@ public class BasicCalculatorII {
         }
 
         int total = 0;
+
+        // calculate the remaining if stack is still not empty
         while (!stack.isEmpty()) {
             total += stack.pop();
         }
@@ -69,7 +79,7 @@ public class BasicCalculatorII {
     }
 
     public static void main(String[] args) {
-        String test = "3 * 5 + 6 + 8/4";
+        String test = "5 + 6";
 
         System.out.println(calculate(test));
     }
