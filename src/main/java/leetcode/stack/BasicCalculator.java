@@ -61,6 +61,7 @@ public class BasicCalculator {
                 if (ch == '(') {
 
                     int res = calculateStackPre(stack);
+                    // pop out the ')'
                     stack.pop();
                     // Append the evaluated result to the stack.
                     // This result could be of a sub-expression within the parenthesis.
@@ -140,8 +141,10 @@ public class BasicCalculator {
                 result = 0;
             }else if(c == ')'){
                 result += sign * number;
-                result *= stack.pop();    //stack.pop() is the sign before the parenthesis
-                result += stack.pop();   //stack.pop() now is the result calculated before the parenthesis
+                //stack.pop() is the sign before the parenthesis
+                result *= stack.pop();
+                //stack.pop() now is the result calculated before the parenthesis
+                result += stack.pop();
 
                 number = 0;
             }
