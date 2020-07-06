@@ -162,11 +162,7 @@ public class WordBreakII {
 
       sb.append(" " +  s.substring(start, i));
 
-      int rstBeforeDFS = rst.size();
       dfs_build(rst, sb, s, dict, canBreakResult, i);
-      if (rst.size() == rstBeforeDFS) {
-        canBreakResult[i] = false;
-      }
       sb.delete(sbBeforeAdd, sb.length());
     }
   }
