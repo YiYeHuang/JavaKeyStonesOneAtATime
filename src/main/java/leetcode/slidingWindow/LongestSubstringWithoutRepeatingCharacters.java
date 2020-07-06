@@ -102,6 +102,8 @@ public class LongestSubstringWithoutRepeatingCharacters
                 i = Math.max(map.get(s.charAt(j)), i);
             }
             ans = Math.max(ans, j - i + 1);
+
+            // update index of char of duplicate
             map.put(s.charAt(j), j + 1);
         }
         return ans;
