@@ -1,16 +1,20 @@
-package leetcode.string;
+package leetcode;
 
-import baseObj.TreeNode;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+import java.util.TreeMap;
+import leetcode.tag.type.Mathematics;
 
 public class Contest {
 
     public static int removePalindromeSub(String s) {
- 
+
         int left = 0;
         int right = s.length() - 1;
         int count = 0;
@@ -272,8 +276,13 @@ public class Contest {
         return sum;
     }
 
+
+
     public static void main(String[] args) {
-        int[] test1 =   {21, 4, 7};
-        System.out.println(sumFourDivisors(test1));
+        System.out.println("box apple test".compareTo("box apples test"));
     }
+
+
 }
+
+
